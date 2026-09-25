@@ -69,11 +69,16 @@ void loop3D(std::vector<uint32_t>& buffer,
     int pixelB = backgroundColor[2];
     const int pixelA = backgroundColor[3];
 
+    double worldX;
+    double worldY;
+    double worldZ;
+
     Vec3 rayOrigin; // needs to be set to camera coordinates when called
-    Vec3 rayDir;
+    Vec3 rayDir{worldX, worldY, worldZ};
 
+    // theres no way this equation is right bro
     double rayLength = sqrt((rayDir.x() * rayDir.x())+(rayDir.y() * rayDir.y())+(rayDir.z() * rayDir.z()));
-
+    std::cout << rayLength << "\n";
 
     SetPixel(buffer.data(), width, height,
     xPixel, yPixel, pixelR, pixelG, pixelB,
