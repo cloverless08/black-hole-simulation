@@ -53,7 +53,7 @@ void loop2D(std::vector<uint32_t>& buffer, BlackHole& hole, int pixelX, int pixe
 }
 
 void loop3D(std::vector<uint32_t>& buffer,
-    BlackHole& hole,
+    BlackHole& hole, Camera& cam,
     int xPixel, int yPixel,
     const int height, const int width,
     std::array<int, 4> backgroundColor) {
@@ -72,11 +72,8 @@ void loop3D(std::vector<uint32_t>& buffer,
     Vec3 rayOrigin; // needs to be set to camera coordinates when called
     Vec3 rayDir;
 
-    /*
-    pixelR = xPixel * 0.3984375;
-    pixelG = yPixel * 0.3984375;
-    pixelB = (xPixel + yPixel) / 2;
-    */
+    double rayLength = sqrt((rayDir.x() * rayDir.x())+(rayDir.y() * rayDir.y())+(rayDir.z() * rayDir.z()));
+
 
     SetPixel(buffer.data(), width, height,
     xPixel, yPixel, pixelR, pixelG, pixelB,
