@@ -24,7 +24,7 @@ void loop3D(std::vector<uint32_t>& buffer,
     BlackHole& hole, Camera& cam,
     int xPixel, int yPixel,
     const int height, const int width,
-    std::array<int, 4> backgroundColor) {
+    Vec3 backgroundColor) {
 
     unsigned long long time = 0;
 
@@ -35,7 +35,7 @@ void loop3D(std::vector<uint32_t>& buffer,
     int pixelR = backgroundColor[0];
     int pixelG = backgroundColor[1];
     int pixelB = backgroundColor[2];
-    const int pixelA = backgroundColor[3];
+    const int pixelA = 255;
 
 
 
