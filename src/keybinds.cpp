@@ -28,23 +28,23 @@ void GetKeyPress(SDL_Event &event, bool &running, Camera &cam) {
                         break;
                     case SDLK_RIGHT:
                         StrOut("Right Arrow Pressed", msgType[0]);
-                        cam.yaw = ((cam.yaw + 10) % 361);
+                       //cam.yaw = ((cam.yaw + 10) % 361);
                         break;
                     case SDLK_LEFT:
                         StrOut("Left Arrow Pressed", msgType[0]);
-                        cam.yaw = ((cam.yaw - 10) % 361);
+                        //cam.yaw = ((cam.yaw - 10) % 361);
                         break;
                     case SDLK_UP:
                         StrOut("Up Arrow Pressed", msgType[0]);
-                        cam.pitch = ((cam.pitch + 10) % 361);
+                        //cam.pitch = ((cam.pitch + 10) % 361);
                         break;
                     case SDLK_DOWN:
                         StrOut("Down Arrow Pressed", msgType[0]);
-                        cam.pitch = ((cam.pitch - 10) % 361);
+                        //cam.pitch = ((cam.pitch - 10) % 361);
                         break;
                     case SDLK_q:
                         StrOut("Q: Camera Position", msgType[0]);
-                        std::cout << cam.pitch << " " << cam.yaw << std::endl;
+                        //std::cout << cam.pitch << " " << cam.yaw << std::endl;
                         break;
                 }
             } else if (event.type == SDL_KEYUP) {

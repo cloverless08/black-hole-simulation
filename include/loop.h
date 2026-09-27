@@ -1,8 +1,6 @@
 //
 // Created by cdemin on 9/10/26.
 //
-
-
 #pragma once
 
 #include <array>
