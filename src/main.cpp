@@ -34,7 +34,7 @@ constexpr int MOVING_RESOLUTION_HEIGHT = 320;
 constexpr int MOVING_RESOLUTION_WIDTH = 240;
 
 const std::array<std::string, 4> msgType = {"SYSTEM", "ERROR", "SETUP", "WARN"}; // strOut() helpful labels
-const Vec3 BACKGROUND_COLOR = {0.0, 0.0, 0.0};
+const Vec3 BACKGROUND_COLOR = {0, 0, 0};
 
 
 int main() {
