@@ -4,6 +4,7 @@
 
 #pragma once
 
+
 class Vec3 {    // for 3d space
 public:
     std::array<double, 3> data;
@@ -33,6 +34,21 @@ public:
     }
     double operator[](int i) const {return data[i];}
     double& operator[](int i) {return data[i];}
+
+};
+
+class Ray {
+public:
+    Ray() {}
+    Ray(const Vec3& origin, const Vec3& direction) : origin(origin), direction(direction) {}
+
+    const Vec3& origin() const {
+        return origin;
+    }
+
+    const Vec3& direction() const {
+        return direction;
+    }
 
 };
 
