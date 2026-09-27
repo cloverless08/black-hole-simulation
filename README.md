@@ -128,7 +128,6 @@ Research and reference materials consulted during the development of this projec
 - *Geometrized Unit System* — Wikipedia
 
 ### Ray Tracing & Computer Graphics
-- *Ray Tracing in One Weekend*
 - *Ray Tracing with C++*
 - *Ray Tracing (Graphics)* — Wikipedia
 - *An Introduction to Ray Tracing*
