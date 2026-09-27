@@ -29,23 +29,15 @@ void loop3D(std::vector<uint32_t>& buffer,
     unsigned long long time = 0;
 
     // normalize pixels into UV coordinates 0 through 1
-    const double xPixelCentered = static_cast<double>((2.0 * xPixel - width) / height);
-    const double yPixelCentered = static_cast<double>((2.0 * yPixel - height) / height);
+    double u = (2.0 * (xPixel + 0.5) / width) - 1.0;   // -1 .. 1 left-to-right
+    double v = 1.0 - (2.0 * (yPixel + 0.5) / height);  // -1 .. 1 bottom-to-top
 
     int pixelR = backgroundColor[0];
     int pixelG = backgroundColor[1];
     int pixelB = backgroundColor[2];
     const int pixelA = backgroundColor[3];
 
-    double worldX;
-    double worldY;
-    double worldZ;
 
-    Vec3 rayOrigin; // needs to be set to camera coordinates when called
-    Vec3 rayDir{worldX, worldY, worldZ};
-
-    // theres no way this equation is right bro
-    double rayLength = sqrt((rayDir.x() * rayDir.x())+(rayDir.y() * rayDir.y())+(rayDir.z() * rayDir.z()));
 
     SetPixel(buffer.data(), width, height,
     xPixel, yPixel, pixelR, pixelG, pixelB,

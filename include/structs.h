@@ -10,8 +10,8 @@ public:
     std::array<double, 3> data;
 
     // constructors for empty and 3 arg calls
-    Vec3() : data{0.0,0.0,0.0} {};
-    Vec3(double position0, double position1, double position2) : data{position0,position1,position2} {};
+    Vec3() : data{0.0,0.0,0.0} {}
+    Vec3(double position0, double position1, double position2) : data{position0,position1,position2} {}
 
 
     // getter functions
@@ -34,6 +34,13 @@ public:
     }
     double operator[](int i) const {return data[i];}
     double& operator[](int i) {return data[i];}
+
+    Vec3 operator+(const Vec3& o) const { return {x()+o.x(), y()+o.y(), z()+o.z()}; }
+    Vec3 operator-(const Vec3& o) const { return {x()-o.x(), y()-o.y(), z()-o.z()}; }
+    Vec3 operator*(double s) const { return {x()*s, y()*s, z()*s}; }
+
+    // experimenting with something that coudld replace Vec2
+    template <std::size_t N> class Vec { std::array<double,N> data; };
 
 };
 
