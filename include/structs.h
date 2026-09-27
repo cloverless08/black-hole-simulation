@@ -40,16 +40,18 @@ public:
 class Ray {
 public:
     Ray() {}
-    Ray(const Vec3& origin, const Vec3& direction) : origin(origin), direction(direction) {}
+    Ray(const Vec3& origin, const Vec3& direction) : dataOrigin(origin), dataDirection(direction) {}
 
     const Vec3& origin() const {
-        return origin;
+        return dataOrigin;
     }
 
     const Vec3& direction() const {
-        return direction;
+        return dataDirection;
     }
-
+private:
+    Vec3 dataOrigin;
+    Vec3 dataDirection;
 };
 
 class Vec2 {   // for 2D space
