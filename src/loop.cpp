@@ -20,38 +20,6 @@
 #define CYAN    "\033[36m"
 #define newline "\n"
 
-void loop2D(std::vector<uint32_t>& buffer, BlackHole& hole, int pixelX, int pixelY, const int height, const int width, std::array<int, 4> backgroundColor) { // loop for pixel color assignments
-
-    // normalize pixels into UV coordinates 0 through 1
-    const double xCentered = ((2.0 * pixelX - width) / height);
-    const double yCentered = ((2.0 * pixelY - height) / height);
-    const int pixelA = backgroundColor[3];
-
-    int pixelR = backgroundColor[0];
-    int pixelG = backgroundColor[1];
-    int pixelB = backgroundColor[2];
-
-    Vec2 rayDir = {xCentered, yCentered};
-
-    double length = std::sqrt(rayDir.x() * rayDir.x() + rayDir.y() * rayDir.y());
-
-    if (length <= hole.radius) {
-        // pixel is withing black hole radius
-        pixelR = 0;
-        pixelG = 0;
-        pixelB = 0;
-    } else if (length > hole.radius) {
-        // pixel is outside radius, render background
-        pixelR = 255;
-        pixelG = 255;
-        pixelB = 255;
-    }
-
-    SetPixel(buffer.data(), width, height,
-        pixelX, pixelY, pixelR, pixelG, pixelB,
-        255);
-}
-
 void loop3D(std::vector<uint32_t>& buffer,
     BlackHole& hole, Camera& cam,
     int xPixel, int yPixel,
@@ -82,6 +50,38 @@ void loop3D(std::vector<uint32_t>& buffer,
     SetPixel(buffer.data(), width, height,
     xPixel, yPixel, pixelR, pixelG, pixelB,
     pixelA);
+}
+
+void loop2D(std::vector<uint32_t>& buffer, BlackHole& hole, int pixelX, int pixelY, const int height, const int width, std::array<int, 4> backgroundColor) { // loop for pixel color assignments
+
+    // normalize pixels into UV coordinates 0 through 1
+    const double xCentered = ((2.0 * pixelX - width) / height);
+    const double yCentered = ((2.0 * pixelY - height) / height);
+    const int pixelA = backgroundColor[3];
+
+    int pixelR = backgroundColor[0];
+    int pixelG = backgroundColor[1];
+    int pixelB = backgroundColor[2];
+
+    Vec2 rayDir = {xCentered, yCentered};
+
+    double length = std::sqrt(rayDir.x() * rayDir.x() + rayDir.y() * rayDir.y());
+
+    if (length <= hole.radius) {
+        // pixel is withing black hole radius
+        pixelR = 0;
+        pixelG = 0;
+        pixelB = 0;
+    } else if (length > hole.radius) {
+        // pixel is outside radius, render background
+        pixelR = 255;
+        pixelG = 255;
+        pixelB = 255;
+    }
+
+    SetPixel(buffer.data(), width, height,
+        pixelX, pixelY, pixelR, pixelG, pixelB,
+        255);
 }
 
 void test_loop(std::vector<uint32_t>& buffer, int pixelX, int pixelY, const int height, const int width) { // old loop that draws a gradient as i was learning

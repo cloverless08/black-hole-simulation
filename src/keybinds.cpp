@@ -14,7 +14,6 @@
 
 void GetKeyPress(SDL_Event &event, bool &running, Camera &cam) {
 
-
     const std::array<std::string, 4> msgType = {"SYSTEM", "ERROR", "SETUP", "WARN"}; // strOut() helpful labels
 
         // poll all events

@@ -113,4 +113,26 @@ furnished to do so, subject to the following conditions:
 
 ## Sources
 
+Research and reference materials consulted during the development of this project:
+
+### General Relativity & Black Holes
+- *Black Hole* — Wikipedia
+- *Black Hole Horizons*
+- *The Black Hole Equation* — Explained
+- *Schwarzschild Metric* — Wikipedia
+- *Anatomy* — NASA Science
+
+### Geometrized Units
+- *Geometrized Units* — The Spectrum
+- *Main — Geometrized Units*
+- *Geometrized Unit System* — Wikipedia
+
+### Ray Tracing & Computer Graphics
+- *Ray Tracing in One Weekend*
+- *Ray Tracing with C++*
+- *Ray Tracing (Graphics)* — Wikipedia
+- *An Introduction to Ray Tracing*
+
+### Additional References
+- *Gravity: How...* — C++ Forum
 

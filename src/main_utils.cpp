@@ -16,6 +16,17 @@
 
 #define newline "\n"
 
+void TerminalInfoHeader() {
+    std::cout << newline;
+    std::cout << GREEN;
+    std::cout << "====================================" << std::endl;
+    std::cout << "      CSC1060 Black Hole Sim" << std::endl;
+    std::cout << "        By Carrick De Min" << std::endl;
+    std::cout << "====================================" << std::endl;
+    std::cout << GREEN;
+    std::cout << newline;
+}
+
 // function for clean, dynamic console output with labels
 int StrOut(const std::string& msg, std::string label) {
     if (label != "standard") {
@@ -51,17 +62,6 @@ void SetPixel(uint32_t* buffer, int width, int height, int x, int y, uint8_t r, 
         uint32_t color = (static_cast<uint32_t>(r) << 24) | (static_cast<uint32_t>(g) << 16) | (static_cast<uint32_t>(b) << 8) | a; // translates base-255 into proper color format
         buffer[(y * width) + x] = color;
     }
-}
-
-void TerminalInfoHeader() {
-    std::cout << newline;
-    std::cout << GREEN;
-    std::cout << "====================================" << std::endl;
-    std::cout << "      CSC1060 Black Hole Sim" << std::endl;
-    std::cout << "        By Carrick De Min" << std::endl;
-    std::cout << "====================================" << std::endl;
-    std::cout << GREEN;
-    std::cout << newline;
 }
 
 uint64_t randomUint64(int min, int max) {
