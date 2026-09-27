@@ -32,9 +32,9 @@ void loop3D(std::vector<uint32_t>& buffer,
     double u = (2.0 * (xPixel + 0.5) / width) - 1.0;   // -1 .. 1 left-to-right
     double v = 1.0 - (2.0 * (yPixel + 0.5) / height);  // -1 .. 1 bottom-to-top
 
-    int pixelR = backgroundColor[0];
-    int pixelG = backgroundColor[1];
-    int pixelB = backgroundColor[2];
+    int pixelR = static_cast<int>(backgroundColor[0]);
+    int pixelG = static_cast<int>(backgroundColor[1]);
+    int pixelB = static_cast<int>(backgroundColor[2]);
     const int pixelA = 255;
 
 
