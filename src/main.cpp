@@ -7,11 +7,10 @@
 
 #include <SDL2/SDL.h>
 #include <vector>
-#include <iostream>
 #include <array>
 #include <string>
-#include <cmath>
 #include <cstdint>
+#include <iostream>
 
 #include "main_utils.h"
 #include "structs.h"
