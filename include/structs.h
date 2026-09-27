@@ -91,9 +91,13 @@ public:
     double radius = 0.25;
 };
 
-class Camera {
-public:
-    int pitch = 0;
-    int yaw = 0;
-    int distance = 0;
+struct Camera {
+    Vec3   eye;        // position in world space
+    Vec3   forward;    // unit vector, direction of view
+    Vec3   right;      // unit vector, camera-local +X
+    Vec3   up;         // unit vector, camera-local +Y
+    double fovY;       // vertical field of view, radians
+    double aspect_ratio;
+
+    Camera(Vec3 eye, Vec3 target, Vec3 worldUp, double fovY, double aspect);
 };
