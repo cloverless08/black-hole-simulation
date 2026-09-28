@@ -105,7 +105,7 @@ int main() {
 
     // initalize custom structs
     BlackHole hole;
-    Camera cam;
+    Camera cam = {};
 
     // window loop
     StrOut("Starting Program Loop...", msgType[0]);
