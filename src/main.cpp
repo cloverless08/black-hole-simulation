@@ -34,7 +34,7 @@ constexpr int MOVING_RESOLUTION_WIDTH = 240;
 
 const int BLACK_HOLE_MASS = 100;
 const double BLACK_HOLE_RADIUS = 0.25;
-const Vec3 BLACK_HOLE_INTIAL_POSITION;
+const Vec3 BLACK_HOLE_INITIAL_POSITION;
 
 const std::array<std::string, 4> msgType = {"SYSTEM", "ERROR", "SETUP", "WARN"}; // strOut() helpful labels
 const Vec3 BACKGROUND_COLOR = {0, 0, 0};
