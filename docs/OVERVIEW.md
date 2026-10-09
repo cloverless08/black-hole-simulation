@@ -19,9 +19,6 @@ Utilize geometric ratio units, like 1M and 2M or 19M, instead of fixed or approx
 r_s = 2M = 2 event horizon (Schwarzschild radius) r_ph = 3M = 3 photon sphere ISCO = 6M = 6 innermost stable circular orbit
 Physical constants were absorbed into the unit system so that all simulation lengths are expressed as multiples of the gravitational radius GM/c², which keeps every quantity in the integrator within a few orders of magnitude of unity and avoids catastrophic loss of floating-point precision.
 
-
-
-
 Backwards ray-trace from camera into space, four possible endings for every ray:
 - Falls into event horizon → black (“shadow”)
 - Crosses disk plane, between r_in and r_out → disk colour
