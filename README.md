@@ -37,7 +37,7 @@ cp ./build/CSC1060_CAPSTONE_PROJECT .
 
 ***OR***
 
-Download the cross-platform executable here (without source code):
+Download the platform-specific executable here (without source code):
  - [Google Drive](link TK)
  - [Dropbox](link TK)
 
