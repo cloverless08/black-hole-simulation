@@ -86,9 +86,10 @@ public:
 
 class BlackHole {
 public:
+    // defaults every value to 0 if not otherwise called
     Vec3 position = {0.0,0.0,0.0};
-    double mass = 100;
-    double radius = 0.25;
+    double mass = 0;
+    double radius = 0;
 };
 
 struct Camera {
