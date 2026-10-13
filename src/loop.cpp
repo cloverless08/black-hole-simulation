@@ -7,9 +7,10 @@
 #include <cmath>
 #include <array>
 
-#include "../include/main_utils.h"
-#include "../include/structs.h"
-#include "../include/loop.h"
+#include "main_utils.h"
+#include "structs.h"
+#include "loop.h"
+#include "camera.h"
 
 #define RESET   "\033[0m"
 #define RED     "\033[31m"

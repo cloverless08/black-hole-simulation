@@ -16,6 +16,7 @@
 #include "structs.h"
 #include "loop.h"
 #include "keybinds.h"
+#include "camera.h"
 
 #define RESET   "\033[0m"
 #define RED     "\033[31m"
