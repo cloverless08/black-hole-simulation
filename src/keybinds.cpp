@@ -9,6 +9,7 @@
 
 #include "main_utils.h"
 #include "structs.h"
+#include "camera.h"
 
 #include <SDL2/SDL.h>
 

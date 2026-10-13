@@ -6,6 +6,7 @@
 #include <array>
 #include <vector>
 #include "structs.h"
+#include "camera.h"
 
 void loop3D(std::vector<uint32_t>& buffer,
     BlackHole& hole, Camera& cam,

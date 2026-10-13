@@ -4,8 +4,6 @@
 
 #pragma once
 
-#endif //CSC1060_CAPSTONE_PROJECT_CAMERA_H
-
 struct Camera {
     Vec3   eye;        // position in world space
     Vec3   forward;    // unit vector, direction of view
