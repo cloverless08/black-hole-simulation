@@ -7,7 +7,7 @@ A (not quite) real-time visual simulation of a Black Hole, including Doppler Eff
 CPU traced representation of light rays passing through a black hole in space.
  - C++ Calculates light rays, star position and black hole effects
  - Each pixel gets an RBG value in a pixel buffer
- - SDL2 renders pixel buffer to screen using GPU
+ - SDL2 renders pixel buffer to screen using GPU or iGPU
 
 ## Run/Install (Linux or Windows)
 
@@ -58,7 +58,7 @@ As is standard convention in my projects, and to uphold my education
 and academic honesty, *no generative AI tools (such as ChatGPT or Claude Code)
 were used to write, generate, or create any code or other submitted project content.*
 
-Any use of Artificial Intelligence for any other reason will be comprehensively listed below:
+***Any use of Artificial Intelligence for any other reason will be comprehensively listed below:***
 - AI tools played a minor role in compiling research resources
 and articles for me to read, and sometimes was used to explain parts of these documents like equations and procedures.
 
