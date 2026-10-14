@@ -1,3 +1,0 @@
-/home/cdemin/Code/Active/CSC1060 Capstone Project/build/CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir
-/home/cdemin/Code/Active/CSC1060 Capstone Project/build/CMakeFiles/edit_cache.dir
-/home/cdemin/Code/Active/CSC1060 Capstone Project/build/CMakeFiles/rebuild_cache.dir
