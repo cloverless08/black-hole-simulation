@@ -59,6 +59,7 @@ and academic honesty, *no generative AI tools (such as ChatGPT or Claude Code)
 were used to write, generate, or create any code or other submitted project content.*
 
 ***Any use of Artificial Intelligence for any other reason will be comprehensively listed below:***
+
 - AI tools played a minor role in compiling research resources
 and articles for me to read, and sometimes was used to explain parts of these documents like equations and procedures.
 
@@ -116,7 +117,7 @@ furnished to do so, subject to the following conditions:
 
 ## Sources
 
-Research and reference materials consulted during the development of this project:
+**Research and reference materials consulted during the development of this project:**
 
 ### General Relativity & Black Holes
 - *Black Hole* — Wikipedia
@@ -138,3 +139,10 @@ Research and reference materials consulted during the development of this projec
 ### Additional References
 - *Gravity: How...* — C++ Forum
 
+**Relevant or resource projects**
+
+### Ray Tracer Test - Carrick De Min
+Concurrent research project specifically for learning how to implement this simulation's raytracer.
+~~~
+https://github.com/cloverless08/raytracer-test.git
+~~~
