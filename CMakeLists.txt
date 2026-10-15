@@ -5,7 +5,8 @@ set(CMAKE_CXX_STANDARD 17)
 find_package(SDL2 REQUIRED CONFIG)
 add_executable(CSC1060_CAPSTONE_PROJECT
         src/main.cpp
-        include/camera.h)
+        include/camera.h
+        include/math.h)
 
 target_sources(CSC1060_CAPSTONE_PROJECT PRIVATE
 "${CMAKE_CURRENT_SOURCE_DIR}/src/loop.cpp"
