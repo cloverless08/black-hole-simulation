@@ -153,3 +153,13 @@ Concurrent research project specifically for learning how to implement this simu
 ~~~
 https://github.com/cloverless08/raytracer-test.git
 ~~~
+
+---
+
+**Libraries or Repositories from others:**
+
+## SDL2
+ - Used for displaying the pixel buffer to the screen, initializing a window, and reducing the need for GPU calculations.
+
+## "Linear Algebra in  C++ - Part 4 - A simple Vector class"
+ - Tutorial helpful for matrix math implementations
