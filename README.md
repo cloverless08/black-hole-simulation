@@ -7,7 +7,7 @@ A (not quite) real-time visual simulation of a Black Hole, including Doppler Eff
 CPU traced representation of light rays passing through a black hole in space.
  - C++ Calculates light rays, star position and black hole effects
  - Each pixel gets an RBG value in a pixel buffer
- - SDL2 renders pixel buffer to screen using GPU (requires graphics card or modern CPU with an iGPU)
+ - SDL2 renders pixel buffer to screen using GPU (requires graphics card or modern CPU with an igpu)
 
 ## Run/Install (Linux or Windows)
 
@@ -22,9 +22,9 @@ To install and run, simply download or clone this repository, navigate to ./buil
 - **Windows**
 - to come ig
 
-You can use the following commands to simplify the install if you are on linux to install the latest git push from main:
+You can use the following commands to simplify the installation if you are on linux to install the latest git push from main:
 
-(Ensure that you have git and base-devel intalled, as well as cmake and a cpp compiler)
+(Ensure that you have git and base-devel installed, as well as cmake and a cpp compiler)
 
 ~~~bash
 git clone https://github.com/cloverless08/black-hole-simulation.git
@@ -42,7 +42,7 @@ Download the platform-specific executable here (without source code):
  - [Dropbox](link TK)
 
 ## Controls/Keybinds
-- Arrow Keys: Conrol camera pitch and yaw
+- Arrow Keys: Control camera pitch and yaw
 - D: Print diagnostic info to terminal/screen
 - S: Save snapshot of current frame
 - P: Pause simulation
@@ -117,6 +117,8 @@ furnished to do so, subject to the following conditions:
 
 ## Sources
 
+--- 
+
 **Research and reference materials consulted during the development of this project:**
 
 ### General Relativity & Black Holes
@@ -139,7 +141,9 @@ furnished to do so, subject to the following conditions:
 ### Additional References
 - *Gravity: How...* — C++ Forum
 
-**Relevant or resource projects**
+--- 
+
+**Relevant or resource projects:**
 
 ### Ray Tracer Test - Carrick De Min
 Concurrent research project specifically for learning how to implement this simulation's raytracer.
