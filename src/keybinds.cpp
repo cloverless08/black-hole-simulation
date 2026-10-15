@@ -5,7 +5,6 @@
 #include <iostream>
 #include <ostream>
 #include <array>
-#include <thread>
 
 #include "main_utils.h"
 #include "structs.h"
