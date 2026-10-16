@@ -101,3 +101,15 @@ VectorMath<t> VectorMath<T>::operator- (const VectorMath<T> &rhs) const {
     return result;
 }
 
+template <class T>
+VectorMath<T> VectorMath<T>::operator* (T &rhs) const {
+
+    // scalar multiplication
+    std::vector<T> resultData;
+    for (int i = 0; i < m_nDims; ++i) {
+        resultData.push_back(m_vectorData.at(i) * rhs);
+    }
+
+    VectorMath<T> result(resultData);
+    return result;
+}
