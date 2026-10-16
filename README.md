@@ -160,6 +160,9 @@ https://github.com/cloverless08/raytracer-test.git
 
 ## SDL2
  - Used for displaying the pixel buffer to the screen, initializing a window, and reducing the need for GPU calculations.
+~~~
+https://github.com/libsdl-org/SDL.git
+~~~
 
 ## "Linear Algebra in  C++ - Part 4 - A simple Vector class"
  - Tutorial helpful for matrix math implementations
