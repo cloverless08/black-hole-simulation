@@ -11,6 +11,8 @@
 #include <string>
 #include <cstdint>
 #include <iostream>
+#include <stdexcept>
+#include <iomanip>
 
 #include "main_utils.h"
 #include "structs.h"

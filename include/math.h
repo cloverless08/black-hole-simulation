@@ -128,3 +128,43 @@ VectorMath<T> operator* (const T &lhs, const VectorMath<T> &rhs) {
     VectorMath<T> result(resultData);
     return result;
 }
+
+// static functions
+// ------------------------
+
+// vector dot product
+template <class T>
+T VectorMath<T>::dot(const VectorMath<T> &a, const VectorMath<T> &b) {
+    if (a.m_nDims != b.m_nDims) {
+        throw std::invalid_argument("Vector dimensions do not match");
+    }
+
+    T sum = static_cast<T>(0.0);
+    for (int i = 0; i < a.m_nDims; ++i) {
+        sum += a.m_vectorData.at(i) * b.m_vectorData.at(i);
+    }
+
+    return sum;
+}
+
+// vector cross product
+template <class T>
+VectorMath<T> VectorMath<T>::cross(const VectorMath<T> &a, const VectorMath<T> &b) {
+
+    if (a.m_nDims != b.m_nDims) { // vector dimensions must match
+        throw std::invalid_argument("Vector dimensios do not match");
+    }
+
+    if (a.m_nDims != 3) { // vector dimensions must equal 3
+        throw std::invalid_argument("Cross product can only be computed for 3d vectors");
+    }
+
+    // actually compute the cross product
+    std::vector<T> resultData;
+    resultData.push_back((a.m_vectorData.at(1) * b.m_vectorData.at(2)) - (a.m_vectorData.at(2) * b.m_vectorData.at(1)));
+    resultData.push_back(-((a.m_vectorData.at(0) * b.m_vectorData.at(2)) - (a.m_vectorData.at(2) * b.m_vectorData.at(0))));
+    resultData.push_back((a.m_vectorData.at(0) * b.m_vectorData.at(1)) - (a.m_vectorData.at(1) * b.m_vectorData.at(0)));
+
+    VectorMath<T> result(resultData);
+    return result;
+}
