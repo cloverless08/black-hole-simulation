@@ -41,7 +41,7 @@ public:
 
 private:
     std::vector<T> m_vectorData;
-    int M_nDims;
+    int m_nDims;
 };
 
 // constuctor and deconstructor functions
@@ -73,7 +73,7 @@ T VectorMath<T>::GetElement(int i) {
 // -----------------------------
 template <class T>
 VectorMath<T> VectorMath<T>::operator+ (const VectorMath<T> &rhs) const {
-    if (m_nDims != rhs.nDims) {
+    if (m_nDims != rhs.m_nDims) {
         throw std::invalid_argument("Vector dimensiobs do not match");
     }
 
@@ -87,8 +87,8 @@ VectorMath<T> VectorMath<T>::operator+ (const VectorMath<T> &rhs) const {
 }
 
 template <class T>
-VectorMath<t> VectorMath<T>::operator- (const VectorMath<T> &rhs) const {
-    if (m_nDims != rhs.nDims) {
+VectorMath<T> VectorMath<T>::operator- (const VectorMath<T> &rhs) const {
+    if (m_nDims != rhs.m_nDims) {
         throw std::invalid_argument("Vector dimensiobs do not match");
     }
 
@@ -108,6 +108,21 @@ VectorMath<T> VectorMath<T>::operator* (T &rhs) const {
     std::vector<T> resultData;
     for (int i = 0; i < m_nDims; ++i) {
         resultData.push_back(m_vectorData.at(i) * rhs);
+    }
+
+    VectorMath<T> result(resultData);
+    return result;
+}
+
+// friend function
+// -----------------------
+
+template <class T>
+VectorMath<T> operator* (const T &lhs, const VectorMath<T> &rhs) {
+
+    std::vector<T> resultData;
+    for (int i = 0; i < rhs.m_nDims; ++i) {
+        resultData.push_back(rhs.m_vectorData.at(i) * lhs);
     }
 
     VectorMath<T> result(resultData);
