@@ -43,3 +43,11 @@ private:
     std::vector<T> m_vectorData;
     int M_nDims;
 };
+
+// constuctor and deconstructor functions
+// ----------------------------------------
+
+template <class T>
+VectorMath<T>::VectorMath(std::vector<T> input) {
+
+}
