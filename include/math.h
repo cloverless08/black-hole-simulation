@@ -4,11 +4,13 @@
 
 #pragma once
 
-#include "main_utils.h"
+#include <stdexcept>
 #include <iostream>
+#include <iomanip>
 #include <cmath>
 #include <vector>
 
+// lets user create vectors of any type
 template <class T>
 
 class VectorMath {
@@ -20,10 +22,13 @@ public:
 
     ~VectorMath();
 
-    // basic functions
-    int GetNumDims();
+    // parameter and basic functions
+    int GetNumDims(); // number of dims is set as data is added
 
     T GetElement(int i);
 
-    // operation functions
+    // overloaded operators
+    VectorMath<T> operator+ (const VectorMath<T> &rhs) const;
+    VectorMath<T> operator- (const VectorMath<T> &rhs) const;
+    VectorMath<T> operator* (T &rhs) const;
 };
