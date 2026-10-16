@@ -4,6 +4,7 @@
 
 #pragma once
 
+// cant wait to have to redo this whole fucking file and piece soon because whwat was i tihnking???
 struct Camera {
     Vec3   eye;        // position in world space
     Vec3   forward;    // unit vector, direction of view

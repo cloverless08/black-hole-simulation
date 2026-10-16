@@ -31,4 +31,15 @@ public:
     VectorMath<T> operator+ (const VectorMath<T> &rhs) const;
     VectorMath<T> operator- (const VectorMath<T> &rhs) const;
     VectorMath<T> operator* (T &rhs) const;
+
+    // friend function
+    template <class U> friend VectorMath<U> operator* (const U lhs, const VectorMath<U> &rhs);
+
+    // static functions
+    static T dot(const VectorMath<T> &a, const VectorMath<T> &b);
+    static VectorMath<T> cross(const VectorMath<T> &a, const VectorMath<T> &b);
+
+private:
+    std::vector<T> m_vectorData;
+    int M_nDims;
 };
