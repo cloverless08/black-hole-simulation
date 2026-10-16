@@ -167,4 +167,5 @@ VectorMath<T> VectorMath<T>::cross(const VectorMath<T> &a, const VectorMath<T> &
 
     VectorMath<T> result(resultData);
     return result;
+
 }
