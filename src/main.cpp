@@ -31,8 +31,11 @@
 
 // global constants
 enum SCREEN_RESOLUTION {
+    // standard resolutions
     STANDARD_W = 640,
     MOVING_W = 320,
+
+    // for while camera is moving, to act as a sort of preview
     STANDARD_H = 480,
     MOVING_H = 240,
 };
@@ -127,7 +130,6 @@ int main() {
 
         // poll all events
         GetKeyPress(event, running, cam);
-
        
         // update pixel buffer
          for (int pixelY = 0; pixelY < resolutionHeight; pixelY++) {
