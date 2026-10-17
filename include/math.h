@@ -44,7 +44,7 @@ private:
     int m_nDims;
 };
 
-// constuctor and deconstructor functions
+// constructor and deconstructor functions
 // ----------------------------------------
 
 template <class T>
@@ -61,7 +61,7 @@ int VectorMath<T>::GetNumDims() {
     return m_nDims;
 }
 
-// element math_errhandling
+// element handline
 //--------------------------------
 
 template<class T>
@@ -74,7 +74,7 @@ T VectorMath<T>::GetElement(int i) {
 template <class T>
 VectorMath<T> VectorMath<T>::operator+ (const VectorMath<T> &rhs) const {
     if (m_nDims != rhs.m_nDims) {
-        throw std::invalid_argument("Vector dimensiobs do not match");
+        throw std::invalid_argument("Vector dimensions do not match");
     }
 
     std::vector<T> resultData;
@@ -89,7 +89,7 @@ VectorMath<T> VectorMath<T>::operator+ (const VectorMath<T> &rhs) const {
 template <class T>
 VectorMath<T> VectorMath<T>::operator- (const VectorMath<T> &rhs) const {
     if (m_nDims != rhs.m_nDims) {
-        throw std::invalid_argument("Vector dimensiobs do not match");
+        throw std::invalid_argument("Vector dimensions do not match");
     }
 
     std::vector<T> resultData;
@@ -152,7 +152,7 @@ template <class T>
 VectorMath<T> VectorMath<T>::cross(const VectorMath<T> &a, const VectorMath<T> &b) {
 
     if (a.m_nDims != b.m_nDims) { // vector dimensions must match
-        throw std::invalid_argument("Vector dimensios do not match");
+        throw std::invalid_argument("Vector dimensions do not match");
     }
 
     if (a.m_nDims != 3) { // vector dimensions must equal 3
