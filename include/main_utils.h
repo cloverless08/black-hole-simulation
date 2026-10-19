@@ -2,7 +2,6 @@
 //
 // Created by cdemin on 8/25/26.
 //
-#include <cstdint>
 #pragma once
 
 #include <iostream>
@@ -37,8 +36,6 @@ inline void TerminalInfoHeader();
 inline void DiagnoseProgram();
 
 inline uint64_t randomUint64(int min, int max);
-
-inline uint64_t generateStarFieldSeed();
 
 // definitions
 // -----------------
@@ -80,8 +77,8 @@ inline int StrOut(const std::string& msg, std::string label) {
 inline int RandInt(int rangeMin, int rangeMax) {
     static std::random_device rd;
     static std::mt19937 gen(rd());
-    std::uniform_int_distribution<> distr(rangeMin, rangeMax);
-    return distr(gen);
+    std::uniform_int_distribution<> distribution(rangeMin, rangeMax);
+    return distribution(gen);
 }
 
 inline void SetPixel(uint32_t* buffer, int width, int height, int x, int y, uint8_t r, uint8_t g, uint8_t b, uint8_t a) {

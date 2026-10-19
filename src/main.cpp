@@ -10,8 +10,6 @@
 #include <array>
 #include <string>
 #include <cstdint>
-#include <iostream>
-#include <stdexcept>
 #include <iomanip>
 
 #include "main_utils.h"
@@ -29,19 +27,21 @@
 #define CYAN    "\033[36m"
 #define newline "\n"
 
-// global constants
-enum SCREEN_RESOLUTION {
-    // standard resolutions
-    STANDARD_W = 640,
-    MOVING_W = 320,
+namespace {
+    // global constants
+    enum SCREEN_RESOLUTION {
+        // standard resolutions
+        STANDARD_W = 640,
+        MOVING_W = 320,
 
-    // for while camera is moving, to act as a sort of preview
-    STANDARD_H = 480,
-    MOVING_H = 240,
-};
+        // for while camera is moving, to act as a sort of preview
+        STANDARD_H = 480,
+        MOVING_H = 240,
+    };
+}
 
-const int BLACK_HOLE_MASS = 100;
-const double BLACK_HOLE_RADIUS = 0.25;
+constexpr int BLACK_HOLE_MASS = 100;
+constexpr double BLACK_HOLE_RADIUS = 0.25;
 const Vec3 BLACK_HOLE_INITIAL_POSITION;
 
 const std::array<std::string, 4> msgType = {"SYSTEM", "ERROR", "SETUP", "WARN"}; // strOut() helpful labels
@@ -61,7 +61,7 @@ int main() {
     StrOut("Local Variables Initialized.", msgType[2]);
 
 
-    // intial warnings and output
+    // initial warnings and output
     StrOut("CSC1060 - Capstone Project", "info");
     StrOut("By Carrick De Min, Fall 2026", "info");
     StrOut("This program is under development and may not function as expected.", "warn");
@@ -73,7 +73,7 @@ int main() {
         return 1;
     }
 
-    // built in event struct intialized as "event" from now on
+    // built in event struct initialized as "event" from now on
     SDL_Event event;
     StrOut("SDL2 Initialized.", msgType[2]);
 
@@ -117,7 +117,7 @@ int main() {
     std::vector<uint32_t> pixelBuffer(resolutionWidth * resolutionHeight, 0);
     StrOut("Pixel Buffer Initialized.", msgType[2]);
 
-    // initalize custom structs
+    // initialize custom structs
     BlackHole hole;
     hole.mass = BLACK_HOLE_MASS;
     hole.position = BLACK_HOLE_INITIAL_POSITION;

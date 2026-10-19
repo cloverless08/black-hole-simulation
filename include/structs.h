@@ -39,7 +39,7 @@ public:
     Vec3 operator-(const Vec3& o) const { return {x()-o.x(), y()-o.y(), z()-o.z()}; }
     Vec3 operator*(double s) const { return {x()*s, y()*s, z()*s}; }
 
-    // experimenting with something that coudld replace Vec2
+    // experimenting with something that could replace Vec2
     template <std::size_t N> class Vec { std::array<double,N> data; };
 
 };
