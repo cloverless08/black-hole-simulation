@@ -134,8 +134,8 @@ int main() {
         // update pixel buffer
          for (int pixelY = 0; pixelY < resolutionHeight; pixelY++) {
              for (int pixelX = 0; pixelX< resolutionWidth; pixelX++) {
-                loop3D(pixelBuffer, hole, cam, pixelX, pixelY, resolutionHeight, resolutionWidth, BACKGROUND_COLOR);
-                 //test_loop(pixelBuffer, pixelX, pixelY, STANDARD_RESOLUTION_HEIGHT, STANDARD_RESOLUTION_WIDTH);
+                //loop3D(pixelBuffer, hole, cam, pixelX, pixelY, resolutionHeight, resolutionWidth, BACKGROUND_COLOR);
+                 test_loop(pixelBuffer, pixelX, pixelY, resolutionHeight, resolutionWidth);
              }
          }
 
