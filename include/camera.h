@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include "structs.h"
+
 // cant wait to have to redo this whole fucking file and piece soon because whwat was i tihnking???
 struct Camera {
     Vec3   eye;        // position in world space
