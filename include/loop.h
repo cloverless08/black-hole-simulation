@@ -15,7 +15,7 @@ void loop3D(std::vector<uint32_t>& buffer,
     Vec3 backgroundColor);
 
 void loop2D(std::vector<uint32_t>& buffer,
-    BlackHole& hole,
+    const BlackHole& hole,
     int pixelX, int pixelY,
     const int height, const int width,
     std::array<int,

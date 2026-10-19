@@ -2,23 +2,17 @@
 // Created by cdemin on 9/15/26.
 //
 
-#include <iostream>
-#include <ostream>
 #include <array>
-#include <thread>
 
 #include "main_utils.h"
-#include "structs.h"
 #include "camera.h"
 
 #include <SDL2/SDL.h>
 
-void GetKeyPress(SDL_Event &event, bool &running, Camera &cam) {
-
-    const std::array<std::string, 4> msgType = {"SYSTEM", "ERROR", "SETUP", "WARN"}; // strOut() helpful labels
-
-        // poll all events
+static void GetKeyPress(SDL_Event &event, bool &running, Camera &cam) {
+    // poll all events
         while (SDL_PollEvent(&event)) {
+            const std::array<std::string, 4> msgType = {"SYSTEM", "ERROR", "SETUP", "WARN"};
             if (event.type == SDL_QUIT) {
                 running = false;
             } else if (event.type == SDL_KEYDOWN) {
@@ -47,6 +41,8 @@ void GetKeyPress(SDL_Event &event, bool &running, Camera &cam) {
                         StrOut("Q: Camera Position", msgType[0]);
                         //std::cout << cam.pitch << " " << cam.yaw << std::endl;
                         break;
+                    default:
+                        break;
                 }
             } else if (event.type == SDL_KEYUP) {
                 //std::cout << "Key Was Pressed" << std::endl;
@@ -66,6 +62,8 @@ void GetKeyPress(SDL_Event &event, bool &running, Camera &cam) {
                         break;
                     case SDLK_DOWN:
                         StrOut("Down Arrow Released", msgType[0]);
+                        break;
+                    default:
                         break;
                 }
             }

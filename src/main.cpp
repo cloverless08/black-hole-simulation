@@ -10,7 +10,7 @@
 #include <array>
 #include <string>
 #include <cstdint>
-#include <iostream>
+#include <iomanip>
 
 #include "main_utils.h"
 #include "structs.h"
@@ -27,14 +27,21 @@
 #define CYAN    "\033[36m"
 #define newline "\n"
 
-// global constants
-constexpr int STANDARD_RESOLUTION_WIDTH = 640;
-constexpr int STANDARD_RESOLUTION_HEIGHT = 480;
-constexpr int MOVING_RESOLUTION_HEIGHT = 320;
-constexpr int MOVING_RESOLUTION_WIDTH = 240;
+namespace {
+    // global constants
+    enum SCREEN_RESOLUTION {
+        // standard resolutions
+        STANDARD_W = 640,
+        MOVING_W = 320,
 
-const int BLACK_HOLE_MASS = 100;
-const double BLACK_HOLE_RADIUS = 0.25;
+        // for while camera is moving, to act as a sort of preview
+        STANDARD_H = 480,
+        MOVING_H = 240,
+    };
+}
+
+constexpr int BLACK_HOLE_MASS = 100;
+constexpr double BLACK_HOLE_RADIUS = 0.25;
 const Vec3 BLACK_HOLE_INITIAL_POSITION;
 
 const std::array<std::string, 4> msgType = {"SYSTEM", "ERROR", "SETUP", "WARN"}; // strOut() helpful labels
@@ -48,10 +55,13 @@ int main() {
     // local variables
     bool running = true;
 
+    enum SCREEN_RESOLUTION resolutionWidth = STANDARD_W;
+    enum SCREEN_RESOLUTION resolutionHeight = STANDARD_H;
+
     StrOut("Local Variables Initialized.", msgType[2]);
 
 
-    // intial warnings and output
+    // initial warnings and output
     StrOut("CSC1060 - Capstone Project", "info");
     StrOut("By Carrick De Min, Fall 2026", "info");
     StrOut("This program is under development and may not function as expected.", "warn");
@@ -63,7 +73,7 @@ int main() {
         return 1;
     }
 
-    // built in event struct intialized as "event" from now on
+    // built in event struct initialized as "event" from now on
     SDL_Event event;
     StrOut("SDL2 Initialized.", msgType[2]);
 
@@ -72,7 +82,7 @@ int main() {
     SDL_Window* window = SDL_CreateWindow(
         "CSC1060 Capstone Project",
         SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-        STANDARD_RESOLUTION_WIDTH, STANDARD_RESOLUTION_HEIGHT,
+        resolutionWidth, resolutionHeight,
         SDL_WINDOW_SHOWN
         );
     if (!window) {
@@ -93,7 +103,7 @@ int main() {
         renderer,
         SDL_PIXELFORMAT_RGBA8888, // 32-bit format for 8 bits per channel
         SDL_TEXTUREACCESS_STREAMING, // allows fast cpu to gpu updates
-        STANDARD_RESOLUTION_WIDTH, STANDARD_RESOLUTION_HEIGHT // screen resolution
+        resolutionWidth, resolutionHeight // screen resolution
         );
     if (!pixelBufferTexture) {
         StrOut(std::string("CreateTexture failed: ") + SDL_GetError(), msgType[1]);
@@ -104,10 +114,10 @@ int main() {
 
 
     // create canvas pixel buffer in memory
-    std::vector<uint32_t> pixelBuffer(STANDARD_RESOLUTION_WIDTH * STANDARD_RESOLUTION_HEIGHT, 0);
+    std::vector<uint32_t> pixelBuffer(resolutionWidth * resolutionHeight, 0);
     StrOut("Pixel Buffer Initialized.", msgType[2]);
 
-    // initalize custom structs
+    // initialize custom structs
     BlackHole hole;
     hole.mass = BLACK_HOLE_MASS;
     hole.position = BLACK_HOLE_INITIAL_POSITION;
@@ -120,13 +130,12 @@ int main() {
 
         // poll all events
         GetKeyPress(event, running, cam);
-
        
         // update pixel buffer
-         for (int pixelY = 0; pixelY < STANDARD_RESOLUTION_HEIGHT; pixelY++) {
-             for (int pixelX = 0; pixelX< STANDARD_RESOLUTION_WIDTH; pixelX++) {
-                //loop3D(pixelBuffer, hole, cam, pixelX, pixelY, STANDARD_RESOLUTION_HEIGHT, STANDARD_RESOLUTION_WIDTH, BACKGROUND_COLOR);
-                 test_loop(pixelBuffer, pixelX, pixelY, STANDARD_RESOLUTION_HEIGHT, STANDARD_RESOLUTION_WIDTH);
+         for (int pixelY = 0; pixelY < resolutionHeight; pixelY++) {
+             for (int pixelX = 0; pixelX< resolutionWidth; pixelX++) {
+                loop3D(pixelBuffer, hole, cam, pixelX, pixelY, resolutionHeight, resolutionWidth, BACKGROUND_COLOR);
+                 //test_loop(pixelBuffer, pixelX, pixelY, STANDARD_RESOLUTION_HEIGHT, STANDARD_RESOLUTION_WIDTH);
              }
          }
 
@@ -136,7 +145,7 @@ int main() {
             pixelBufferTexture,
             nullptr,                   // NULL updates the entire texture
             pixelBuffer.data(),            // Pointer to our raw CPU buffer
-            STANDARD_RESOLUTION_WIDTH * sizeof(uint32_t)
+            resolutionWidth * sizeof(uint32_t)
         );
 
         // render loop

@@ -36,7 +36,7 @@ void loop3D(std::vector<uint32_t>& buffer,
     int pixelR = static_cast<int>(backgroundColor[0]);
     int pixelG = static_cast<int>(backgroundColor[1]);
     int pixelB = static_cast<int>(backgroundColor[2]);
-    const int pixelA = 255;
+    constexpr int pixelA = 255;
 
     SetPixel(buffer.data(), width, height,
     xPixel, yPixel, pixelR, pixelG, pixelB,
@@ -45,12 +45,12 @@ void loop3D(std::vector<uint32_t>& buffer,
 
 // deprecated
 // 2 dimensional loop for calculations and early testing
-void loop2D(std::vector<uint32_t>& buffer, BlackHole& hole, int pixelX, int pixelY, const int height, const int width, std::array<int, 4> backgroundColor) { // loop for pixel color assignments
+void loop2D(std::vector<uint32_t>& buffer, const BlackHole& hole, int pixelX, int pixelY, const int height, const int width, std::array<int, 4> backgroundColor) { // loop for pixel color assignments
 
     // normalize pixels into UV coordinates 0 through 1
     const double xCentered = ((2.0 * pixelX - width) / height);
     const double yCentered = ((2.0 * pixelY - height) / height);
-    const int pixelA = backgroundColor[3];
+    // const int pixelA = backgroundColor[3];
 
     int pixelR = backgroundColor[0];
     int pixelG = backgroundColor[1];
@@ -77,7 +77,7 @@ void loop2D(std::vector<uint32_t>& buffer, BlackHole& hole, int pixelX, int pixe
         255);
 }
 
-// outputs graident just to test render loop and display
+// outputs gradient just to test render loop and display
 void test_loop(std::vector<uint32_t>& buffer, int pixelX, int pixelY, const int height, const int width) { // old loop that draws a gradient as i was learning
     // normalize pixels into UV coordinates 0 through 1
     const double u = static_cast<double>(pixelX) / height;

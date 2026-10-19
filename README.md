@@ -7,24 +7,27 @@ A (not quite) real-time visual simulation of a Black Hole, including Doppler Eff
 CPU traced representation of light rays passing through a black hole in space.
  - C++ Calculates light rays, star position and black hole effects
  - Each pixel gets an RBG value in a pixel buffer
- - SDL2 renders pixel buffer to screen using GPU
+ - SDL2 renders pixel buffer to screen using GPU (requires graphics card or modern CPU with an igpu)
 
 ## Run/Install (Linux or Windows)
 
-This project has cross-platform compatible makefiles for Linux and Windows x86.
+This project has cross-platform makefiles included via CMake.
 
 To install and run, simply download or clone this repository, navigate to ./build and run the linux application file or build from source.
-- **Linux**
+
+**Linux**
 - ./CSC1060_Captstone_Project/build
 - Find ./CSC1060_CAPSTONE_PROJECT
 - Execute via file manager or terminal
 
-- **Windows**
-- to come ig
+---
 
-You can use the following commands to simplify the install if you are on linux to install the latest git push from main:
+**Windows**
+- TK 
 
-(Ensure that you have git and base-devel intalled, as well as cmake and a cpp compiler)
+You can use the following commands to simplify the installation if you are on linux to install the latest git push from main:
+
+(Ensure that you have git and base-devel installed, as well as cmake and a cpp compiler)
 
 ~~~bash
 git clone https://github.com/cloverless08/black-hole-simulation.git
@@ -42,7 +45,7 @@ Download the platform-specific executable here (without source code):
  - [Dropbox](link TK)
 
 ## Controls/Keybinds
-- Arrow Keys: Conrol camera pitch and yaw
+- Arrow Keys: Control camera pitch and yaw
 - D: Print diagnostic info to terminal/screen
 - S: Save snapshot of current frame
 - P: Pause simulation
@@ -58,12 +61,16 @@ As is standard convention in my projects, and to uphold my education
 and academic honesty, *no generative AI tools (such as ChatGPT or Claude Code)
 were used to write, generate, or create any code or other submitted project content.*
 
-AI tools played a minor role in compiling research resources
-and articles and were occasionally used as personal tutor to explain certain
-C++ and programming concepts while I was learning them. 
-Any resulting knowledge was independently applied and implemented by me once it was understood.
+***Any use of Artificial Intelligence for any other reason will be comprehensively listed below:***
 
-AI use in this project aligns with the 
+- AI tools played a minor role in compiling research resources
+and articles for me to read, and sometimes was used to explain parts of these documents like equations and procedures.
+
+- AI was occasionally used as personal tutor to explain certain
+  C++ and programming concepts as I was learning them. 
+  However, any resulting knowledge was independently applied and implemented by me once it was understood.
+
+- AI use in this project aligns with the 
 FRCC Code of Conduct and the requirements outlined in the CSC1060 syllabus.
 
 Please refer to the tags in the **Sources** section of this readme for more specifics.
@@ -113,7 +120,9 @@ furnished to do so, subject to the following conditions:
 
 ## Sources
 
-Research and reference materials consulted during the development of this project:
+--- 
+
+**Research and reference materials consulted during the development of this project:**
 
 ### General Relativity & Black Holes
 - *Black Hole* — Wikipedia
@@ -135,3 +144,25 @@ Research and reference materials consulted during the development of this projec
 ### Additional References
 - *Gravity: How...* — C++ Forum
 
+--- 
+
+**Relevant or resource projects:**
+
+### Ray Tracer Test - Carrick De Min
+Concurrent research project specifically for learning how to implement this simulation's raytracer.
+~~~
+https://github.com/cloverless08/raytracer-test.git
+~~~
+
+---
+
+**Libraries or Repositories from others:**
+
+## SDL2
+ - Used for displaying the pixel buffer to the screen, initializing a window, and reducing the need for GPU calculations.
+~~~
+https://github.com/libsdl-org/SDL.git
+~~~
+
+## "Linear Algebra in  C++ - Part 4 - A simple Vector class"
+ - Tutorial helpful for matrix math implementations
