@@ -173,7 +173,7 @@ https://github.com/cloverless08/raytracer-test.git
 
 ---
 
-**Libraries or Repositories from others:**
+**Libraries or Repositories:**
 
 ## SDL2
  - Used for displaying the pixel buffer to the screen, initializing a window, and reducing the need for GPU calculations.
