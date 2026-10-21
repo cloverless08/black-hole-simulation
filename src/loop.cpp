@@ -22,15 +22,15 @@
 #define newline "\n"
 
 void loop3D(std::vector<uint32_t>& buffer,
+    BlackHole& hole, Camera& cam,
+    int xPixel, int yPixel,
+    const int height, const int width,
+    Vec3 backgroundColor,
+    bool& setupMessageSent) {
 
     /*
      * This is repeated one time for every x and y pixel, each frame, as denoted in main.cpp
      */
-
-    BlackHole& hole, Camera& cam,
-    int xPixel, int yPixel,
-    const int height, const int width,
-    Vec3 backgroundColor) {
 
     unsigned long long time = 0;
 

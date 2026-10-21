@@ -27,18 +27,16 @@
 #define CYAN    "\033[36m"
 #define newline "\n"
 
-namespace {
-    // global constants
-    enum SCREEN_RESOLUTION {
-        // standard resolutions
-        STANDARD_W = 640,
-        MOVING_W = 320,
+// global constants
+enum SCREEN_RESOLUTION {
+    // standard resolutions
+    STANDARD_W = 640,
+    MOVING_W = 320,
 
-        // for while camera is moving, to act as a sort of preview
-        STANDARD_H = 480,
-        MOVING_H = 240,
-    };
-}
+    // for while camera is moving, to act as a sort of preview
+    STANDARD_H = 480,
+    MOVING_H = 240,
+};
 
 constexpr int BLACK_HOLE_MASS = 100;
 constexpr double BLACK_HOLE_RADIUS = 0.25;
@@ -54,6 +52,7 @@ int main() {
 
     // local variables
     bool running = true;
+    bool setupMessageSent = false;
 
     enum SCREEN_RESOLUTION resolutionWidth = STANDARD_W;
     enum SCREEN_RESOLUTION resolutionHeight = STANDARD_H;
@@ -123,6 +122,7 @@ int main() {
     hole.position = BLACK_HOLE_INITIAL_POSITION;
     hole.radius = BLACK_HOLE_RADIUS;
     Camera cam{};
+    StrOut("Custom Structs Initialized.", msgType[2]);
 
     // window loop
     StrOut("Starting Program Loop...", msgType[0]);
@@ -134,8 +134,8 @@ int main() {
         // update pixel buffer
          for (int pixelY = 0; pixelY < resolutionHeight; pixelY++) {
              for (int pixelX = 0; pixelX< resolutionWidth; pixelX++) {
-                //loop3D(pixelBuffer, hole, cam, pixelX, pixelY, resolutionHeight, resolutionWidth, BACKGROUND_COLOR);
-                 test_loop(pixelBuffer, pixelX, pixelY, resolutionHeight, resolutionWidth);
+                loop3D(pixelBuffer, hole, cam, pixelX, pixelY, resolutionHeight, resolutionWidth, BACKGROUND_COLOR, setupMessageSent);
+                 //test_loop(pixelBuffer, pixelX, pixelY, resolutionHeight, resolutionWidth);
              }
          }
 
@@ -153,6 +153,7 @@ int main() {
         SDL_RenderCopy(renderer, pixelBufferTexture, nullptr, nullptr);
         SDL_RenderPresent(renderer);
         //SDL_Delay(25);
+
     }
     StrOut("Closing Program Loop...", msgType[0]);
 
