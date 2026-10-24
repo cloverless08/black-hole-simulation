@@ -5,7 +5,7 @@
 #include <array>
 
 #include "main_utils.h"
-#include "camera.h"
+#include "../raytrace/camera.h"
 
 #include <SDL2/SDL.h>
 

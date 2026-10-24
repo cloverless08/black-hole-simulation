@@ -10,7 +10,7 @@
 #include "main_utils.h"
 #include "structs.h"
 #include "loop.h"
-#include "camera.h"
+#include "../raytrace/camera.h"
 
 #define RESET   "\033[0m"
 #define RED     "\033[31m"
@@ -31,6 +31,10 @@ void loop3D(std::vector<uint32_t>& buffer,
     /*
      * This is repeated one time for every x and y pixel, each frame, as denoted in main.cpp
      */
+
+    if (setupMessageSent == false) {
+
+    }
 
     unsigned long long time = 0;
 
