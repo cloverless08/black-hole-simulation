@@ -81,8 +81,8 @@ Please refer to the tags in the **Sources** section of this readme for more spec
 ## License
 
 This project uses the GNU General Public License version 3
-to allow general access and supports open source
-developemnt
+to allow general access and support open source
+development
 
 ~~~ Synopsis
  All rights granted under this License are granted for the term of
