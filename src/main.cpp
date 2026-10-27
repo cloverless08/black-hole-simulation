@@ -121,7 +121,7 @@ int main() {
     hole.mass = BLACK_HOLE_MASS;
     hole.position = BLACK_HOLE_INITIAL_POSITION;
     hole.radius = BLACK_HOLE_RADIUS;
-    Camera cam{};
+    raytrace::Camera cam{};
     StrOut("Custom Structs Initialized.", msgType[2]);
 
     // window loop

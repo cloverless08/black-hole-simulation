@@ -9,7 +9,7 @@
 
 #include <SDL2/SDL.h>
 
-void GetKeyPress(SDL_Event &event, bool &running, Camera &cam) {
+void GetKeyPress(SDL_Event &event, bool &running, raytrace::Camera &cam) {
     // poll all events
         while (SDL_PollEvent(&event)) {
             const std::array<std::string, 4> msgType = {"SYSTEM", "ERROR", "SETUP", "WARN"};
