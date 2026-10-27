@@ -13,6 +13,8 @@
 ---
 
 ## Naming Conventions
+- **Variables:** lowerCamelCase (myVar, newInt, etc)
+- **Functions:** UpperCamelCase (AddNumbers(), DeleteName(), etc)
 
 ---
 
