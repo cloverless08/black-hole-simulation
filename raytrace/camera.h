@@ -4,9 +4,8 @@
 
 #pragma once
 
-#include "structs.h"
+#include "../include/structs.h"
 
-// cant wait to have to redo this whole fucking file and piece soon because whwat was i tihnking???
 struct Camera {
     Vec3   eye;        // position in world space
     Vec3   forward;    // unit vector, direction of view
@@ -15,7 +14,13 @@ struct Camera {
     double fovY;       // vertical field of view, radians
     double aspect_ratio;
 
-    Camera() {};
-
-    Camera(Vec3 eye, Vec3 target, Vec3 worldUp, double fovY, double aspect);
+    // default constructor
+    Camera() {
+        eye = Vec3(0, 0, 0);
+        forward = Vec3(0, 0, -1);
+        right = Vec3(1, 0, 0);
+        up = Vec3(0, 1, 0);
+        fovY = 45.0;
+        aspect_ratio = 1.0;
+    };
 };
