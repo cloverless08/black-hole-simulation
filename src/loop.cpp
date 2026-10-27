@@ -25,7 +25,7 @@ void loop3D(std::vector<uint32_t>& buffer,
     BlackHole& hole, Camera& cam,
     int xPixel, int yPixel,
     const int height, const int width,
-    Vec3 backgroundColor,
+    math::Vec3 backgroundColor,
     bool& setupMessageSent) {
 
     /*
@@ -65,7 +65,7 @@ void loop2D(std::vector<uint32_t>& buffer, const BlackHole& hole, int pixelX, in
     int pixelG = backgroundColor[1];
     int pixelB = backgroundColor[2];
 
-    Vec2 rayDir = {xCentered, yCentered};
+    math::Vec2 rayDir = {xCentered, yCentered};
 
     double length = std::sqrt(rayDir.x() * rayDir.x() + rayDir.y() * rayDir.y());
 
@@ -92,7 +92,7 @@ void test_loop(std::vector<uint32_t>& buffer, int pixelX, int pixelY, const int 
     const double u = static_cast<double>(pixelX) / height;
     const double v = static_cast<double>(pixelY) / width;
 
-    Vec2 rayDir = {u, v};
+    math::Vec2 rayDir = {u, v};
 
     if (double length = std::sqrt(rayDir.x() * rayDir.x() + rayDir.y() * rayDir.y()); length > 0.0001) { // avoids NaN or division by zero at the centerpoint
         rayDir[0] /= length;

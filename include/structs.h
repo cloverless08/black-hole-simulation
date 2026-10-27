@@ -4,7 +4,9 @@
 
 #pragma once
 
+#include <array>
 
+namespace math {
 class Vec3 {    // for 3d space
 public:
     std::array<double, 3> data;
@@ -29,15 +31,15 @@ public:
 
 
     // operator functions
-    Vec3 operator-() const {
-        return Vec3{-data[0], -data[1], -data[2]};
+    math::Vec3 operator-() const {
+        return math::Vec3{-data[0], -data[1], -data[2]};
     }
     double operator[](int i) const {return data[i];}
     double& operator[](int i) {return data[i];}
 
-    Vec3 operator+(const Vec3& o) const { return {x()+o.x(), y()+o.y(), z()+o.z()}; }
-    Vec3 operator-(const Vec3& o) const { return {x()-o.x(), y()-o.y(), z()-o.z()}; }
-    Vec3 operator*(double s) const { return {x()*s, y()*s, z()*s}; }
+    math::Vec3 operator+(const math::Vec3& o) const { return {x()+o.x(), y()+o.y(), z()+o.z()}; }
+    math::Vec3 operator-(const math::Vec3& o) const { return {x()-o.x(), y()-o.y(), z()-o.z()}; }
+    math::Vec3 operator*(double s) const { return {x()*s, y()*s, z()*s}; }
 
     // experimenting with something that could replace Vec2
     template <std::size_t N> class Vec { std::array<double,N> data; };
@@ -59,18 +61,19 @@ public:
         return data[1];
     }
 
-    Vec2 operator-() const {
-        return Vec2{-data[0], -data[1]};
+    math::Vec2 operator-() const {
+        return math::Vec2{-data[0], -data[1]};
     }
 
     double operator[](int i) const {return data[i];}
     double& operator[](int i) {return data[i];}
 };
+} // namespace math
 
 class BlackHole {
 public:
     // defaults every value to 0 if not otherwise called
-    Vec3 position = {0.0,0.0,0.0};
+    math::Vec3 position = {0.0,0.0,0.0};
     double mass = 0;
     double radius = 0;
 };

@@ -40,10 +40,10 @@ enum SCREEN_RESOLUTION {
 
 constexpr int BLACK_HOLE_MASS = 100;
 constexpr double BLACK_HOLE_RADIUS = 0.25;
-const Vec3 BLACK_HOLE_INITIAL_POSITION;
+const math::Vec3 BLACK_HOLE_INITIAL_POSITION;
 
 const std::array<std::string, 4> msgType = {"SYSTEM", "ERROR", "SETUP", "WARN"}; // strOut() helpful labels
-const Vec3 BACKGROUND_COLOR = {0, 0, 0};
+const math::Vec3 BACKGROUND_COLOR = {0, 0, 0};
 
 int main() {
 

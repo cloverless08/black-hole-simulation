@@ -6,17 +6,17 @@ namespace raytrace {
     class Ray {
         public:
             Ray() {}
-            Ray(const Vec3& origin, const Vec3& direction) : dataOrigin(origin), dataDirection(direction) {}
+            Ray(const math::Vec3& origin, const math::Vec3& direction) : dataOrigin(origin), dataDirection(direction) {}
 
             // getter functions
-            const Vec3& origin() const {
+            const math::Vec3& origin() const {
                 return dataOrigin;
             }
-            const Vec3& direction() const {
+            const math::Vec3& direction() const {
                 return dataDirection;
             }
         private:
-            Vec3 dataOrigin;
-            Vec3 dataDirection;
+            math::Vec3 dataOrigin;
+            math::Vec3 dataDirection;
         };
 }
