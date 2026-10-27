@@ -9,7 +9,7 @@
 #include "../raytrace/camera.h"
 
 void loop3D(std::vector<uint32_t>& buffer,
-    BlackHole& hole, Camera& cam,
+    BlackHole& hole, raytrace::Camera& cam,
     int xPixel, int yPixel,
     const int height, const int width,
     math::Vec3 backgroundColor,

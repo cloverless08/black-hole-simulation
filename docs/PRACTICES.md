@@ -1,10 +1,27 @@
 # Project Best Practices and Standards/Methods
 
+*under heavy current development*
+
 ## Guiding Values and Principles
 
 ---
 
 ## Use of Artificial Intelligence, LLMs, and Upfront Communication
+
+AI use will be clearly and proactively described and disclaimed in all necessary documents (most specifically, the README.md).
+
+As is standard convention in my projects, and to uphold my education
+and academic honesty, *no generative AI tools (such as ChatGPT or Claude Code)
+were used to write, generate, or create any code or other submitted project content.*
+
+***Any use of Artificial Intelligence (LLMs, Generative AI, Vibe-Coding tools) MUST be clearly stated and listed
+in their entirety, no matter what.***
+
+Some Examples of what should be listed include:
+- Resource compilation.
+- Idea generation or brainstorming.
+- **Any generated content or files**
+- Indexing or refactoring
 
 ---
 
@@ -36,7 +53,11 @@ origin/
 | |-<new, incomplete features>
 ~~~
 
+The **main** branch is considered the production environment. Any files staged in this branch should
+reflect a finished, working snapshot of code that can be cloned and demonstrated.
 
+The **dev** branch is for active development (obviously lol). Pretty much free-reign for unfinished and current-working
+files. Nothing here *has* to be finished and should be where most commits are pushed before staging to main.
 
 ---
 
