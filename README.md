@@ -73,6 +73,8 @@ and articles for me to read, and sometimes was used to explain parts of these do
 - AI use in this project aligns with the 
 FRCC Code of Conduct and the requirements outlined in the CSC1060 syllabus.
 
+- GitHub occasionally generated commit messages for changes that were staged in the remote repository or when made in a CodeSpace
+
 Please refer to the tags in the **Sources** section of this readme for more specifics.
 
 
