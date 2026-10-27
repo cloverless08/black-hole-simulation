@@ -161,6 +161,12 @@ your copyrighted material outside their relationship with you.
 ### Additional References
 - *Gravity: How...* — C++ Forum
 
+### Tools Used
+- JetBrains CLion
+- NeoVim
+- cmake
+- GitHub Codespaces
+
 --- 
 
 **Relevant or resource projects:**
