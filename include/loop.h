@@ -19,7 +19,6 @@ void loop2D(std::vector<uint32_t>& buffer,
     const BlackHole& hole,
     int pixelX, int pixelY,
     const int height, const int width,
-    std::array<int,
-    4> backgroundColor);
+    std::array<int,4> backgroundColor);
 
 void test_loop(std::vector<uint32_t>& buffer, int pixelX, int pixelY, int height, int width);
