@@ -5,7 +5,6 @@
 //  v0.4.0
 /* ========================================================================== */
 
-#include <eigen3/Eigen/Dense>
 #include <SDL2/SDL.h>
 #include <vector>
 #include <array>

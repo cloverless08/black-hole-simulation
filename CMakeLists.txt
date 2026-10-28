@@ -3,7 +3,6 @@ project(CSC1060_Capstone_Project CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 find_package(SDL2 REQUIRED CONFIG)
-find_package(Eigen3 REQUIRED NO_MODULE)
 add_executable(CSC1060_CAPSTONE_PROJECT
         src/main.cpp
         raytrace/camera.h
@@ -21,4 +20,3 @@ target_include_directories(CSC1060_CAPSTONE_PROJECT PRIVATE
 )
 
 target_link_libraries(CSC1060_CAPSTONE_PROJECT PRIVATE SDL2::SDL2 SDL2::SDL2main)
-target_link_libraries(CSC1060_CAPSTONE_PROJECT PRIVATE Eigen3::Eigen)
