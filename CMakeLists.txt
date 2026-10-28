@@ -6,7 +6,7 @@ find_package(SDL2 REQUIRED CONFIG)
 find_package(Eigen3 REQUIRED NO_MODULE)
 add_executable(CSC1060_CAPSTONE_PROJECT
         src/main.cpp
-        include/camera.h
+        raytrace/camera.h
         include/math.h
 )
 
@@ -21,4 +21,4 @@ target_include_directories(CSC1060_CAPSTONE_PROJECT PRIVATE
 )
 
 target_link_libraries(CSC1060_CAPSTONE_PROJECT PRIVATE SDL2::SDL2 SDL2::SDL2main)
-target_link_libraries(example Eigen3::Eigen)
+target_link_libraries(CSC1060_CAPSTONE_PROJECT PRIVATE Eigen3::Eigen)
