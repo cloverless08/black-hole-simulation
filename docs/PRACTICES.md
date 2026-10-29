@@ -1,8 +1,9 @@
 # Project Best Practices and Standards/Methods
 
-*under heavy current development*
 
 ## Guiding Values and Principles
+
+
 
 ---
 
@@ -29,6 +30,8 @@ Some Examples of what should be listed include:
 
 ### Pull/Merge requests from *internal branches or forks*:
 
+*assuming that "internal branches" are made and contributed to by the original author only*
+
 - Should be made sparingly, reserved for large milestone completions, or meaningful changes from development to production.
 - Named with Version/Number, most meaningful or general change(s), and origin: i. e. "#4; Added new math directory and implemented window handling; origin/dev"
   - *Each 'section' seperated by semicolon(;), use full path names for origin, number should be total pull request number for that branch.*
@@ -36,7 +39,9 @@ Some Examples of what should be listed include:
 ### Pull/Merge requests from *others or outside forks*:
 
 - Generally disallowed, as this is a personal and educational project, there is no benefit and no need for others to make contributions.
-  - *Exceptions include: professor or classmates making small suggestions or changes, co-work or mentorship on another's device/account, properly credited external sources/repos.*
+  - *Exceptions include: professor or classmates making small suggestions or changes,
+  co-work or mentorship on another's device/account, 
+  properly credited external sources/repos (where applicable).*
 
 ---
 
@@ -61,9 +66,20 @@ files. Nothing here *has* to be finished and should be where most commits are pu
 
 ---
 
+## File Structure
+
+
+---
+
 ## Naming Conventions
 - **Variables:** lowerCamelCase (myVar, newInt, etc)
 - **Functions:** UpperCamelCase (AddNumbers(), DeleteName(), etc)
+- **Namespaces:** All lower case (test, algorithm, etc)
+- **Classes:** While these are usually one word, use UpperCamelCase like functions, no need to make
+it complicated
+- **Files:** All lower case, never use spaces.
+Always use single words when possible, but separate with underscores when not.
+Use .h for header files (as apposed to .hpp)
 
 ---
 
