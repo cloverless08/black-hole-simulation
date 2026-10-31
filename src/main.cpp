@@ -33,20 +33,21 @@ enum SCREEN_RESOLUTION {
     STANDARD_W = 640,
     MOVING_W = 320,
 
-    // for while camera is moving, to act as a sort of preview
+    // for while camera is moving, to act as a sort of preview that renders quicker
     STANDARD_H = 480,
     MOVING_H = 240,
 };
 
 constexpr int BLACK_HOLE_MASS = 100;
 constexpr double BLACK_HOLE_RADIUS = 0.25;
-const math::Vec3 BLACK_HOLE_INITIAL_POSITION;
+const math::Vec3 BLACK_HOLE_INITIAL_POSITION = {0.0, 0.0, 0.0}; // centers black hole in the middle of the world coordinates
 
 const std::array<std::string, 4> msgType = {"SYSTEM", "ERROR", "SETUP", "WARN"}; // strOut() helpful labels
-const math::Vec3 BACKGROUND_COLOR = {0, 0, 0};
+const math::Vec3 BACKGROUND_COLOR = {0, 0, 0}; // sets background to black, bc, yknow... space
 
 int main() {
 
+    // put information and header into console
     TerminalInfoHeader();
     SDL_Delay(500);
 
