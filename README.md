@@ -113,6 +113,8 @@ your copyrighted material outside their relationship with you.
 
 ![Early test window](assets/Screenshot_20260923_010026.png)
 
+![First Ray Tracing Example](assets/screenshots/Screenshot_20261102_211758.png)
+
 
 
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
