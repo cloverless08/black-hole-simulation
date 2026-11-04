@@ -66,11 +66,6 @@ files. Nothing here *has* to be finished and should be where most commits are pu
 
 ---
 
-## File Structure
-
-
----
-
 ## Naming Conventions
 - **Variables:** lowerCamelCase (myVar, newInt, etc)
 - **Functions:** UpperCamelCase (AddNumbers(), DeleteName(), etc)
