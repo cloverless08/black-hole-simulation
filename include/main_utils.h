@@ -47,7 +47,7 @@ inline void TerminalInfoHeader() {
     std::cout << "      CSC1060 Black Hole Sim" << std::endl;
     std::cout << "        By Carrick De Min" << std::endl;
     std::cout << "====================================" << std::endl;
-    std::cout << GREEN;
+    std::cout << RESET;
     std::cout << newline;
 }
 

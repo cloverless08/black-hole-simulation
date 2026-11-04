@@ -5,8 +5,11 @@ set(CMAKE_CXX_STANDARD 17)
 find_package(SDL2 REQUIRED CONFIG)
 add_executable(CSC1060_CAPSTONE_PROJECT
         src/main.cpp
-        include/camera.h
+        raytrace/camera.h
         include/math.h
+        raytrace/ray.h
+        raytrace/image.h
+        raytrace/scene.h
 )
 
 target_sources(CSC1060_CAPSTONE_PROJECT PRIVATE

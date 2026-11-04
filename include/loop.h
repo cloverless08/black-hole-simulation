@@ -6,19 +6,19 @@
 #include <array>
 #include <vector>
 #include "structs.h"
-#include "camera.h"
+#include "../raytrace/camera.h"
 
 void loop3D(std::vector<uint32_t>& buffer,
-    BlackHole& hole, Camera& cam,
+    BlackHole& hole, raytrace::Camera& cam,
     int xPixel, int yPixel,
     const int height, const int width,
-    Vec3 backgroundColor);
+    math::Vec3 backgroundColor,
+    bool& setupMessageSent);
 
 void loop2D(std::vector<uint32_t>& buffer,
     const BlackHole& hole,
     int pixelX, int pixelY,
     const int height, const int width,
-    std::array<int,
-    4> backgroundColor);
+    std::array<int,4> backgroundColor);
 
 void test_loop(std::vector<uint32_t>& buffer, int pixelX, int pixelY, int height, int width);

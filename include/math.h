@@ -10,17 +10,17 @@
 #include <cmath>
 #include <vector>
 
+namespace math {
 // lets user create vectors of any type
 template <class T>
-
-class VectorMath {
+class cdVector {
 public:
     // default constructors/deconstructors
-    VectorMath();
+    cdVector();
 
-    VectorMath(std::vector<T> input);
+    cdVector(std::vector<T> input);
 
-    ~VectorMath();
+    ~cdVector();
 
     // parameter and basic functions
     int GetNumDims(); // number of dims is set as data is added
@@ -28,16 +28,16 @@ public:
     T GetElement(int i);
 
     // overloaded operators
-    VectorMath<T> operator+ (const VectorMath<T> &rhs) const;
-    VectorMath<T> operator- (const VectorMath<T> &rhs) const;
-    VectorMath<T> operator* (T &rhs) const;
+    math::cdVector<T> operator+ (const math::cdVector<T> &rhs) const;
+    math::cdVector<T> operator- (const math::cdVector<T> &rhs) const;
+    math::cdVector<T> operator* (T &rhs) const;
 
     // friend function
-    template <class U> friend VectorMath<U> operator* (const U lhs, const VectorMath<U> &rhs);
+    template <class U> friend math::cdVector<U> operator* (const U lhs, const math::cdVector<U> &rhs);
 
     // static functions
-    static T dot(const VectorMath<T> &a, const VectorMath<T> &b);
-    static VectorMath<T> cross(const VectorMath<T> &a, const VectorMath<T> &b);
+    static T dot(const math::cdVector<T> &a, const math::cdVector<T> &b);
+    static math::cdVector<T> cross(const math::cdVector<T> &a, const math::cdVector<T> &b);
 
 private:
     std::vector<T> m_vectorData;
@@ -48,16 +48,16 @@ private:
 // ----------------------------------------
 
 template <class T>
-VectorMath<T>::VectorMath(std::vector<T> input) {
+math::cdVector<T>::cdVector(std::vector<T> input) {
     m_nDims = input.size();
     m_vectorData = input;
 }
 
 template <class T>
-VectorMath<T>::~VectorMath() {} // empty deconstructor
+math::cdVector<T>::~cdVector() {} // empty deconstructor
 
 template <class T>
-int VectorMath<T>::GetNumDims() {
+int math::cdVector<T>::GetNumDims() {
     return m_nDims;
 }
 
@@ -65,14 +65,14 @@ int VectorMath<T>::GetNumDims() {
 //--------------------------------
 
 template<class T>
-T VectorMath<T>::GetElement(int i) {
+T math::cdVector<T>::GetElement(int i) {
     return m_vectorData[i];
 }
 
 // overloaded operators
 // -----------------------------
 template <class T>
-VectorMath<T> VectorMath<T>::operator+ (const VectorMath<T> &rhs) const {
+math::cdVector<T> math::cdVector<T>::operator+ (const math::cdVector<T> &rhs) const {
     if (m_nDims != rhs.m_nDims) {
         throw std::invalid_argument("Vector dimensions do not match");
     }
@@ -82,12 +82,12 @@ VectorMath<T> VectorMath<T>::operator+ (const VectorMath<T> &rhs) const {
         resultData.push_back(m_vectorData.at(i) + rhs.m_vectorData.at(i));
     }
 
-    VectorMath<T> result(resultData);
+    math::cdVector<T> result(resultData);
     return result;
 }
 
 template <class T>
-VectorMath<T> VectorMath<T>::operator- (const VectorMath<T> &rhs) const {
+math::cdVector<T> math::cdVector<T>::operator- (const math::cdVector<T> &rhs) const {
     if (m_nDims != rhs.m_nDims) {
         throw std::invalid_argument("Vector dimensions do not match");
     }
@@ -97,12 +97,12 @@ VectorMath<T> VectorMath<T>::operator- (const VectorMath<T> &rhs) const {
         resultData.push_back(m_vectorData.at(i) - rhs.m_vectorData.at(i));
     }
 
-    VectorMath<T> result(resultData);
+    math::cdVector<T> result(resultData);
     return result;
 }
 
 template <class T>
-VectorMath<T> VectorMath<T>::operator* (T &rhs) const {
+math::cdVector<T> math::cdVector<T>::operator* (T &rhs) const {
 
     // scalar multiplication
     std::vector<T> resultData;
@@ -110,7 +110,7 @@ VectorMath<T> VectorMath<T>::operator* (T &rhs) const {
         resultData.push_back(m_vectorData.at(i) * rhs);
     }
 
-    VectorMath<T> result(resultData);
+    math::cdVector<T> result(resultData);
     return result;
 }
 
@@ -118,14 +118,13 @@ VectorMath<T> VectorMath<T>::operator* (T &rhs) const {
 // -----------------------
 
 template <class T>
-VectorMath<T> operator* (const T &lhs, const VectorMath<T> &rhs) {
-
+math::cdVector<T> operator* (const T &lhs, const math::cdVector<T> &rhs) {
     std::vector<T> resultData;
     for (int i = 0; i < rhs.m_nDims; ++i) {
         resultData.push_back(rhs.m_vectorData.at(i) * lhs);
     }
 
-    VectorMath<T> result(resultData);
+    math::cdVector<T> result(resultData);
     return result;
 }
 
@@ -134,7 +133,7 @@ VectorMath<T> operator* (const T &lhs, const VectorMath<T> &rhs) {
 
 // vector dot product
 template <class T>
-T VectorMath<T>::dot(const VectorMath<T> &a, const VectorMath<T> &b) {
+T math::cdVector<T>::dot(const math::cdVector<T> &a, const math::cdVector<T> &b) {
     if (a.m_nDims != b.m_nDims) {
         throw std::invalid_argument("Vector dimensions do not match");
     }
@@ -149,8 +148,7 @@ T VectorMath<T>::dot(const VectorMath<T> &a, const VectorMath<T> &b) {
 
 // vector cross product
 template <class T>
-VectorMath<T> VectorMath<T>::cross(const VectorMath<T> &a, const VectorMath<T> &b) {
-
+math::cdVector<T> math::cdVector<T>::cross(const math::cdVector<T> &a, const math::cdVector<T> &b) {
     if (a.m_nDims != b.m_nDims) { // vector dimensions must match
         throw std::invalid_argument("Vector dimensions do not match");
     }
@@ -165,7 +163,8 @@ VectorMath<T> VectorMath<T>::cross(const VectorMath<T> &a, const VectorMath<T> &
     resultData.push_back(-((a.m_vectorData.at(0) * b.m_vectorData.at(2)) - (a.m_vectorData.at(2) * b.m_vectorData.at(0))));
     resultData.push_back((a.m_vectorData.at(0) * b.m_vectorData.at(1)) - (a.m_vectorData.at(1) * b.m_vectorData.at(0)));
 
-    VectorMath<T> result(resultData);
+    math::cdVector<T> result(resultData);
     return result;
-
 }
+
+} // namespace math

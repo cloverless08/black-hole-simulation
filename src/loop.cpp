@@ -10,7 +10,7 @@
 #include "main_utils.h"
 #include "structs.h"
 #include "loop.h"
-#include "camera.h"
+#include "../raytrace/camera.h"
 
 #define RESET   "\033[0m"
 #define RED     "\033[31m"
@@ -22,15 +22,19 @@
 #define newline "\n"
 
 void loop3D(std::vector<uint32_t>& buffer,
+    BlackHole& hole, raytrace::Camera& cam,
+    int xPixel, int yPixel,
+    const int height, const int width,
+    math::Vec3 backgroundColor,
+    bool& setupMessageSent) {
 
     /*
      * This is repeated one time for every x and y pixel, each frame, as denoted in main.cpp
      */
 
-    BlackHole& hole, Camera& cam,
-    int xPixel, int yPixel,
-    const int height, const int width,
-    Vec3 backgroundColor) {
+    if (setupMessageSent == false) {
+
+    }
 
     unsigned long long time = 0;
 
@@ -61,7 +65,7 @@ void loop2D(std::vector<uint32_t>& buffer, const BlackHole& hole, int pixelX, in
     int pixelG = backgroundColor[1];
     int pixelB = backgroundColor[2];
 
-    Vec2 rayDir = {xCentered, yCentered};
+    math::Vec2 rayDir = {xCentered, yCentered};
 
     double length = std::sqrt(rayDir.x() * rayDir.x() + rayDir.y() * rayDir.y());
 
@@ -88,7 +92,7 @@ void test_loop(std::vector<uint32_t>& buffer, int pixelX, int pixelY, const int 
     const double u = static_cast<double>(pixelX) / height;
     const double v = static_cast<double>(pixelY) / width;
 
-    Vec2 rayDir = {u, v};
+    math::Vec2 rayDir = {u, v};
 
     if (double length = std::sqrt(rayDir.x() * rayDir.x() + rayDir.y() * rayDir.y()); length > 0.0001) { // avoids NaN or division by zero at the centerpoint
         rayDir[0] /= length;
