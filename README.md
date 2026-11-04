@@ -104,7 +104,7 @@ The full text of the license can be found here for reference:
 
 ![Early test window](assets/screenshots/Screenshot_20260923_010026.png)
 
-![First Sphere Demonstration](assets/screenshots/Screenshot_20261103_143503.png)
+![First Ray Tracing Example](assets/screenshots/Screenshot_20261102_211758.png)
 
 
 

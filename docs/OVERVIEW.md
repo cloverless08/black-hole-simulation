@@ -25,8 +25,5 @@ Backwards ray-trace from camera into space, four possible endings for every ray:
 - Escapes to large radius → lands in star field
 - runs out of integration stpes → black (wouldve been captured anyway)
 
----
-
-## File Structure
-
+	
 

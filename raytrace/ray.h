@@ -1,22 +1,23 @@
 #pragma once
 
-#include "structs.h"
+#include "../include/cdVector.h"
 
 namespace raytrace {
     class Ray {
-        public:
-            Ray() {}
-            Ray(const math::Vec3& origin, const math::Vec3& direction) : dataOrigin(origin), dataDirection(direction) {}
+    public:
+        //defualt constructor
+        Ray();
+        Ray(const math::cdVector<double> &point1, const math::cdVector<double> &point2);
 
-            // getter functions
-            const math::Vec3& origin() const {
-                return dataOrigin;
-            }
-            const math::Vec3& direction() const {
-                return dataDirection;
-            }
-        private:
-            math::Vec3 dataOrigin;
-            math::Vec3 dataDirection;
-        };
+        // getter functions
+        math::cdVector<double> GetPoint1() const;
+        math::cdVector<double> GetPoint2() const;
+
+        // --------------------------------
+        math::cdVector<double> m_point1 = math::cdVector<double>(3);
+        math::cdVector<double> m_point2 = math::cdVector<double>(3);
+        math::cdVector<double> m_lab = math::cdVector<double>(3); // the vector *between* point 1 and 2
+
+
+    };
 }

@@ -6,7 +6,12 @@ find_package(SDL2 REQUIRED CONFIG)
 add_executable(CSC1060_CAPSTONE_PROJECT
         src/main.cpp
         raytrace/camera.h
-        include/math.h
+        include/cdVector.h
+        raytrace/ray.h
+        raytrace/camera.cpp
+        raytrace/ray.cpp
+        raytrace/ray.cpp
+        raytrace/ray.cpp
 )
 
 target_sources(CSC1060_CAPSTONE_PROJECT PRIVATE
