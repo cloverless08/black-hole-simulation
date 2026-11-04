@@ -7,6 +7,9 @@ add_executable(CSC1060_CAPSTONE_PROJECT
         src/main.cpp
         raytrace/camera.h
         include/math.h
+        raytrace/ray.h
+        raytrace/image.h
+        raytrace/scene.h
 )
 
 target_sources(CSC1060_CAPSTONE_PROJECT PRIVATE
