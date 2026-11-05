@@ -1,25 +1,26 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.12) # Note: Upgraded from 3.10 for CONFIGURE_DEPENDS
 project(CSC1060_Capstone_Project CXX)
 
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 find_package(SDL2 REQUIRED CONFIG)
-add_executable(CSC1060_CAPSTONE_PROJECT
-        src/main.cpp
-        raytrace/camera.h
-        include/math.h
-        raytrace/ray.h
-        raytrace/image.h
-        raytrace/scene.h
+
+file(GLOB_RECURSE ALL_SOURCES CONFIGURE_DEPENDS
+        "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp"
+        "${CMAKE_CURRENT_SOURCE_DIR}/include/*.h"
+        "${CMAKE_CURRENT_SOURCE_DIR}/raytrace/*.cpp"  # Added to catch raytrace code
+        "${CMAKE_CURRENT_SOURCE_DIR}/raytrace/*.h"    # Added to catch raytrace headers
+        "${CMAKE_CURRENT_SOURCE_DIR}/main.cpp"
 )
 
-target_sources(CSC1060_CAPSTONE_PROJECT PRIVATE
-"${CMAKE_CURRENT_SOURCE_DIR}/src/loop.cpp"
-# "${CMAKE_CURRENT_SOURCE_DIR}/src/main_utils.cpp"
-"${CMAKE_CURRENT_SOURCE_DIR}/src/keybinds.cpp"
-)
+add_executable(CSC1060_CAPSTONE_PROJECT ${ALL_SOURCES})
 
 target_include_directories(CSC1060_CAPSTONE_PROJECT PRIVATE
-"${CMAKE_CURRENT_SOURCE_DIR}/include/"
+        "${CMAKE_CURRENT_SOURCE_DIR}/include"
 )
 
-target_link_libraries(CSC1060_CAPSTONE_PROJECT PRIVATE SDL2::SDL2 SDL2::SDL2main)
+target_link_libraries(CSC1060_CAPSTONE_PROJECT PRIVATE
+        SDL2::SDL2
+        SDL2::SDL2main
+)

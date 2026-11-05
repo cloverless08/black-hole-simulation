@@ -22,11 +22,13 @@
 #define newline "\n"
 
 void loop3D(std::vector<uint32_t>& buffer,
-    BlackHole& hole, raytrace::Camera& cam,
-    int xPixel, int yPixel,
+    BlackHole& hole, raytrace::Camera& Cam,
+    int x, int y,
     const int height, const int width,
     math::Vec3 backgroundColor,
-    bool& setupMessageSent) {
+    bool& setupMessageSent,
+    double factorX, double factorY,
+    std::vector<std::shared_ptr<raytrace::ObjectBase>> objectList, std::vector<std::shared_ptr<raytrace::LightBase>> lightList) {
 
     /*
      * This is repeated one time for every x and y pixel, each frame, as denoted in main.cpp
@@ -38,18 +40,66 @@ void loop3D(std::vector<uint32_t>& buffer,
 
     unsigned long long time = 0;
 
-    // normalize pixels into UV coordinates 0 through 1
-    double u = (2.0 * (xPixel + 0.5) / width) - 1.0;   // -1 .. 1 left-to-right
-    double v = 1.0 - (2.0 * (yPixel + 0.5) / height);  // -1 .. 1 bottom-to-top
+    raytrace::Ray camRay;
+    qbVector<double> intersectionPoint(3);
+    qbVector<double> localNorm(3);
+    qbVector<double> localColor(3);
 
-    int pixelR = static_cast<int>(backgroundColor[0]);
-    int pixelG = static_cast<int>(backgroundColor[1]);
-    int pixelB = static_cast<int>(backgroundColor[2]);
-    constexpr int pixelA = 255;
+    double minDistance = 1e6;
+    double maxDistance = 0.0;
 
-    SetPixel(buffer.data(), width, height,
-    xPixel, yPixel, pixelR, pixelG, pixelB,
-    pixelA);
+    std::cout << "x = " << x << " y = " << y << std::endl;
+    std::cout << "Starting calculation..." << std::endl;
+
+    double U = (static_cast<double>(x) * factorX) - 1.0;
+    double V = (static_cast<double>(y) * factorY) - 1.0;
+
+    Cam.GenerateRay(U, V, camRay);
+
+            // test for intersections with all objects in scene
+            for (auto currentObject : objectList) { // loop through all objects in object list and return reference to that in currentObject
+                bool validIntersection = currentObject -> TestIntersection(camRay, intersectionPoint, localNorm, localColor);
+
+                if (validIntersection) {
+                    // compute intensity of illumination
+                    double intensity;
+                    qbVector<double> color {3};
+                    bool validIllumination = false;
+                    for (auto currentLight : lightList) { // currently hard-coded to only deal with one light source
+                        validIllumination = currentLight -> ComputeIllumination(intersectionPoint,
+                            localNorm,
+                            objectList,
+                            currentObject,
+                            color,
+                            intensity);
+                    }
+
+                    // compute distance between camera and int
+                    double dist = (intersectionPoint - camRay.m_point1).norm();
+                    if (dist > maxDistance) { // check mainly for debugging
+                        maxDistance = dist;
+                    }
+
+                    if (dist < minDistance) { // check mainly for debugging
+                        minDistance = dist;
+                    }
+
+                    //outputImage.SetPixel(x, y, 255.0 - ((dist - 9.0) / 0.94605) * 255.0, 0.0, 0.0);
+                    if (validIllumination) {
+                        SetPixel(buffer.data(), width, height, x, y, 255.0 * intensity, 0.0, 0.0);
+                    } else {
+                        SetPixel(buffer.data(), width, height, x, y, 0.0, 0.0, 0.0); // sets black if theres no illumination
+                    }
+
+
+                    std::cout << "true" << std::endl;
+                } else {
+                    SetPixel(buffer.data(), width, height, x, y, 0.0, 0.0, 0.0);
+                    std::cout << "false" << std::endl;
+                }
+
+                std::cout << "done" << std::endl;
+            }
 }
 
 // deprecated

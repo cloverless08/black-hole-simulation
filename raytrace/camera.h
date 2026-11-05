@@ -5,26 +5,54 @@
 #pragma once
 
 #include "../include/structs.h"
+#include "ray.h"
+#include "../include/cdVector.h"
 
 namespace raytrace {
     class Camera {
     public:
-
-        math::Vec3   eye;        // position in world space
-        math::Vec3   forward;    // unit vector, direction of view
-        math::Vec3   right;      // unit vector, camera-local +X
-        math::Vec3   up;         // unit vector, camera-local +Y
-        double fovY;       // vertical field of view, radians
-        double aspect_ratio;
-
         // default constructor
-        Camera() {
-            eye = math::Vec3(0, 0, 0);
-            forward = math::Vec3(0, 0, -1);
-            right = math::Vec3(1, 0, 0);
-            up = math::Vec3(0, 1, 0);
-            fovY = 45.0;
-            aspect_ratio = 1.0;
-        };
+        Camera();
+
+        // camera parameter functions
+        void SetPosition(const qbVector<double> &newPosition);
+        void SetLookAt(const qbVector<double> &newLookAt);
+        void SetUp(const qbVector<double> &upVector);
+        void SetLength(double newLength); // distance from virtual screen
+
+        void SetHorizontalSize(double horizontalSize); // defines aspect ratio
+        void SetAspectRatio(double aspectRatio);
+
+        // parameter getter functions
+        [[nodiscard]] qbVector<double> GetPosition() const;
+        [[nodiscard]] qbVector<double> GetLookAt() const;
+        [[nodiscard]] qbVector<double> GetUp() const;
+        [[nodiscard]] qbVector<double> GetU() const; // screen dimensions getter
+        [[nodiscard]] qbVector<double> GetV() const; // screen dimension getter
+        [[nodiscard]] qbVector<double> GetScreenCenter() const;
+
+        double GetLength();
+        double GetHorizontalSize();
+        double GetAspectRatio();
+
+        // function to get a ray
+        bool GenerateRay(float projectScreenX, float projectScreenY,
+            raytrace::Ray &camRay); // x and y define position on screen that we generate a ray for
+
+        // update camera geometry
+        void UpdateCamera();
+
+    private:
+        qbVector<double> m_cameraPosition = qbVector<double>(3);
+        qbVector<double> m_cameraLookAt = qbVector<double>(3);
+        qbVector<double> m_cameraUp = qbVector<double>(3);
+        double m_cameraLength;
+        double m_cameraHorizontalSize;
+        double m_cameraAspectRatio;
+
+        qbVector<double> m_alignment = qbVector<double>(3);
+        qbVector<double> m_projScreenU = qbVector<double>(3);
+        qbVector<double> m_projScreenV = qbVector<double>(3);
+        qbVector<double> m_projScreenCenter = qbVector<double>(3);
     };
 }

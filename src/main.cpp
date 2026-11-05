@@ -5,18 +5,24 @@
 //  v0.4.0
 /* ========================================================================== */
 
+// library includes
 #include <SDL2/SDL.h>
 #include <vector>
 #include <array>
 #include <string>
 #include <cstdint>
 #include <iomanip>
+#include <memory>
 
+// gnereal header file includes
 #include "main_utils.h"
 #include "structs.h"
 #include "loop.h"
 #include "keybinds.h"
 #include "../raytrace/camera.h"
+
+#include "../raytrace/objects/objsphere.h"
+#include "../raytrace/objects/pointlight.h"
 
 #define RESET   "\033[0m"
 #define RED     "\033[31m"
@@ -34,6 +40,7 @@ enum SCREEN_RESOLUTION {
     MOVING_W = 320,
 
     // for while camera is moving, to act as a sort of preview that renders quicker
+    // not sure if this will ever be implemented
     STANDARD_H = 480,
     MOVING_H = 240,
 };
@@ -54,6 +61,9 @@ int main() {
     // local variables
     bool running = true;
     bool setupMessageSent = false;
+
+    double xFactor = 1.0 / (static_cast<double>(STANDARD_W) / 2.0);
+    double yFactor = 1.0 / (static_cast<double>(STANDARD_H) / 2.0);
 
     enum SCREEN_RESOLUTION resolutionWidth = STANDARD_W;
     enum SCREEN_RESOLUTION resolutionHeight = STANDARD_H;
@@ -122,8 +132,40 @@ int main() {
     hole.mass = BLACK_HOLE_MASS;
     hole.position = BLACK_HOLE_INITIAL_POSITION;
     hole.radius = BLACK_HOLE_RADIUS;
-    raytrace::Camera cam{};
     StrOut("Custom Structs Initialized.", msgType[2]);
+
+    // initialize raytracing
+    StrOut("Initializing ray tracing structure.", msgType[2]);
+    raytrace::Camera cam;
+    cam.SetPosition(qbVector<double>{std::vector<double>{0.0, -10.0, 0.0}} );
+    cam.SetLookAt(qbVector<double>{std::vector<double>{0.0, 0.0, 0.0}}); // look at origin
+    cam.SetUp(qbVector<double>{std::vector<double>{0.0, 0.0, 1.0}});
+
+    cam.SetHorizontalSize(0.25);
+    cam.SetAspectRatio(4.0 / 3.0);
+
+    cam.UpdateCamera();
+    StrOut("Ray Tracing Initialized.", msgType[2]);
+
+
+    // create scene objects (test)
+    // list of objects in scene
+    std::vector<std::shared_ptr<raytrace::ObjectBase>> objectList;
+
+    // list of lights in scene
+    std::vector<std::shared_ptr<raytrace::LightBase>> lightList;
+
+    // unit sphere on origin for testing
+    raytrace::ObjSphere m_testSphere;
+    objectList.push_back(std::make_shared<raytrace::ObjSphere>(raytrace::ObjSphere()));
+
+    // construct a test light source
+    lightList.push_back(std::make_shared<raytrace::PointLight>(raytrace::PointLight())); // calls default constructor
+    lightList.at(0) -> m_location = qbVector<double> {std::vector<double>{5.0, -10.0, -5.0}};
+    lightList.at(0) -> m_color = qbVector<double> {std::vector<double>{255.0, 255.0, 255.0}};
+    std::cout << objectList.data() << std::endl;
+    std::cout << lightList.data() << std::endl;
+
 
     // window loop
     StrOut("Starting Program Loop...", msgType[0]);
@@ -131,11 +173,14 @@ int main() {
 
         // poll all events
         GetKeyPress(event, running, cam);
-       
+
         // update pixel buffer
          for (int pixelY = 0; pixelY < resolutionHeight; pixelY++) {
              for (int pixelX = 0; pixelX< resolutionWidth; pixelX++) {
-                loop3D(pixelBuffer, hole, cam, pixelX, pixelY, resolutionHeight, resolutionWidth, BACKGROUND_COLOR, setupMessageSent);
+                loop3D(pixelBuffer, hole, cam, pixelX, pixelY,
+                    resolutionHeight, resolutionWidth, BACKGROUND_COLOR,
+                    setupMessageSent, xFactor, yFactor,
+                    objectList, lightList);
                  //test_loop(pixelBuffer, pixelX, pixelY, resolutionHeight, resolutionWidth);
              }
          }
