@@ -38,10 +38,16 @@ void loop3D(std::vector<uint32_t>& buffer,
 
     unsigned long long time = 0;
 
+    int pixelR;
+    int pixelG;
+    int pixelB;
+    int pixelA;
 
+    std::cout << "x = " << x << " y = " << y << std::endl;
+    std::cout << "Starting calculation..." << std::endl;
 
     SetPixel(buffer.data(), width, height,
-    xPixel, yPixel, pixelR, pixelG, pixelB,
+    x, y, pixelR, pixelG, pixelB,
     pixelA);
 }
 
