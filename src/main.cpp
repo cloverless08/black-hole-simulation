@@ -147,6 +147,7 @@ int main() {
     cam.UpdateCamera();
     StrOut("Ray Tracing Initialized.", msgType[2]);
 
+
     // create scene objects (test)
     // list of objects in scene
     std::vector<std::shared_ptr<raytrace::ObjectBase>> objectList;
@@ -178,7 +179,8 @@ int main() {
              for (int pixelX = 0; pixelX< resolutionWidth; pixelX++) {
                 loop3D(pixelBuffer, hole, cam, pixelX, pixelY,
                     resolutionHeight, resolutionWidth, BACKGROUND_COLOR,
-                    setupMessageSent, xFactor, yFactor);
+                    setupMessageSent, xFactor, yFactor,
+                    objectList, lightList);
                  //test_loop(pixelBuffer, pixelX, pixelY, resolutionHeight, resolutionWidth);
              }
          }

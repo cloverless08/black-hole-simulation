@@ -27,7 +27,8 @@ void loop3D(std::vector<uint32_t>& buffer,
     const int height, const int width,
     math::Vec3 backgroundColor,
     bool& setupMessageSent,
-    double factorX, double factorY) {
+    double factorX, double factorY,
+    std::vector<std::shared_ptr<raytrace::ObjectBase>> objectList, std::vector<std::shared_ptr<raytrace::LightBase>> lightList) {
 
     /*
      * This is repeated one time for every x and y pixel, each frame, as denoted in main.cpp
@@ -56,7 +57,7 @@ void loop3D(std::vector<uint32_t>& buffer,
     Cam.GenerateRay(U, V, camRay);
 
             // test for intersections with all objects in scene
-            for (auto currentObject : m_objectList) { // loop through all objects in object list and return reference to that in currentObject
+            for (auto currentObject : objectList) { // loop through all objects in object list and return reference to that in currentObject
                 bool validIntersection = currentObject -> TestIntersection(camRay, intersectionPoint, localNorm, localColor);
 
                 if (validIntersection) {
@@ -64,10 +65,10 @@ void loop3D(std::vector<uint32_t>& buffer,
                     double intensity;
                     qbVector<double> color {3};
                     bool validIllumination = false;
-                    for (auto currentLight : m_lightList) { // currently hard-coded to only deal with one light source
+                    for (auto currentLight : lightList) { // currently hard-coded to only deal with one light source
                         validIllumination = currentLight -> ComputeIllumination(intersectionPoint,
                             localNorm,
-                            m_objectList,
+                            objectList,
                             currentObject,
                             color,
                             intensity);
