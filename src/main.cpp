@@ -142,6 +142,16 @@ int main() {
     cam.SetAspectRatio(4.0 / 3.0);
 
     cam.UpdateCamera();
+    StrOut("Ray Tracing Initialized.", msgType[2]);
+
+    // create scene objects (test)
+    // construct test sphere
+    m_objectList.push_back(std::make_shared<raytrace::ObjSphere>(raytrace::ObjSphere()));
+
+    // construct a test light source
+    m_lightList.push_back(std::make_shared<raytrace::PointLight>(raytrace::PointLight())); // calls default constructor
+    m_lightList.at(0) -> m_location = qbVector<double> {std::vector<double>{5.0, -10.0, -5.0}};
+    m_lightList.at(0) -> m_color = qbVector<double> {std::vector<double>{255.0, 255.0, 255.0}};
 
 
     // window loop

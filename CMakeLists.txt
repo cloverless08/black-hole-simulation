@@ -3,14 +3,13 @@ project(CSC1060_Capstone_Project CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 find_package(SDL2 REQUIRED CONFIG)
+
+file(GLOB_RECURSE SOURCES "*.cpp")
+file(GLOB_RECURSE INCLUDE "*.h")
+
 add_executable(CSC1060_CAPSTONE_PROJECT
-        src/main.cpp
-        raytrace/camera.h
-        include/cdVector.h
-        raytrace/ray.h
-        raytrace/camera.cpp
-        raytrace/camera.cpp
-        raytrace/ray.cpp
+    ${SOURCES}
+    ${INCLUDE}
 )
 
 target_sources(CSC1060_CAPSTONE_PROJECT PRIVATE
