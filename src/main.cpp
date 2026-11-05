@@ -7,12 +7,16 @@
 
 // library includes
 #include <SDL2/SDL.h>
+//#include <SDL2/SDL_cpuinfo.h>
+
 #include <vector>
 #include <array>
 #include <string>
 #include <cstdint>
 #include <iomanip>
 #include <memory>
+#include <thread>
+#include <stdexcept>
 
 // gnereal header file includes
 #include "main_utils.h"
@@ -20,6 +24,7 @@
 #include "loop.h"
 #include "keybinds.h"
 #include "../raytrace/camera.h"
+#include "../include/threading.h"
 
 #include "../raytrace/objects/objsphere.h"
 #include "../raytrace/objects/pointlight.h"
@@ -45,6 +50,9 @@ enum SCREEN_RESOLUTION {
     MOVING_H = 240,
 };
 
+unsigned int NUMBER_CORES = SDL_GetCPUCount();
+unsigned int AMOUNT_RAM = SDL_GetSystemRAM();
+
 constexpr int BLACK_HOLE_MASS = 100;
 constexpr double BLACK_HOLE_RADIUS = 0.25;
 const math::Vec3 BLACK_HOLE_INITIAL_POSITION = {0.0, 0.0, 0.0}; // centers black hole in the middle of the world coordinates
@@ -53,10 +61,22 @@ const std::array<std::string, 4> msgType = {"SYSTEM", "ERROR", "SETUP", "WARN"};
 const math::Vec3 BACKGROUND_COLOR = {0, 0, 0}; // sets background to black, bc, yknow... space
 
 int main() {
-
     // put information and header into console
     TerminalInfoHeader();
     SDL_Delay(500);
+
+    if (NUMBER_CORES == 0) {
+        std::cout << "Could not detect core count. Falling back to 1.\n";
+        NUMBER_CORES = 1;
+    } else {
+        std::cout << "Number of logical CPU cores: " << NUMBER_CORES << "\n";
+    }
+
+    if (AMOUNT_RAM == 0) {
+        throw "Could not detect system ram.\n";
+    } else {
+        std::cout << "Total system RAM detected: " << AMOUNT_RAM << "MB\n";
+    }
 
     // local variables
     bool running = true;
@@ -174,16 +194,21 @@ int main() {
         // poll all events
         GetKeyPress(event, running, cam);
 
-        // update pixel buffer
-         for (int pixelY = 0; pixelY < resolutionHeight; pixelY++) {
-             for (int pixelX = 0; pixelX< resolutionWidth; pixelX++) {
-                loop3D(pixelBuffer, hole, cam, pixelX, pixelY,
-                    resolutionHeight, resolutionWidth, BACKGROUND_COLOR,
-                    setupMessageSent, xFactor, yFactor,
-                    objectList, lightList);
-                 //test_loop(pixelBuffer, pixelX, pixelY, resolutionHeight, resolutionWidth);
-             }
-         }
+        // // update pixel buffer
+        //  for (int pixelY = 0; pixelY < resolutionHeight; pixelY++) {
+        //      for (int pixelX = 0; pixelX< resolutionWidth; pixelX++) {
+        //         loop3D(pixelBuffer, hole, cam, pixelX, pixelY,
+        //             resolutionHeight, resolutionWidth, BACKGROUND_COLOR,
+        //             setupMessageSent, xFactor, yFactor,
+        //             objectList, lightList);
+        //          //test_loop(pixelBuffer, pixelX, pixelY, resolutionHeight, resolutionWidth);
+        //      }
+        //  }
+
+        // start multithreaded rendering
+        CreateThreads(pixelBuffer, NUMBER_CORES, hole, cam,
+            STANDARD_H, STANDARD_W, BACKGROUND_COLOR,
+            xFactor, yFactor, objectList, lightList);
 
 
         // update render texture (pixel buffer)

@@ -6,6 +6,7 @@
 
 #include "main_utils.h"
 #include "../raytrace/camera.h"
+#include "../qbLinearAlgebra/qbVector.h"
 
 #include <SDL2/SDL.h>
 
@@ -23,23 +24,22 @@ void GetKeyPress(SDL_Event &event, bool &running, raytrace::Camera &cam) {
                         break;
                     case SDLK_RIGHT:
                         StrOut("Right Arrow Pressed", msgType[0]);
-                       //cam.yaw = ((cam.yaw + 10) % 361);
+                        cam.SetPosition(cam.GetPosition() + qbVector<double>{std::vector{0.025, 0.0, 0.0}});
                         break;
                     case SDLK_LEFT:
                         StrOut("Left Arrow Pressed", msgType[0]);
-                        //cam.yaw = ((cam.yaw - 10) % 361);
+                        cam.SetPosition(cam.GetPosition() + qbVector<double>{std::vector{-0.025, 0.0, 0.0}});
                         break;
                     case SDLK_UP:
                         StrOut("Up Arrow Pressed", msgType[0]);
-                        //cam.pitch = ((cam.pitch + 10) % 361);
+                        cam.SetPosition(cam.GetPosition() + qbVector<double>{std::vector{0.0, 0.0, -0.025}});
                         break;
                     case SDLK_DOWN:
                         StrOut("Down Arrow Pressed", msgType[0]);
-                        //cam.pitch = ((cam.pitch - 10) % 361);
+                        cam.SetPosition(cam.GetPosition() + qbVector<double>{std::vector{0.0, 0.0, 0.025}});
                         break;
                     case SDLK_q:
                         StrOut("Q: Camera Position", msgType[0]);
-                        //std::cout << cam.pitch << " " << cam.yaw << std::endl;
                         break;
                     default:
                         break;
