@@ -104,7 +104,7 @@ void CreateThreads(std::vector<uint32_t>& buffer, int numThreads,
     std::vector<std::shared_ptr<raytrace::ObjectBase>> objectList, std::vector<std::shared_ptr<raytrace::LightBase>> lightList) {
     // -------------------------------------------------
 
-    std::cout << "Initializing MultiThreading..." << std::endl;
+    //std::cout << "Initializing MultiThreading..." << std::endl;
     std::vector<std::thread> threads;
 
     // [CHANGED] Divide the image height into approximately equal row ranges.

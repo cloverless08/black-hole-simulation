@@ -49,7 +49,8 @@ Download the platform-specific executable here (without source code):
 - d: Display diagnostic info to terminal/screend
 - s: Save snapshot of current frame
 - p: Pause simulation
-- q: Close app
+- q: Output Camera Position
+- Esc: Quit App
 
 ## Authors
 
