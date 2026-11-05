@@ -194,12 +194,13 @@ int main() {
     // window loop
     StrOut("Starting Program Loop...", msgType[0]);
     while (running) {
+
         auto currentTime = std::chrono::high_resolution_clock::now(); // get first timestamp at start of loop
         std::chrono::duration<float> elapsed = currentTime - lastTime;
         float deltaTime = elapsed.count();
         lastTime = currentTime;
 
-        std::cout << "frame rate: " << (1 / deltaTime) << std::endl;
+        //std::cout << "frame rate: " << (1 / deltaTime) << std::endl;
 
         // poll all events
         GetKeyPress(event, running, cam);

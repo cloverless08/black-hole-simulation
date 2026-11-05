@@ -6,7 +6,6 @@
 
 #include "../include/structs.h"
 #include "ray.h"
-#include "../include/cdVector.h"
 
 namespace raytrace {
     class Camera {

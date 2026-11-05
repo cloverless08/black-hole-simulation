@@ -1,7 +1,6 @@
 #pragma once
 
 #include "structs.h"
-#include "../include/cdVector.h"
 #include "../qbLinearAlgebra/qbVector.h"
 
 namespace raytrace {
