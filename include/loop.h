@@ -10,7 +10,7 @@
 
 void loop3D(std::vector<uint32_t>& buffer,
     BlackHole& hole, raytrace::Camera& cam,
-    int xPixel, int yPixel,
+    int x, int y,
     const int height, const int width,
     math::Vec3 backgroundColor,
     bool& setupMessageSent);

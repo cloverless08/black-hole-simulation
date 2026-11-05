@@ -8,24 +8,24 @@
 #include<math.h>
 
 raytrace::Camera::Camera() {
-    m_cameraPosition = math::cdVector<double> {std::vector<double> {0.0, -10.0, 0.0}}; // 10 units away form origin
-    m_cameraLookAt = math::cdVector<double> {std::vector<double> {0.0, 0.0, 0.0}}; // looking at origin
-    m_cameraUp = math::cdVector<double> {std::vector<double> {0.0, 0.0, 1.0}};
+    m_cameraPosition = qbVector<double> {std::vector<double> {0.0, -10.0, 0.0}}; // 10 units away form origin
+    m_cameraLookAt = qbVector<double> {std::vector<double> {0.0, 0.0, 0.0}}; // looking at origin
+    m_cameraUp = qbVector<double> {std::vector<double> {0.0, 0.0, 1.0}};
 
     m_cameraLength = 1.0;
     m_cameraAspectRatio = 1.0;
 }
 
 //paramter assigning functions
-void raytrace::Camera::SetPosition(const math::cdVector<double> &newPosition) {
+void raytrace::Camera::SetPosition(const qbVector<double> &newPosition) {
     m_cameraPosition = newPosition;
 }
 
-void raytrace::Camera::SetLookAt(const math::cdVector<double> &newLookAt) {
+void raytrace::Camera::SetLookAt(const qbVector<double> &newLookAt) {
     m_cameraLookAt = newLookAt;
 }
 
-void raytrace::Camera::SetUp(const math::cdVector<double> &newUp) {
+void raytrace::Camera::SetUp(const qbVector<double> &newUp) {
     m_cameraUp = newUp;
 }
 
@@ -43,16 +43,16 @@ void raytrace::Camera::SetAspectRatio(double aspectRatio) {
 
 // return paramters of cmaera
 // position
-math::cdVector<double> raytrace::Camera::GetPosition() const {
+qbVector<double> raytrace::Camera::GetPosition() const {
     return m_cameraPosition;
 }
 
-math::cdVector<double> raytrace::Camera::GetLookAt() const {
+qbVector<double> raytrace::Camera::GetLookAt() const {
     return m_cameraLookAt;
 }
 
 //up vector
-math::cdVector<double> raytrace::Camera::GetUp() const {
+qbVector<double> raytrace::Camera::GetUp() const {
     return m_cameraUp;
 }
 
@@ -73,16 +73,16 @@ double raytrace::Camera::GetAspectRatio() {
 
 
 // method to return U and V vectors
-math::cdVector<double> raytrace::Camera::GetU() const {
+qbVector<double> raytrace::Camera::GetU() const {
     return m_projScreenU;
 }
 
-math::cdVector<double> raytrace::Camera::GetV() const {
+qbVector<double> raytrace::Camera::GetV() const {
     return m_projScreenV;
 }
 
 // get proj screen center
-math::cdVector<double> raytrace::Camera::GetScreenCenter() const {
+qbVector<double> raytrace::Camera::GetScreenCenter() const {
     return m_projScreenCenter;
 }
 
@@ -94,10 +94,10 @@ void raytrace::Camera::UpdateCamera() {
     m_alignment.Normalize();
 
     // compute U and V vectors
-    m_projScreenU = math::cdVector<double>::cross(m_alignment, m_cameraUp);
+    m_projScreenU = qbVector<double>::cross(m_alignment, m_cameraUp);
     m_projScreenU.Normalize();
 
-    m_projScreenV = math::cdVector<double>::cross(m_projScreenU, m_alignment);
+    m_projScreenV = qbVector<double>::cross(m_projScreenU, m_alignment);
     m_projScreenV.Normalize();
 
     // compute position of center point of screen
@@ -112,8 +112,8 @@ void raytrace::Camera::UpdateCamera() {
 bool raytrace::Camera::GenerateRay(float projScreenX, float projScreenY, raytrace::Ray &camRay) {
 
     // compute location of screen point (in world coordinates) U/V --> X/Y/Z
-    math::cdVector<double> screenWorldPart1 = m_projScreenCenter + (m_projScreenU * projScreenX); // transorms U coordinate to world coordinates
-    math::cdVector<double> screenWorldCoordinate = screenWorldPart1 + (m_projScreenV * projScreenY);
+    qbVector<double> screenWorldPart1 = m_projScreenCenter + (m_projScreenU * projScreenX); // transorms U coordinate to world coordinates
+    qbVector<double> screenWorldCoordinate = screenWorldPart1 + (m_projScreenV * projScreenY);
 
     camRay.m_point1 = m_cameraPosition;
     camRay.m_point2 = screenWorldCoordinate;

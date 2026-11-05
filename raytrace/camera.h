@@ -15,21 +15,21 @@ namespace raytrace {
         Camera();
 
         // camera parameter functions
-        void SetPosition(const math::cdVector<double> &newPosition);
-        void SetLookAt(const math::cdVector<double> &newLookAt);
-        void SetUp(const math::cdVector<double> &upVector);
+        void SetPosition(const qbVector<double> &newPosition);
+        void SetLookAt(const qbVector<double> &newLookAt);
+        void SetUp(const qbVector<double> &upVector);
         void SetLength(double newLength); // distance from virtual screen
 
         void SetHorizontalSize(double horizontalSize); // defines aspect ratio
         void SetAspectRatio(double aspectRatio);
 
         // parameter getter functions
-        [[nodiscard]] math::cdVector<double> GetPosition() const;
-        [[nodiscard]] math::cdVector<double> GetLookAt() const;
-        [[nodiscard]] math::cdVector<double> GetUp() const;
-        [[nodiscard]] math::cdVector<double> GetU() const; // screen dimensions getter
-        [[nodiscard]] math::cdVector<double> GetV() const; // screen dimension getter
-        [[nodiscard]] math::cdVector<double> GetScreenCenter() const;
+        [[nodiscard]] qbVector<double> GetPosition() const;
+        [[nodiscard]] qbVector<double> GetLookAt() const;
+        [[nodiscard]] qbVector<double> GetUp() const;
+        [[nodiscard]] qbVector<double> GetU() const; // screen dimensions getter
+        [[nodiscard]] qbVector<double> GetV() const; // screen dimension getter
+        [[nodiscard]] qbVector<double> GetScreenCenter() const;
 
         double GetLength();
         double GetHorizontalSize();
@@ -43,16 +43,16 @@ namespace raytrace {
         void UpdateCamera();
 
     private:
-        math::cdVector<double> m_cameraPosition = math::cdVector<double>(3);
-        math::cdVector<double> m_cameraLookAt = math::cdVector<double>(3);
-        math::cdVector<double> m_cameraUp = math::cdVector<double>(3);
+        qbVector<double> m_cameraPosition = qbVector<double>(3);
+        qbVector<double> m_cameraLookAt = qbVector<double>(3);
+        qbVector<double> m_cameraUp = qbVector<double>(3);
         double m_cameraLength;
         double m_cameraHorizontalSize;
         double m_cameraAspectRatio;
 
-        math::cdVector<double> m_alignment = math::cdVector<double>(3);
-        math::cdVector<double> m_projScreenU = math::cdVector<double>(3);
-        math::cdVector<double> m_projScreenV = math::cdVector<double>(3);
-        math::cdVector<double> m_projScreenCenter = math::cdVector<double>(3);
+        qbVector<double> m_alignment = qbVector<double>(3);
+        qbVector<double> m_projScreenU = qbVector<double>(3);
+        qbVector<double> m_projScreenV = qbVector<double>(3);
+        qbVector<double> m_projScreenCenter = qbVector<double>(3);
     };
 }

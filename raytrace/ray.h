@@ -2,22 +2,24 @@
 
 #include "structs.h"
 #include "../include/cdVector.h"
+#include "../qbLinearAlgebra/qbVector.h"
 
 namespace raytrace {
     class Ray {
     public:
         //defualt constructor
         Ray();
-        Ray(const math::cdVector<double> &point1, const math::cdVector<double> &point2);
+        Ray(const qbVector<double> &point1, const qbVector<double> &point2);
 
         // getter functions
-        math::cdVector<double> GetPoint1() const;
-        math::cdVector<double> GetPoint2() const;
+        qbVector<double> GetPoint1() const;
+        qbVector<double> GetPoint2() const;
 
         // --------------------------------
-        math::cdVector<double> m_point1 = math::cdVector<double>(3);
-        math::cdVector<double> m_point2 = math::cdVector<double>(3);
-        math::cdVector<double> m_lab = math::cdVector<double>(3); // the vector *between* point 1 and 2
+        qbVector<double> m_point1 = qbVector<double>(3);
+        qbVector<double> m_point2 = qbVector<double>(3);
+        qbVector<double> m_lab = qbVector<double>(3); // the vector *between* point 1 and 2
+
 
     };
 }

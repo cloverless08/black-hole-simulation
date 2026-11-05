@@ -23,7 +23,7 @@
 
 void loop3D(std::vector<uint32_t>& buffer,
     BlackHole& hole, raytrace::Camera& cam,
-    int xPixel, int yPixel,
+    int x, int y,
     const int height, const int width,
     math::Vec3 backgroundColor,
     bool& setupMessageSent) {
@@ -38,14 +38,7 @@ void loop3D(std::vector<uint32_t>& buffer,
 
     unsigned long long time = 0;
 
-    // normalize pixels into UV coordinates 0 through 1
-    double u = (2.0 * (xPixel + 0.5) / width) - 1.0;   // -1 .. 1 left-to-right
-    double v = 1.0 - (2.0 * (yPixel + 0.5) / height);  // -1 .. 1 bottom-to-top
 
-    int pixelR = static_cast<int>(backgroundColor[0]);
-    int pixelG = static_cast<int>(backgroundColor[1]);
-    int pixelB = static_cast<int>(backgroundColor[2]);
-    constexpr int pixelA = 255;
 
     SetPixel(buffer.data(), width, height,
     xPixel, yPixel, pixelR, pixelG, pixelB,
