@@ -15,8 +15,7 @@
 #include <cstdint>
 #include <iomanip>
 #include <memory>
-#include <thread>
-#include <stdexcept>
+#include <chrono>
 
 // gnereal header file includes
 #include "main_utils.h"
@@ -87,6 +86,8 @@ int main() {
 
     enum SCREEN_RESOLUTION resolutionWidth = STANDARD_W;
     enum SCREEN_RESOLUTION resolutionHeight = STANDARD_H;
+
+    int frame = 0;
 
     StrOut("Local Variables Initialized.", msgType[2]);
 
@@ -186,10 +187,16 @@ int main() {
     std::cout << objectList.data() << std::endl;
     std::cout << lightList.data() << std::endl;
 
-
+    auto lastTime = std::chrono::high_resolution_clock::now(); // initialize timestamp tracker for fps calculations
     // window loop
     StrOut("Starting Program Loop...", msgType[0]);
     while (running) {
+        auto currentTime = std::chrono::high_resolution_clock::now(); // get first timestamp at start of loop
+        std::chrono::duration<float> elapsed = currentTime - lastTime;
+        float deltaTime = elapsed.count();
+        lastTime = currentTime;
+
+        std::cout << "frame rate: " << (1 / deltaTime) << std::endl;
 
         // poll all events
         GetKeyPress(event, running, cam);
@@ -225,6 +232,7 @@ int main() {
         SDL_RenderPresent(renderer);
         //SDL_Delay(25);
 
+        frame += 1;
     }
     StrOut("Closing Program Loop...", msgType[0]);
 
