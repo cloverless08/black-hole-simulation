@@ -34,6 +34,7 @@ enum SCREEN_RESOLUTION {
     MOVING_W = 320,
 
     // for while camera is moving, to act as a sort of preview that renders quicker
+    // not sure if this will ever be implemented
     STANDARD_H = 480,
     MOVING_H = 240,
 };

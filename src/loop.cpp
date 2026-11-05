@@ -53,6 +53,51 @@ void loop3D(std::vector<uint32_t>& buffer,
 
     Cam.GenerateRay(U, V, camRay);
 
+            // test for intersections with all objects in scene
+            for (auto currentObject : m_objectList) { // loop through all objects in object list and return reference to that in currentObject
+                bool validIntersection = currentObject -> TestIntersection(camRay, intersectionPoint, localNorm, localColor);
+
+                if (validIntersection) {
+                    // compute intensity of illumination
+                    double intensity;
+                    qbVector<double> color {3};
+                    bool validIllumination = false;
+                    for (auto currentLight : m_lightList) { // currently hard-coded to only deal with one light source
+                        validIllumination = currentLight -> ComputeIllumination(intersectionPoint,
+                            localNorm,
+                            m_objectList,
+                            currentObject,
+                            color,
+                            intensity);
+                    }
+
+                    // compute distance between camera and int
+                    double dist = (intersectionPoint - camRay.m_point1).norm();
+                    if (dist > maxDistance) { // check mainly for debugging
+                        maxDistance = dist;
+                    }
+
+                    if (dist < minDistance) { // check mainly for debugging
+                        minDistance = dist;
+                    }
+
+                    //outputImage.SetPixel(x, y, 255.0 - ((dist - 9.0) / 0.94605) * 255.0, 0.0, 0.0);
+                    if (validIllumination) {
+                        SetPixel(buffer.data(), width, height, x, y, 255.0 * intensity, 0.0, 0.0);
+                    } else {
+                        SetPixel(buffer.data(), width, height, x, y, 0.0, 0.0, 0.0); // sets black if theres no illumination
+                    }
+
+
+                    std::cout << "true" << std::endl;
+                } else {
+                    SetPixel(buffer.data(), width, height, x, y, 0.0, 0.0, 0.0);
+                    std::cout << "false" << std::endl;
+                }
+
+                std::cout << "done" << std::endl;
+            }
+
     SetPixel(buffer.data(), width, height,
     x, y, pixelR, pixelG, pixelB,
     pixelA);
