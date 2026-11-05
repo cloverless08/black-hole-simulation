@@ -31,21 +31,22 @@ You can use the following commands to simplify the installation (only tested on 
 
 ~~~bash
 git clone https://github.com/cloverless08/black-hole-simulation.git
-cd CSC1060-Capstone-Project
+cd black-hole-simulation
 rm -rf ./build/
 cmake -S . -B build
 cd ./build && make && cd ..
-cp ./build/CSC1060_CAPSTONE_PROJECT .
+cp ./build/CSC1060_CAPSTONE_PROJECT ./BlackHoleSimExec
 ~~~
 
 ***OR***
 
 Download the platform-specific executable here (without source code):
- - [Dropbox](link TK)
+ - [Windows](link TK)
+ - [Linux](link TK)
 
 ## Controls/Keybinds
 - Arrow Keys: Control camera pitch and yaw
-- d: Display diagnostic info to terminal/screen
+- d: Display diagnostic info to terminal/screend
 - s: Save snapshot of current frame
 - p: Pause simulation
 - q: Close app
@@ -106,7 +107,7 @@ The full text of the license can be found here for reference:
 
 ![First Sphere Demonstration](assets/screenshots/Screenshot_20261103_143503.png)
 
-
+---
 
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
