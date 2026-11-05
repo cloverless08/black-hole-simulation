@@ -16,6 +16,7 @@
 #include <iomanip>
 #include <memory>
 #include <chrono>
+#include <cmath>
 
 // gnereal header file includes
 #include "main_utils.h"
@@ -88,6 +89,8 @@ int main() {
     enum SCREEN_RESOLUTION resolutionHeight = STANDARD_H;
 
     int frame = 0;
+
+    double THETA = 0;
 
     StrOut("Local Variables Initialized.", msgType[2]);
 
@@ -216,6 +219,17 @@ int main() {
         CreateThreads(pixelBuffer, NUMBER_CORES, hole, cam,
             STANDARD_H, STANDARD_W, BACKGROUND_COLOR,
             xFactor, yFactor, objectList, lightList);
+
+
+        // spin the light in a circle
+        qbVector<double> oldLightPosition = lightList.at(0) -> m_location;
+        double radius = lightList.at(0) -> m_location.GetElement(2);
+
+        double lightX = radius * std::cos(THETA);
+        double lightY = radius * std::sin(THETA);
+
+        lightList.at(0) -> m_location = oldLightPosition + qbVector<double>{std::vector<double>{lightX, lightY, 0.0}}; // add
+        THETA += 0.5;
 
 
         // update render texture (pixel buffer)
