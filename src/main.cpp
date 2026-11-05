@@ -5,18 +5,24 @@
 //  v0.4.0
 /* ========================================================================== */
 
+// library includes
 #include <SDL2/SDL.h>
 #include <vector>
 #include <array>
 #include <string>
 #include <cstdint>
 #include <iomanip>
+#include <memory>
 
+// gnereal header file includes
 #include "main_utils.h"
 #include "structs.h"
 #include "loop.h"
 #include "keybinds.h"
 #include "../raytrace/camera.h"
+
+#include "../raytrace/objects/objsphere.h"
+#include "../raytrace/objects/pointlight.h"
 
 #define RESET   "\033[0m"
 #define RED     "\033[31m"
@@ -58,9 +64,6 @@ int main() {
 
     double xFactor = 1.0 / (static_cast<double>(STANDARD_W) / 2.0);
     double yFactor = 1.0 / (static_cast<double>(STANDARD_H) / 2.0);
-
-    double minDistance = 1e6;
-    double maxDistance = 0.0;
 
     enum SCREEN_RESOLUTION resolutionWidth = STANDARD_W;
     enum SCREEN_RESOLUTION resolutionHeight = STANDARD_H;
@@ -145,13 +148,22 @@ int main() {
     StrOut("Ray Tracing Initialized.", msgType[2]);
 
     // create scene objects (test)
-    // construct test sphere
-    m_objectList.push_back(std::make_shared<raytrace::ObjSphere>(raytrace::ObjSphere()));
+    // list of objects in scene
+    std::vector<std::shared_ptr<raytrace::ObjectBase>> objectList;
+
+    // list of lights in scene
+    std::vector<std::shared_ptr<raytrace::LightBase>> lightList;
+
+    // unit sphere on origin for testing
+    raytrace::ObjSphere m_testSphere;
+    objectList.push_back(std::make_shared<raytrace::ObjSphere>(raytrace::ObjSphere()));
 
     // construct a test light source
-    m_lightList.push_back(std::make_shared<raytrace::PointLight>(raytrace::PointLight())); // calls default constructor
-    m_lightList.at(0) -> m_location = qbVector<double> {std::vector<double>{5.0, -10.0, -5.0}};
-    m_lightList.at(0) -> m_color = qbVector<double> {std::vector<double>{255.0, 255.0, 255.0}};
+    lightList.push_back(std::make_shared<raytrace::PointLight>(raytrace::PointLight())); // calls default constructor
+    lightList.at(0) -> m_location = qbVector<double> {std::vector<double>{5.0, -10.0, -5.0}};
+    lightList.at(0) -> m_color = qbVector<double> {std::vector<double>{255.0, 255.0, 255.0}};
+    std::cout << objectList.data() << std::endl;
+    std::cout << lightList.data() << std::endl;
 
 
     // window loop
@@ -161,18 +173,12 @@ int main() {
         // poll all events
         GetKeyPress(event, running, cam);
 
-        raytrace::Ray camRay;
-        qbVector<double> intersectionPoint(3);
-        qbVector<double> localNorm(3);
-        qbVector<double> localColor(3);
-
         // update pixel buffer
          for (int pixelY = 0; pixelY < resolutionHeight; pixelY++) {
              for (int pixelX = 0; pixelX< resolutionWidth; pixelX++) {
                 loop3D(pixelBuffer, hole, cam, pixelX, pixelY,
                     resolutionHeight, resolutionWidth, BACKGROUND_COLOR,
-                    setupMessageSent, xFactor, yFactor,
-                    camRay);
+                    setupMessageSent, xFactor, yFactor);
                  //test_loop(pixelBuffer, pixelX, pixelY, resolutionHeight, resolutionWidth);
              }
          }

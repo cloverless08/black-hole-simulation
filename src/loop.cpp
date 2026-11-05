@@ -27,8 +27,7 @@ void loop3D(std::vector<uint32_t>& buffer,
     const int height, const int width,
     math::Vec3 backgroundColor,
     bool& setupMessageSent,
-    double factorX, double factorY,
-    raytrace::Ray &camRay) {
+    double factorX, double factorY) {
 
     /*
      * This is repeated one time for every x and y pixel, each frame, as denoted in main.cpp
@@ -40,10 +39,13 @@ void loop3D(std::vector<uint32_t>& buffer,
 
     unsigned long long time = 0;
 
-    int pixelR;
-    int pixelG;
-    int pixelB;
-    int pixelA;
+    raytrace::Ray camRay;
+    qbVector<double> intersectionPoint(3);
+    qbVector<double> localNorm(3);
+    qbVector<double> localColor(3);
+
+    double minDistance = 1e6;
+    double maxDistance = 0.0;
 
     std::cout << "x = " << x << " y = " << y << std::endl;
     std::cout << "Starting calculation..." << std::endl;
@@ -97,10 +99,6 @@ void loop3D(std::vector<uint32_t>& buffer,
 
                 std::cout << "done" << std::endl;
             }
-
-    SetPixel(buffer.data(), width, height,
-    x, y, pixelR, pixelG, pixelB,
-    pixelA);
 }
 
 // deprecated

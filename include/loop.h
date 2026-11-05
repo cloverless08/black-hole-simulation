@@ -14,8 +14,7 @@ void loop3D(std::vector<uint32_t>& buffer,
     const int height, const int width,
     math::Vec3 backgroundColor,
     bool& setupMessageSent,
-    double factorX, double factorY,
-    raytrace::Ray &camRay);
+    double factorX, double factorY);
 
 void loop2D(std::vector<uint32_t>& buffer,
     const BlackHole& hole,
