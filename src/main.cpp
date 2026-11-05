@@ -15,8 +15,8 @@
 #include <cstdint>
 #include <iomanip>
 #include <memory>
-#include <thread>
-#include <stdexcept>
+#include <chrono>
+#include <cmath>
 
 // gnereal header file includes
 #include "main_utils.h"
@@ -87,6 +87,10 @@ int main() {
 
     enum SCREEN_RESOLUTION resolutionWidth = STANDARD_W;
     enum SCREEN_RESOLUTION resolutionHeight = STANDARD_H;
+
+    int frame = 0;
+
+    double THETA = 0;
 
     StrOut("Local Variables Initialized.", msgType[2]);
 
@@ -186,10 +190,16 @@ int main() {
     std::cout << objectList.data() << std::endl;
     std::cout << lightList.data() << std::endl;
 
-
+    auto lastTime = std::chrono::high_resolution_clock::now(); // initialize timestamp tracker for fps calculations
     // window loop
     StrOut("Starting Program Loop...", msgType[0]);
     while (running) {
+        auto currentTime = std::chrono::high_resolution_clock::now(); // get first timestamp at start of loop
+        std::chrono::duration<float> elapsed = currentTime - lastTime;
+        float deltaTime = elapsed.count();
+        lastTime = currentTime;
+
+        std::cout << "frame rate: " << (1 / deltaTime) << std::endl;
 
         // poll all events
         GetKeyPress(event, running, cam);
@@ -211,6 +221,17 @@ int main() {
             xFactor, yFactor, objectList, lightList);
 
 
+        // spin the light in a circle
+        qbVector<double> oldLightPosition = lightList.at(0) -> m_location;
+        double radius = lightList.at(0) -> m_location.GetElement(2);
+
+        double lightX = radius * std::cos(THETA);
+        double lightY = radius * std::sin(THETA);
+
+        lightList.at(0) -> m_location = oldLightPosition + qbVector<double>{std::vector<double>{lightX, lightY, 0.0}}; // add
+        THETA += 0.5;
+
+
         // update render texture (pixel buffer)
         SDL_UpdateTexture(
             pixelBufferTexture,
@@ -225,6 +246,7 @@ int main() {
         SDL_RenderPresent(renderer);
         //SDL_Delay(25);
 
+        frame += 1;
     }
     StrOut("Closing Program Loop...", msgType[0]);
 
