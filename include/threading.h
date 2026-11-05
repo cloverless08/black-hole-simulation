@@ -9,7 +9,6 @@
 
 #include "loop.h"
 
-std::array<int, 2> SubdivideScreen(int bufferLength, int coreCount);
 
 void RenderFromThread(std::vector<uint32_t>& buffer,
     BlackHole& hole, raytrace::Camera& Cam,

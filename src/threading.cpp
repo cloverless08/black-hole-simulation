@@ -9,12 +9,6 @@
 
 #include <functional>
 
-std::array<int, 2> SubdivideScreen(int bufferLength, int coreCount) {
-    int base = bufferLength / coreCount; // [CHANGED] Removed unnecessary floor()
-    int remainder = bufferLength % coreCount;
-
-    return {base, remainder};
-};
 
 void RenderFromThread(std::vector<uint32_t>& buffer,
     BlackHole& hole, raytrace::Camera& Cam,
@@ -107,8 +101,8 @@ void CreateThreads(std::vector<uint32_t>& buffer, int numThreads,
     //std::cout << "Initializing MultiThreading..." << std::endl;
     std::vector<std::thread> threads;
 
-    // [CHANGED] Divide the image height into approximately equal row ranges.
-    // Integer division distributes any remainder across the ranges.
+
+    // integer division distributes any remainder across the ranges.
     for (int i = 0; i < numThreads; ++i) {
         int startY = i * height / numThreads;
         int endY = (i + 1) * height / numThreads;
