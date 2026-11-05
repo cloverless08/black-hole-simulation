@@ -21,7 +21,6 @@ void RenderFromThread(std::vector<uint32_t>& buffer,
     int startY, int endY,
     int height, int width,
     math::Vec3 backgroundColor,
-    bool& setupMessageSent,
     double factorX, double factorY,
     std::vector<std::shared_ptr<raytrace::ObjectBase>> objectList, std::vector<std::shared_ptr<raytrace::LightBase>> lightList) {
     /*
@@ -96,12 +95,11 @@ void RenderFromThread(std::vector<uint32_t>& buffer,
     }
 }
 
-void CreateThreads(std::vector<uint32_t>& buffer, int numThreads, std::array<int, 2> subdivideScreen,
+void CreateThreads(std::vector<uint32_t>& buffer, int numThreads,
     // arguments for the loop3D that has to get passed, fix this bc its sloppy
     BlackHole& hole, raytrace::Camera& Cam,
     int height, int width,
     math::Vec3 backgroundColor,
-    bool& setupMessageSent,
     double factorX, double factorY,
     std::vector<std::shared_ptr<raytrace::ObjectBase>> objectList, std::vector<std::shared_ptr<raytrace::LightBase>> lightList) {
     // -------------------------------------------------
@@ -116,7 +114,7 @@ void CreateThreads(std::vector<uint32_t>& buffer, int numThreads, std::array<int
         int endY = (i + 1) * height / numThreads;
 
         threads.emplace_back(RenderFromThread, std::ref(buffer), std::ref(hole), std::ref(Cam),
-            startY, endY, height, width, backgroundColor, std::ref(setupMessageSent),
+            startY, endY, height, width, backgroundColor,
             factorX, factorY, objectList, lightList);
     }
 

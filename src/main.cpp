@@ -24,6 +24,7 @@
 #include "loop.h"
 #include "keybinds.h"
 #include "../raytrace/camera.h"
+#include "../include/threading.h"
 
 #include "../raytrace/objects/objsphere.h"
 #include "../raytrace/objects/pointlight.h"
@@ -193,16 +194,21 @@ int main() {
         // poll all events
         GetKeyPress(event, running, cam);
 
-        // update pixel buffer
-         for (int pixelY = 0; pixelY < resolutionHeight; pixelY++) {
-             for (int pixelX = 0; pixelX< resolutionWidth; pixelX++) {
-                loop3D(pixelBuffer, hole, cam, pixelX, pixelY,
-                    resolutionHeight, resolutionWidth, BACKGROUND_COLOR,
-                    setupMessageSent, xFactor, yFactor,
-                    objectList, lightList);
-                 //test_loop(pixelBuffer, pixelX, pixelY, resolutionHeight, resolutionWidth);
-             }
-         }
+        // // update pixel buffer
+        //  for (int pixelY = 0; pixelY < resolutionHeight; pixelY++) {
+        //      for (int pixelX = 0; pixelX< resolutionWidth; pixelX++) {
+        //         loop3D(pixelBuffer, hole, cam, pixelX, pixelY,
+        //             resolutionHeight, resolutionWidth, BACKGROUND_COLOR,
+        //             setupMessageSent, xFactor, yFactor,
+        //             objectList, lightList);
+        //          //test_loop(pixelBuffer, pixelX, pixelY, resolutionHeight, resolutionWidth);
+        //      }
+        //  }
+
+        // start multithreaded rendering
+        CreateThreads(pixelBuffer, NUMBER_CORES, hole, cam,
+            STANDARD_H, STANDARD_W, BACKGROUND_COLOR,
+            xFactor, yFactor, objectList, lightList);
 
 
         // update render texture (pixel buffer)
