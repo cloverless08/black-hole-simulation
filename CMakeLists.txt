@@ -8,8 +8,6 @@ add_executable(CSC1060_CAPSTONE_PROJECT
         raytrace/camera.h
         include/cdVector.h
         raytrace/ray.h
-        raytrace/image.h
-        raytrace/scene.h
         raytrace/camera.cpp
         raytrace/camera.cpp
         raytrace/ray.cpp

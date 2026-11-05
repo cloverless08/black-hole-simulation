@@ -19,6 +19,5 @@ namespace raytrace {
         math::cdVector<double> m_point2 = math::cdVector<double>(3);
         math::cdVector<double> m_lab = math::cdVector<double>(3); // the vector *between* point 1 and 2
 
-
     };
 }
