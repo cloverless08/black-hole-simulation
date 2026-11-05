@@ -48,8 +48,10 @@ void loop3D(std::vector<uint32_t>& buffer,
     double minDistance = 1e6;
     double maxDistance = 0.0;
 
+    /*
     std::cout << "x = " << x << " y = " << y << std::endl;
     std::cout << "Starting calculation..." << std::endl;
+    */
 
     double U = (static_cast<double>(x) * factorX) - 1.0;
     double V = (static_cast<double>(y) * factorY) - 1.0;
@@ -92,13 +94,13 @@ void loop3D(std::vector<uint32_t>& buffer,
                     }
 
 
-                    std::cout << "true" << std::endl;
+                    //std::cout << "true" << std::endl;
                 } else {
                     SetPixel(buffer.data(), width, height, x, y, 0.0, 0.0, 0.0);
-                    std::cout << "false" << std::endl;
+                    //std::cout << "false" << std::endl;
                 }
 
-                std::cout << "done" << std::endl;
+                //std::cout << "done" << std::endl;
             }
 }
 

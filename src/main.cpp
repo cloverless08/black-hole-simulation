@@ -13,6 +13,7 @@
 #include <cstdint>
 #include <iomanip>
 #include <memory>
+#include <thread>
 
 // gnereal header file includes
 #include "main_utils.h"
@@ -45,6 +46,8 @@ enum SCREEN_RESOLUTION {
     MOVING_H = 240,
 };
 
+unsigned int NUMBER_CORES = std::thread::hardware_concurrency();
+
 constexpr int BLACK_HOLE_MASS = 100;
 constexpr double BLACK_HOLE_RADIUS = 0.25;
 const math::Vec3 BLACK_HOLE_INITIAL_POSITION = {0.0, 0.0, 0.0}; // centers black hole in the middle of the world coordinates
@@ -57,6 +60,13 @@ int main() {
     // put information and header into console
     TerminalInfoHeader();
     SDL_Delay(500);
+
+    if (NUMBER_CORES == 0) {
+        std::cout << "Could not detect core count. Falling back to 1.\n";
+        NUMBER_CORES = 1;
+    } else {
+        std::cout << "Number of logical CPU cores: " << NUMBER_CORES << "\n";
+    }
 
     // local variables
     bool running = true;

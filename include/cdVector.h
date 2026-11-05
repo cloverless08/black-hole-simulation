@@ -156,7 +156,6 @@ math::cdVector<T> math::cdVector<T>::cross(const math::cdVector<T> &a, const mat
     if (a.m_nDims != 3) { // vector dimensions must equal 3
         throw std::invalid_argument("Cross product can only be computed for 3d vectors");
     }
-
     // actually compute the cross product
     std::vector<T> resultData;
     resultData.push_back((a.m_vectorData.at(1) * b.m_vectorData.at(2)) - (a.m_vectorData.at(2) * b.m_vectorData.at(1)));
