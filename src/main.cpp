@@ -60,7 +60,6 @@ const std::array<std::string, 4> msgType = {"SYSTEM", "ERROR", "SETUP", "WARN"};
 const math::Vec3 BACKGROUND_COLOR = {0, 0, 0}; // sets background to black, bc, yknow... space
 
 int main() {
-
     // put information and header into console
     TerminalInfoHeader();
     SDL_Delay(500);
