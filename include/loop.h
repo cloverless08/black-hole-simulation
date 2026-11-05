@@ -13,7 +13,8 @@ void loop3D(std::vector<uint32_t>& buffer,
     int x, int y,
     const int height, const int width,
     math::Vec3 backgroundColor,
-    bool& setupMessageSent);
+    bool& setupMessageSent,
+    double factorX, double factorY);
 
 void loop2D(std::vector<uint32_t>& buffer,
     const BlackHole& hole,

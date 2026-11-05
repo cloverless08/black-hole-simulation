@@ -26,7 +26,8 @@ void loop3D(std::vector<uint32_t>& buffer,
     int x, int y,
     const int height, const int width,
     math::Vec3 backgroundColor,
-    bool& setupMessageSent) {
+    bool& setupMessageSent,
+    double factorX, double factorY) {
 
     /*
      * This is repeated one time for every x and y pixel, each frame, as denoted in main.cpp
@@ -45,6 +46,9 @@ void loop3D(std::vector<uint32_t>& buffer,
 
     std::cout << "x = " << x << " y = " << y << std::endl;
     std::cout << "Starting calculation..." << std::endl;
+
+    double U = (static_cast<double>(x) * factorX) - 1.0;
+    double V = (static_cast<double>(y) * factorY) - 1.0;
 
     SetPixel(buffer.data(), width, height,
     x, y, pixelR, pixelG, pixelB,

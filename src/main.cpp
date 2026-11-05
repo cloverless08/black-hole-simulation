@@ -55,6 +55,9 @@ int main() {
     bool running = true;
     bool setupMessageSent = false;
 
+    double xFactor = 1.0 / (static_cast<double>(STANDARD_W) / 2.0);
+    double yFactor = 1.0 / (static_cast<double>(STANDARD_H) / 2.0);
+
     enum SCREEN_RESOLUTION resolutionWidth = STANDARD_W;
     enum SCREEN_RESOLUTION resolutionHeight = STANDARD_H;
 
@@ -135,7 +138,7 @@ int main() {
         // update pixel buffer
          for (int pixelY = 0; pixelY < resolutionHeight; pixelY++) {
              for (int pixelX = 0; pixelX< resolutionWidth; pixelX++) {
-                loop3D(pixelBuffer, hole, cam, pixelX, pixelY, resolutionHeight, resolutionWidth, BACKGROUND_COLOR, setupMessageSent);
+                loop3D(pixelBuffer, hole, cam, pixelX, pixelY, resolutionHeight, resolutionWidth, BACKGROUND_COLOR, setupMessageSent, xFactor, yFactor);
                  //test_loop(pixelBuffer, pixelX, pixelY, resolutionHeight, resolutionWidth);
              }
          }
