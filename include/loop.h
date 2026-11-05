@@ -9,12 +9,13 @@
 #include "../raytrace/camera.h"
 
 void loop3D(std::vector<uint32_t>& buffer,
-    BlackHole& hole, raytrace::Camera& cam,
+    BlackHole& hole, raytrace::Camera& Cam,
     int x, int y,
     const int height, const int width,
     math::Vec3 backgroundColor,
     bool& setupMessageSent,
-    double factorX, double factorY);
+    double factorX, double factorY,
+    raytrace::Ray &camRay);
 
 void loop2D(std::vector<uint32_t>& buffer,
     const BlackHole& hole,

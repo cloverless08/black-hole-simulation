@@ -7,7 +7,11 @@
 
 #include<math.h>
 
+#include "main_utils.h"
+
 raytrace::Camera::Camera() {
+    StrOut("Camera: Constructing Camera");
+
     m_cameraPosition = qbVector<double> {std::vector<double> {0.0, -10.0, 0.0}}; // 10 units away form origin
     m_cameraLookAt = qbVector<double> {std::vector<double> {0.0, 0.0, 0.0}}; // looking at origin
     m_cameraUp = qbVector<double> {std::vector<double> {0.0, 0.0, 1.0}};

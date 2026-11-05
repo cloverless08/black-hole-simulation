@@ -58,6 +58,9 @@ int main() {
     double xFactor = 1.0 / (static_cast<double>(STANDARD_W) / 2.0);
     double yFactor = 1.0 / (static_cast<double>(STANDARD_H) / 2.0);
 
+    double minDistance = 1e6;
+    double maxDistance = 0.0;
+
     enum SCREEN_RESOLUTION resolutionWidth = STANDARD_W;
     enum SCREEN_RESOLUTION resolutionHeight = STANDARD_H;
 
@@ -125,8 +128,20 @@ int main() {
     hole.mass = BLACK_HOLE_MASS;
     hole.position = BLACK_HOLE_INITIAL_POSITION;
     hole.radius = BLACK_HOLE_RADIUS;
-    raytrace::Camera cam{};
     StrOut("Custom Structs Initialized.", msgType[2]);
+
+    // initialize raytracing
+    StrOut("Initializing ray tracing structure.", msgType[2]);
+    raytrace::Camera cam;
+    cam.SetPosition(qbVector<double>{std::vector<double>{0.0, -10.0, 0.0}} );
+    cam.SetLookAt(qbVector<double>{std::vector<double>{0.0, 0.0, 0.0}}); // look at origin
+    cam.SetUp(qbVector<double>{std::vector<double>{0.0, 0.0, 1.0}});
+
+    cam.SetHorizontalSize(0.25);
+    cam.SetAspectRatio(4.0 / 3.0);
+
+    cam.UpdateCamera();
+
 
     // window loop
     StrOut("Starting Program Loop...", msgType[0]);
@@ -134,11 +149,19 @@ int main() {
 
         // poll all events
         GetKeyPress(event, running, cam);
-       
+
+        raytrace::Ray camRay;
+        qbVector<double> intersectionPoint(3);
+        qbVector<double> localNorm(3);
+        qbVector<double> localColor(3);
+
         // update pixel buffer
          for (int pixelY = 0; pixelY < resolutionHeight; pixelY++) {
              for (int pixelX = 0; pixelX< resolutionWidth; pixelX++) {
-                loop3D(pixelBuffer, hole, cam, pixelX, pixelY, resolutionHeight, resolutionWidth, BACKGROUND_COLOR, setupMessageSent, xFactor, yFactor);
+                loop3D(pixelBuffer, hole, cam, pixelX, pixelY,
+                    resolutionHeight, resolutionWidth, BACKGROUND_COLOR,
+                    setupMessageSent, xFactor, yFactor,
+                    camRay);
                  //test_loop(pixelBuffer, pixelX, pixelY, resolutionHeight, resolutionWidth);
              }
          }

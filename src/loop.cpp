@@ -22,12 +22,13 @@
 #define newline "\n"
 
 void loop3D(std::vector<uint32_t>& buffer,
-    BlackHole& hole, raytrace::Camera& cam,
+    BlackHole& hole, raytrace::Camera& Cam,
     int x, int y,
     const int height, const int width,
     math::Vec3 backgroundColor,
     bool& setupMessageSent,
-    double factorX, double factorY) {
+    double factorX, double factorY,
+    raytrace::Ray &camRay) {
 
     /*
      * This is repeated one time for every x and y pixel, each frame, as denoted in main.cpp
@@ -49,6 +50,8 @@ void loop3D(std::vector<uint32_t>& buffer,
 
     double U = (static_cast<double>(x) * factorX) - 1.0;
     double V = (static_cast<double>(y) * factorY) - 1.0;
+
+    Cam.GenerateRay(U, V, camRay);
 
     SetPixel(buffer.data(), width, height,
     x, y, pixelR, pixelG, pixelB,
