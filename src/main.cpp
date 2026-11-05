@@ -7,7 +7,6 @@
 
 // library includes
 #include <SDL2/SDL.h>
-//#include <SDL2/SDL_cpuinfo.h>
 
 #include <vector>
 #include <array>
@@ -91,6 +90,8 @@ int main() {
     int frame = 0;
 
     double THETA = 0;
+
+    unsigned long long time = 0;
 
     StrOut("Local Variables Initialized.", msgType[2]);
 
