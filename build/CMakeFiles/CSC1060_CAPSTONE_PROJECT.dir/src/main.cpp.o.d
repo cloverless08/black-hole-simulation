@@ -349,7 +349,6 @@ CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/main.cpp.o: \
  /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/include/../raytrace/objects/lightbase.h \
  /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/include/../qbLinearAlgebra/qbVector.h \
  /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/include/../raytrace/objects/../ray.h \
- /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/include/../raytrace/objects/../../include/cdVector.h \
  /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/include/../raytrace/objects/../../qbLinearAlgebra/qbVector.h \
  /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/include/../raytrace/objects/object_base.h \
  /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/include/../raytrace/objects/objsphere.h \

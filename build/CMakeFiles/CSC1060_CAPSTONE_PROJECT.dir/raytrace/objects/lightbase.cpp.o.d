@@ -189,6 +189,5 @@ CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/lightbase.cpp.o: \
  /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/raytrace/objects/../ray.h \
  /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/include/structs.h \
  /usr/include/c++/16/array /usr/include/c++/16/compare \
- /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/raytrace/objects/../../include/cdVector.h \
  /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/raytrace/objects/../../qbLinearAlgebra/qbVector.h \
  /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/raytrace/objects/object_base.h

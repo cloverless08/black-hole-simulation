@@ -198,10 +198,24 @@ CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/main.cpp.s"
 	/usr/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cdemin/Code/Active/CSC1060 Capstone Project/src/main.cpp" -o CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/main.cpp.s
 
+CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/postprocessing.cpp.o: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/flags.make
+CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/postprocessing.cpp.o: /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/src/postprocessing.cpp
+CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/postprocessing.cpp.o: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cdemin/Code/Active/CSC1060 Capstone Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/postprocessing.cpp.o"
+	/usr/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/postprocessing.cpp.o -MF CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/postprocessing.cpp.o.d -o CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/postprocessing.cpp.o -c "/home/cdemin/Code/Active/CSC1060 Capstone Project/src/postprocessing.cpp"
+
+CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/postprocessing.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/postprocessing.cpp.i"
+	/usr/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cdemin/Code/Active/CSC1060 Capstone Project/src/postprocessing.cpp" > CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/postprocessing.cpp.i
+
+CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/postprocessing.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/postprocessing.cpp.s"
+	/usr/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cdemin/Code/Active/CSC1060 Capstone Project/src/postprocessing.cpp" -o CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/postprocessing.cpp.s
+
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/threading.cpp.o: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/flags.make
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/threading.cpp.o: /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/src/threading.cpp
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/threading.cpp.o: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cdemin/Code/Active/CSC1060 Capstone Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/threading.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cdemin/Code/Active/CSC1060 Capstone Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/threading.cpp.o"
 	/usr/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/threading.cpp.o -MF CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/threading.cpp.o.d -o CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/threading.cpp.o -c "/home/cdemin/Code/Active/CSC1060 Capstone Project/src/threading.cpp"
 
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/threading.cpp.i: cmake_force
@@ -223,6 +237,7 @@ CSC1060_CAPSTONE_PROJECT_OBJECTS = \
 "CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/keybinds.cpp.o" \
 "CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/loop.cpp.o" \
 "CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/main.cpp.o" \
+"CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/postprocessing.cpp.o" \
 "CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/threading.cpp.o"
 
 # External object files for target CSC1060_CAPSTONE_PROJECT
@@ -237,13 +252,14 @@ CSC1060_CAPSTONE_PROJECT: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/ray.c
 CSC1060_CAPSTONE_PROJECT: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/keybinds.cpp.o
 CSC1060_CAPSTONE_PROJECT: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/loop.cpp.o
 CSC1060_CAPSTONE_PROJECT: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/main.cpp.o
+CSC1060_CAPSTONE_PROJECT: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/postprocessing.cpp.o
 CSC1060_CAPSTONE_PROJECT: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/threading.cpp.o
 CSC1060_CAPSTONE_PROJECT: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/build.make
 CSC1060_CAPSTONE_PROJECT: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/compiler_depend.ts
 CSC1060_CAPSTONE_PROJECT: /usr/lib/libSDL2-2.0.so.0.3200.74
 CSC1060_CAPSTONE_PROJECT: /usr/lib/libSDL2main.a
 CSC1060_CAPSTONE_PROJECT: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/home/cdemin/Code/Active/CSC1060 Capstone Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable CSC1060_CAPSTONE_PROJECT"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/home/cdemin/Code/Active/CSC1060 Capstone Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable CSC1060_CAPSTONE_PROJECT"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

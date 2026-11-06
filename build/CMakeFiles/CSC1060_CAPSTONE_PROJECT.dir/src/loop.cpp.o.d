@@ -203,7 +203,6 @@ CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/loop.cpp.o: \
  /usr/include/c++/16/bits/quoted_string.h /usr/include/c++/16/sstream \
  /usr/include/c++/16/bits/sstream.tcc /usr/include/c++/16/math.h \
  /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/include/../raytrace/objects/../ray.h \
- /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/include/../raytrace/objects/../../include/cdVector.h \
  /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/include/../raytrace/objects/../../qbLinearAlgebra/qbVector.h \
  /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/include/../raytrace/objects/object_base.h \
  /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/include/../raytrace/objects/objsphere.h \

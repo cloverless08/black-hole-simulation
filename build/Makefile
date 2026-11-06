@@ -346,6 +346,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/build.make CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/postprocessing.o: src/postprocessing.cpp.o
+.PHONY : src/postprocessing.o
+
+# target to build an object file
+src/postprocessing.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/build.make CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/postprocessing.cpp.o
+.PHONY : src/postprocessing.cpp.o
+
+src/postprocessing.i: src/postprocessing.cpp.i
+.PHONY : src/postprocessing.i
+
+# target to preprocess a source file
+src/postprocessing.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/build.make CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/postprocessing.cpp.i
+.PHONY : src/postprocessing.cpp.i
+
+src/postprocessing.s: src/postprocessing.cpp.s
+.PHONY : src/postprocessing.s
+
+# target to generate assembly for a file
+src/postprocessing.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/build.make CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/postprocessing.cpp.s
+.PHONY : src/postprocessing.cpp.s
+
 src/threading.o: src/threading.cpp.o
 .PHONY : src/threading.o
 
@@ -406,6 +430,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/postprocessing.o"
+	@echo "... src/postprocessing.i"
+	@echo "... src/postprocessing.s"
 	@echo "... src/threading.o"
 	@echo "... src/threading.i"
 	@echo "... src/threading.s"

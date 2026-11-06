@@ -11,6 +11,7 @@ CSC1060_CAPSTONE_PROJECT: \
   CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/keybinds.cpp.o \
   CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/loop.cpp.o \
   CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/main.cpp.o \
+  CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/postprocessing.cpp.o \
   CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/threading.cpp.o \
   /usr/lib/libSDL2-2.0.so.0.3200.74 \
   /usr/lib/libSDL2main.a \
@@ -69,6 +70,8 @@ CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/keybinds.cpp.o:
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/loop.cpp.o:
 
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/main.cpp.o:
+
+CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/postprocessing.cpp.o:
 
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/threading.cpp.o:
 

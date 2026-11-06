@@ -18,6 +18,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/loop.cpp.o.d"
   "CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/main.cpp.o"
   "CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/main.cpp.o.d"
+  "CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/postprocessing.cpp.o"
+  "CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/postprocessing.cpp.o.d"
   "CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/threading.cpp.o"
   "CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/threading.cpp.o.d"
   "CSC1060_CAPSTONE_PROJECT"

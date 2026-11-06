@@ -4,10 +4,10 @@
 # ALL_SOURCES at CMakeLists.txt:9 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/cdemin/Code/Active/CSC1060 Capstone Project/include/*.h")
 set(OLD_GLOB
-  "/home/cdemin/Code/Active/CSC1060 Capstone Project/include/cdVector.h"
   "/home/cdemin/Code/Active/CSC1060 Capstone Project/include/keybinds.h"
   "/home/cdemin/Code/Active/CSC1060 Capstone Project/include/loop.h"
   "/home/cdemin/Code/Active/CSC1060 Capstone Project/include/main_utils.h"
+  "/home/cdemin/Code/Active/CSC1060 Capstone Project/include/postprocessing.h"
   "/home/cdemin/Code/Active/CSC1060 Capstone Project/include/structs.h"
   "/home/cdemin/Code/Active/CSC1060 Capstone Project/include/threading.h"
   )
@@ -126,6 +126,7 @@ set(OLD_GLOB
   "/home/cdemin/Code/Active/CSC1060 Capstone Project/src/keybinds.cpp"
   "/home/cdemin/Code/Active/CSC1060 Capstone Project/src/loop.cpp"
   "/home/cdemin/Code/Active/CSC1060 Capstone Project/src/main.cpp"
+  "/home/cdemin/Code/Active/CSC1060 Capstone Project/src/postprocessing.cpp"
   "/home/cdemin/Code/Active/CSC1060 Capstone Project/src/threading.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")

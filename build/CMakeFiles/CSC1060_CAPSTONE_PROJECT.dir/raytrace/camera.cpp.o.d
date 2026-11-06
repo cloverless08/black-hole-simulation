@@ -34,7 +34,7 @@ CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/camera.cpp.o: \
  /usr/include/c++/16/backward/binders.h /usr/include/c++/16/bit \
  /usr/include/c++/16/concepts /usr/include/c++/16/bits/range_access.h \
  /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/raytrace/ray.h \
- /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/raytrace/../include/cdVector.h \
+ /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/raytrace/../qbLinearAlgebra/qbVector.h \
  /usr/include/c++/16/stdexcept /usr/include/c++/16/exception \
  /usr/include/c++/16/bits/exception.h \
  /usr/include/c++/16/bits/exception_ptr.h \
@@ -152,9 +152,9 @@ CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/camera.cpp.o: \
  /usr/include/c++/16/bits/locale_facets_nonio.tcc \
  /usr/include/c++/16/bits/locale_conv.h \
  /usr/include/c++/16/bits/quoted_string.h /usr/include/c++/16/sstream \
- /usr/include/c++/16/bits/sstream.tcc /usr/include/c++/16/cmath \
- /usr/include/math.h /usr/include/bits/math-vector.h \
- /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/c++/16/bits/sstream.tcc /usr/include/c++/16/math.h \
+ /usr/include/c++/16/cmath /usr/include/math.h \
+ /usr/include/bits/math-vector.h /usr/include/bits/libm-simd-decl-stubs.h \
  /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
  /usr/include/bits/fp-fast.h /usr/include/bits/mathcalls-macros.h \
  /usr/include/bits/mathcalls-helper-functions.h \
@@ -176,8 +176,6 @@ CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/camera.cpp.o: \
  /usr/include/c++/16/bits/stl_vector.h \
  /usr/include/c++/16/bits/stl_bvector.h \
  /usr/include/c++/16/bits/vector.tcc \
- /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/raytrace/../qbLinearAlgebra/qbVector.h \
- /usr/include/c++/16/math.h \
  /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/include/main_utils.h \
  /usr/include/c++/16/random /usr/include/c++/16/cstdint \
  /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdint.h \

@@ -4,11 +4,9 @@
 
 #pragma once
 
-namespace raytrace {
-    class PostProcess {
-    public:
-        // constructor and destructor
-        PostProcess();
-        ~PostProcess();
-    };
-}
+class PostProcess {
+public:
+    // constructor and destructor
+    PostProcess();
+    ~PostProcess();
+};

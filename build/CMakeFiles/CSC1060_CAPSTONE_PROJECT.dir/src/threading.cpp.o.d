@@ -199,7 +199,6 @@ CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/threading.cpp.o: \
  /usr/include/c++/16/tr1/riemann_zeta.tcc \
  /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/src/../include/../raytrace/objects/../ray.h \
  /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/include/structs.h \
- /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/src/../include/../raytrace/objects/../../include/cdVector.h \
  /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/src/../include/../raytrace/objects/../../qbLinearAlgebra/qbVector.h \
  /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/src/../include/../raytrace/objects/object_base.h \
  /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/src/../include/../raytrace/objects/objsphere.h \
