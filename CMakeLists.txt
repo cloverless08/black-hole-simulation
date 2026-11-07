@@ -9,8 +9,8 @@ find_package(SDL2 REQUIRED CONFIG)
 file(GLOB_RECURSE ALL_SOURCES CONFIGURE_DEPENDS
         "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp"
         "${CMAKE_CURRENT_SOURCE_DIR}/include/*.h"
-        "${CMAKE_CURRENT_SOURCE_DIR}/raytrace/*.cpp"  # Added to catch raytrace code
-        "${CMAKE_CURRENT_SOURCE_DIR}/raytrace/*.h"    # Added to catch raytrace headers
+        "${CMAKE_CURRENT_SOURCE_DIR}/raytrace/*.cpp"
+        "${CMAKE_CURRENT_SOURCE_DIR}/raytrace/*.h"
         "${CMAKE_CURRENT_SOURCE_DIR}/main.cpp"
 )
 
