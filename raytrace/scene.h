@@ -24,7 +24,7 @@ namespace raytrace {
 
     private:
         // create camear in scene
-        raytrace::Camera camera;
+        raytrace::Camera cam;
 
         // lists of all objects in scene
         std::vector<std::shared_ptr<raytrace::ObjectBase>> objectList;
