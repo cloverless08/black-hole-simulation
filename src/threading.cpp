@@ -11,7 +11,7 @@
 
 
 void RenderFromThread(std::vector<uint32_t>& buffer,
-    BlackHole& hole, raytrace::Camera& Cam,
+    raytrace::Camera& Cam,
     int startY, int endY,
     int height, int width,
     math::Vec3 backgroundColor,
@@ -91,7 +91,7 @@ void RenderFromThread(std::vector<uint32_t>& buffer,
 
 void CreateThreads(std::vector<uint32_t>& buffer, int numThreads,
     // arguments for the loop3D that has to get passed, fix this bc its sloppy
-    BlackHole& hole, raytrace::Camera& Cam,
+    raytrace::Camera& Cam,
     int height, int width,
     math::Vec3 backgroundColor,
     double factorX, double factorY,

@@ -152,12 +152,6 @@ int main() {
     std::vector<uint32_t> pixelBuffer(resolutionWidth * resolutionHeight, 0);
     StrOut("Pixel Buffer Initialized.", msgType[2]);
 
-    // initialize custom structs
-    BlackHole hole;
-    hole.mass = BLACK_HOLE_MASS;
-    hole.position = BLACK_HOLE_INITIAL_POSITION;
-    hole.radius = BLACK_HOLE_RADIUS;
-    StrOut("Custom Structs Initialized.", msgType[2]);
 
     // initialize raytracing
     StrOut("Initializing ray tracing structure.", msgType[2]);
@@ -206,19 +200,9 @@ int main() {
         // poll all events
         GetKeyPress(event, running, cam);
 
-        // // update pixel buffer
-        //  for (int pixelY = 0; pixelY < resolutionHeight; pixelY++) {
-        //      for (int pixelX = 0; pixelX< resolutionWidth; pixelX++) {
-        //         loop3D(pixelBuffer, hole, cam, pixelX, pixelY,
-        //             resolutionHeight, resolutionWidth, BACKGROUND_COLOR,
-        //             setupMessageSent, xFactor, yFactor,
-        //             objectList, lightList);
-        //          //test_loop(pixelBuffer, pixelX, pixelY, resolutionHeight, resolutionWidth);
-        //      }
-        //  }
 
         // start multithreaded rendering
-        CreateThreads(pixelBuffer, NUMBER_CORES, hole, cam,
+        CreateThreads(pixelBuffer, NUMBER_CORES, cam,
             STANDARD_H, STANDARD_W, BACKGROUND_COLOR,
             xFactor, yFactor, objectList, lightList);
 

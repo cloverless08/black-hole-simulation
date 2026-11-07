@@ -33,10 +33,6 @@ inline void SetPixel(uint32_t* buffer, int width, int height, int x, int y, uint
 
 inline void TerminalInfoHeader();
 
-inline void DiagnoseProgram();
-
-inline uint64_t randomUint64(int min, int max);
-
 // definitions
 // -----------------
 
@@ -86,13 +82,4 @@ inline void SetPixel(uint32_t* buffer, int width, int height, int x, int y, uint
         uint32_t color = (static_cast<uint32_t>(r) << 24) | (static_cast<uint32_t>(g) << 16) | (static_cast<uint32_t>(b) << 8) | a; // translates base-255 into proper color format
         buffer[(y * width) + x] = color;
     }
-}
-
-inline uint64_t randomUint64(int min, int max) {
-    static std::random_device rndm;
-    static std::mt19937 gen(rndm());
-
-    std::uniform_int_distribution<int> distrib(min, max);
-
-    return distrib(gen);
 }
