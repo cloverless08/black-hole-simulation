@@ -33,6 +33,10 @@ inline void SetPixel(uint32_t* buffer, int width, int height, int x, int y, uint
 
 inline void TerminalInfoHeader();
 
+inline int LengthInt(int p1, int p2);
+
+inline double LengthDouble(int p1, int p2);
+
 // definitions
 // -----------------
 
@@ -82,4 +86,12 @@ inline void SetPixel(uint32_t* buffer, int width, int height, int x, int y, uint
         uint32_t color = (static_cast<uint32_t>(r) << 24) | (static_cast<uint32_t>(g) << 16) | (static_cast<uint32_t>(b) << 8) | a; // translates base-255 into proper color format
         buffer[(y * width) + x] = color;
     }
+}
+
+inline int LengthInt(int p1, int p2) { // might change soon, dunno if this works in 3d
+    return (p1 * p1 + p2 * p2);
+}
+
+inline double LengthDouble(int p1, int p2) {
+    return (p1 * p1 + p2 * p2);
 }
