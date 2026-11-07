@@ -20,7 +20,8 @@ namespace raytrace {
     class RayIntegrator {
     };
 
-    class LinearRayIntegrator{ // port from threading
+    class LinearRayIntegrator {
+    // port from threading
     public:
         // default constructor and destructor
         LinearRayIntegrator();
@@ -34,13 +35,18 @@ namespace raytrace {
         math::Vec3 backgroundColor,
         double factorX, double factorY,
         std::vector<std::shared_ptr<raytrace::ObjectBase>> objectList, std::vector<std::shared_ptr<raytrace::LightBase>> lightList);
+    };
 
-        class MarchingRayIntegrator : public RayIntegrator {
+    class MarchingRayIntegrator {
+    public:
+        // default constructor and destructor
+        MarchingRayIntegrator();
+        ~MarchingRayIntegrator();
 
-        };
 
-        class GeodesicRayIntegrator : public RayIntegrator {
+    };
 
-        };
+    class GeodesicRayIntegrator : public RayIntegrator {
+
     };
 } // raytrace
