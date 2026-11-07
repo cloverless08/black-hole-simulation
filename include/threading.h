@@ -9,7 +9,6 @@
 
 #include "loop.h"
 
-
 void CreateThreads(std::vector<uint32_t>& buffer, int numThreads,
     // arguments for the loop3D that has to get passed, fix this bc its sloppy
     raytrace::Camera& Cam,
