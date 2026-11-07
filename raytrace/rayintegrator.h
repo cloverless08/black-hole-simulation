@@ -3,20 +3,21 @@
 //
 
 #pragma once
+#include "ray.h"
 
 namespace raytrace {
-    class rayintegrator {
+    class RayIntegrator {
     };
 
-    class LinearRayIntegrator : public rayintegrator {
-
-    };
-
-    class MarchingRayIntegrator : rayintegrator {
+    class LinearRayIntegrator : public RayIntegrator {
 
     };
 
-    class GeodesicRayIntegrator : rayintegrator {
+    class MarchingRayIntegrator : RayIntegrator {
+
+    };
+
+    class GeodesicRayIntegrator : RayIntegrator {
 
     };
 
