@@ -107,7 +107,7 @@ void CreateThreads(std::vector<uint32_t>& buffer, int numThreads,
         int startY = i * height / numThreads;
         int endY = (i + 1) * height / numThreads;
 
-        threads.emplace_back(RenderFromThread, std::ref(buffer), std::ref(hole), std::ref(Cam),
+        threads.emplace_back(RenderFromThread, std::ref(buffer), std::ref(Cam),
             startY, endY, height, width, backgroundColor,
             factorX, factorY, objectList, lightList);
     }
