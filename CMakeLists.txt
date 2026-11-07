@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.12) # Note: Upgraded from 3.10 for CONFIGURE_DEPENDS
+cmake_minimum_required(VERSION 3.12)
 project(CSC1060_Capstone_Project CXX)
 
 set(CMAKE_CXX_STANDARD 17)
