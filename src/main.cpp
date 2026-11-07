@@ -24,7 +24,6 @@
 #include "keybinds.h"
 #include "../raytrace/camera.h"
 #include "../include/threading.h"
-#include "../raytrace/scene.h"
 
 #include "../raytrace/objects/objsphere.h"
 #include "../raytrace/objects/pointlight.h"
@@ -154,11 +153,37 @@ int main() {
     StrOut("Pixel Buffer Initialized.", msgType[2]);
 
 
-    // initialize raytracing (more needs to be added here)
+    // initialize raytracing
     StrOut("Initializing ray tracing structure.", msgType[2]);
-    raytrace::Scene scene; // runs default constructor and called InitScene()
+    raytrace::Camera cam;
+    cam.SetPosition(qbVector<double>{std::vector<double>{0.0, -10.0, 0.0}} );
+    cam.SetLookAt(qbVector<double>{std::vector<double>{0.0, 0.0, 0.0}}); // look at origin
+    cam.SetUp(qbVector<double>{std::vector<double>{0.0, 0.0, 1.0}});
+
+    cam.SetHorizontalSize(0.25);
+    cam.SetAspectRatio(4.0 / 3.0);
+
+    cam.UpdateCamera();
     StrOut("Ray Tracing Initialized.", msgType[2]);
 
+
+    // create scene objects (test)
+    // list of objects in scene
+    std::vector<std::shared_ptr<raytrace::ObjectBase>> objectList;
+
+    // list of lights in scene
+    std::vector<std::shared_ptr<raytrace::LightBase>> lightList;
+
+    // unit sphere on origin for testing
+    raytrace::ObjSphere m_testSphere;
+    objectList.push_back(std::make_shared<raytrace::ObjSphere>(raytrace::ObjSphere()));
+
+    // construct a test light source
+    lightList.push_back(std::make_shared<raytrace::PointLight>(raytrace::PointLight())); // calls default constructor
+    lightList.at(0) -> m_location = qbVector<double> {std::vector<double>{5.0, -10.0, -5.0}};
+    lightList.at(0) -> m_color = qbVector<double> {std::vector<double>{255.0, 255.0, 255.0}};
+    std::cout << objectList.data() << std::endl;
+    std::cout << lightList.data() << std::endl;
 
     auto lastTime = std::chrono::high_resolution_clock::now(); // initialize timestamp tracker for fps calculations
     // window loop
@@ -171,7 +196,6 @@ int main() {
         lastTime = currentTime;
 
         //std::cout << "frame rate: " << (1 / deltaTime) << std::endl;
-
 
         // poll all events
         GetKeyPress(event, running, cam);
