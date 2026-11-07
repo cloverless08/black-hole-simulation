@@ -35,6 +35,7 @@ void CreateThreads(std::vector<uint32_t>& buffer, int numThreads,
         threads.emplace_back(linearRayIntegrator.LinearRayTrace, std::ref(buffer), std::ref(Cam),
             startY, endY, height, width, backgroundColor,
             factorX, factorY, objectList, lightList);
+    }
 
     // wait for all threads to finish rendering
     for (auto& t : threads) {

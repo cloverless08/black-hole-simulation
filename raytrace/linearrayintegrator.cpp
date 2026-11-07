@@ -21,7 +21,7 @@ namespace raytrace {
     double factorX, double factorY,
     std::vector<std::shared_ptr<raytrace::ObjectBase>> objectList, std::vector<std::shared_ptr<raytrace::LightBase>> lightList) {
     /*
-     * This is repeated one time for every x and y pixel, each frame, as denoted in main.cpp
+     * This should be repeated one time for every x and y pixel, each frame
      */
 
     for (int pixelY = startY; pixelY < endY; ++pixelY) {
