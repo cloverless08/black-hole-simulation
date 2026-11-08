@@ -212,14 +212,14 @@ int main() {
 
 
         // spin the light in a circle
-        // qbVector<double> oldLightPosition = lightList.at(0) -> m_location;
-        // double radius = lightList.at(0) -> m_location.GetElement(2);
-        //
-        // double lightX = radius * std::cos(THETA);
-        // double lightY = radius * std::sin(THETA);
-        //
-        // lightList.at(0) -> m_location = oldLightPosition + qbVector<double>{std::vector<double>{lightX, lightY, 0.0}}; // add
-        // THETA += 0.5;
+        qbVector<double> oldLightPosition = lightList.at(0) -> m_location;
+        double radius = lightList.at(0) -> m_location.GetElement(2);
+
+        double lightX = radius * std::cos(THETA);
+        double lightY = radius * std::sin(THETA);
+
+        lightList.at(0) -> m_location = oldLightPosition + qbVector<double>{std::vector<double>{lightX, lightY, 0.0}}; // add
+        THETA += 0.5;
 
 
         // update render texture (pixel buffer)
