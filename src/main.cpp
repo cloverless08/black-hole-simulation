@@ -7,7 +7,6 @@
 
 // library includes
 #include <SDL2/SDL.h>
-//#include <SDL2/SDL_cpuinfo.h>
 
 #include <vector>
 #include <array>
@@ -25,6 +24,7 @@
 #include "keybinds.h"
 #include "../raytrace/camera.h"
 #include "../include/threading.h"
+#include "../raytrace/rayintegrator.h"
 
 #include "../raytrace/objects/objsphere.h"
 #include "../raytrace/objects/pointlight.h"
@@ -92,6 +92,8 @@ int main() {
 
     double THETA = 0;
 
+    unsigned long long time = 0;
+
     StrOut("Local Variables Initialized.", msgType[2]);
 
 
@@ -151,12 +153,6 @@ int main() {
     std::vector<uint32_t> pixelBuffer(resolutionWidth * resolutionHeight, 0);
     StrOut("Pixel Buffer Initialized.", msgType[2]);
 
-    // initialize custom structs
-    BlackHole hole;
-    hole.mass = BLACK_HOLE_MASS;
-    hole.position = BLACK_HOLE_INITIAL_POSITION;
-    hole.radius = BLACK_HOLE_RADIUS;
-    StrOut("Custom Structs Initialized.", msgType[2]);
 
     // initialize raytracing
     StrOut("Initializing ray tracing structure.", msgType[2]);
@@ -180,7 +176,7 @@ int main() {
     std::vector<std::shared_ptr<raytrace::LightBase>> lightList;
 
     // unit sphere on origin for testing
-    raytrace::ObjSphere m_testSphere;
+    //raytrace::ObjSphere m_testSphere;
     objectList.push_back(std::make_shared<raytrace::ObjSphere>(raytrace::ObjSphere()));
 
     // construct a test light source
@@ -194,29 +190,23 @@ int main() {
     // window loop
     StrOut("Starting Program Loop...", msgType[0]);
     while (running) {
+
         auto currentTime = std::chrono::high_resolution_clock::now(); // get first timestamp at start of loop
         std::chrono::duration<float> elapsed = currentTime - lastTime;
         float deltaTime = elapsed.count();
         lastTime = currentTime;
 
-        std::cout << "frame rate: " << (1 / deltaTime) << std::endl;
+        //std::cout << "frame rate: " << (1 / deltaTime) << std::endl;
 
         // poll all events
         GetKeyPress(event, running, cam);
+        if (!running) {
+            break;
+        }
 
-        // // update pixel buffer
-        //  for (int pixelY = 0; pixelY < resolutionHeight; pixelY++) {
-        //      for (int pixelX = 0; pixelX< resolutionWidth; pixelX++) {
-        //         loop3D(pixelBuffer, hole, cam, pixelX, pixelY,
-        //             resolutionHeight, resolutionWidth, BACKGROUND_COLOR,
-        //             setupMessageSent, xFactor, yFactor,
-        //             objectList, lightList);
-        //          //test_loop(pixelBuffer, pixelX, pixelY, resolutionHeight, resolutionWidth);
-        //      }
-        //  }
 
         // start multithreaded rendering
-        CreateThreads(pixelBuffer, NUMBER_CORES, hole, cam,
+        CreateMarchedThreads(pixelBuffer, NUMBER_CORES, cam,
             STANDARD_H, STANDARD_W, BACKGROUND_COLOR,
             xFactor, yFactor, objectList, lightList);
 
@@ -248,6 +238,7 @@ int main() {
 
         frame += 1;
     }
+
     StrOut("Closing Program Loop...", msgType[0]);
 
     StrOut("Pixel Buffer Deleted", msgType[3]);

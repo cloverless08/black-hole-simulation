@@ -11,6 +11,8 @@
 // Added for std::toupper
 #include <cctype>
 
+#include "../qbLinearAlgebra/qbVector.h"
+
 #define RESET   "\033[0m"
 #define RED     "\033[31m"
 #define GREEN   "\033[32m"
@@ -33,9 +35,11 @@ inline void SetPixel(uint32_t* buffer, int width, int height, int x, int y, uint
 
 inline void TerminalInfoHeader();
 
-inline void DiagnoseProgram();
+inline int LengthInt(int p1, int p2);
 
-inline uint64_t randomUint64(int min, int max);
+inline double LengthDouble(int p1, int p2);
+
+inline double Length3D(qbVector<double> point1, qbVector<double> point2);
 
 // definitions
 // -----------------
@@ -88,11 +92,31 @@ inline void SetPixel(uint32_t* buffer, int width, int height, int x, int y, uint
     }
 }
 
-inline uint64_t randomUint64(int min, int max) {
-    static std::random_device rndm;
-    static std::mt19937 gen(rndm());
+inline int LengthInt(int p1, int p2) { // might change soon, dunno if this works in 3d
+    return (p1 * p1 + p2 * p2);
+}
 
-    std::uniform_int_distribution<int> distrib(min, max);
+inline double LengthDouble(int p1, int p2) {
+    return (p1 * p1 + p2 * p2);
+}
 
-    return distrib(gen);
+inline double Length3D(qbVector<double> point1, qbVector<double> point2) {
+    if (point1.GetNumDims() != 3 || point2.GetNumDims() != 3) {
+        std::cout << "ERROR: number of diensions must equal 3" << std::endl;
+        return 10000.0;
+    } else {
+        double result;
+
+        auto x1 = static_cast<double>(point1.GetElement(0));
+        auto x2 = static_cast<double>(point2.GetElement(0));
+
+        auto y1 = static_cast<double>(point1.GetElement(1));
+        auto y2 = static_cast<double>(point2.GetElement(1));
+
+        auto z1 = static_cast<double>(point1.GetElement(2));
+        auto z2 = static_cast<double>(point2.GetElement(2));
+
+        result = sqrt(pow((x2-x1), 2) + pow((y2-y1), 2) + pow((z2-z1), 2));
+        return result;
+    }
 }

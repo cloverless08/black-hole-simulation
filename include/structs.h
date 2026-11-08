@@ -69,11 +69,3 @@ public:
     double& operator[](int i) {return data[i];}
 };
 } // namespace math
-
-class BlackHole {
-public:
-    // defaults every value to 0 if not otherwise called
-    math::Vec3 position = {0.0,0.0,0.0};
-    double mass = 0;
-    double radius = 0;
-};

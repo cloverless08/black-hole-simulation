@@ -21,6 +21,7 @@ void GetKeyPress(SDL_Event &event, bool &running, raytrace::Camera &cam) {
                 switch (event.key.keysym.sym) {
                     case SDLK_ESCAPE:
                         StrOut("Escape Key Pressed", msgType[0]);
+                        running = false;
                         break;
                     case SDLK_RIGHT:
                         StrOut("Right Arrow Pressed", msgType[0]);
@@ -49,7 +50,6 @@ void GetKeyPress(SDL_Event &event, bool &running, raytrace::Camera &cam) {
                 switch (event.key.keysym.sym) {
                     case SDLK_ESCAPE:
                         StrOut("Escape Key Released", msgType[0]);
-                        running = false;
                         break;
                     case SDLK_RIGHT:
                         StrOut("Right Arrow Released", msgType[0]);
