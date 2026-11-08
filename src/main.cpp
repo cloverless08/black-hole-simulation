@@ -203,7 +203,7 @@ int main() {
 
 
         // start multithreaded rendering
-        CreateThreads(pixelBuffer, NUMBER_CORES, cam,
+        CreateMarchedThreads(pixelBuffer, NUMBER_CORES, cam,
             STANDARD_H, STANDARD_W, BACKGROUND_COLOR,
             xFactor, yFactor, objectList, lightList);
 

@@ -43,12 +43,16 @@ namespace raytrace {
                     }};
 
                 while (running) {
+                    double distance = 0.0;
                     double minDistance = 8008.5;
                     for (auto object : objectList) {
-                        double distance = Length3D(marchPoint, qbVector<double>{std::vector<double>{0.0, 0.0, 0.0}}) - 1.0; // only works for sphere at origin
-                        if (distance == 0.0) {
+                        distance = Length3D(marchPoint, qbVector<double>{std::vector<double>{0.0, 0.0, 0.0}}) - 1.0; // only works for sphere at origin
+
+                        if (distance < 0.001) { // means there is an intersection, implement this isnt right twin
                             running = false;
-                            break;
+                            SetPixel(buffer.data(), width, height, x, y, 255.0, 0.0, 0.0);
+                        } else {
+                            SetPixel(buffer.data(), width, height, x, y, 0.0, 0.0, 0.0);
                         }
 
                         if (distance < minDistance) {
@@ -59,7 +63,9 @@ namespace raytrace {
                    // P(t) = O + t * D
                     // D = V / ||V||
 
-
+                    // move down the ray a scalar amount
+                    qbVector<double> direction = marchPoint.Normalized();
+                    marchPoint = marchPoint + distance * direction;
                 }
 
             }
