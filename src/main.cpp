@@ -200,6 +200,9 @@ int main() {
 
         // poll all events
         GetKeyPress(event, running, cam);
+        if (!running) {
+            break;
+        }
 
 
         // start multithreaded rendering
@@ -235,9 +238,6 @@ int main() {
 
         frame += 1;
     }
-
-    raytrace::MarchingRayIntegrator::MarchRayTrace(pixelBuffer, cam, 0, STANDARD_H, STANDARD_H, STANDARD_W, BACKGROUND_COLOR,
-        xFactor, yFactor, objectList, lightList);
 
     StrOut("Closing Program Loop...", msgType[0]);
 
