@@ -30,6 +30,9 @@ namespace raytrace {
         for (int y = startY; y < endY; ++y) {
             for (int x = 0; x < width; ++x) {
 
+                int stepsIncreasing = 0;
+                double lastDistanceToSphere = 0.0;
+
                 raytrace::Ray camRay; // construct ray for this pixel
                 qbVector<double> intersectionPoint(3);
                 qbVector<double> localNorm(3);
@@ -46,15 +49,26 @@ namespace raytrace {
                     qbVector<double> rayDirection = camRay.m_lab;
                     rayDirection.Normalize();
 
-                    constexpr int maxMarchSteps = 256;
-                    constexpr double maxMarchDistance = 100.0;
-                    constexpr double hitThreshold = 0.001;
+                    constexpr int maxMarchSteps = 128;
+                    constexpr double maxMarchDistance = 10.0;
+                    constexpr double hitThreshold = 0.025;
                     const qbVector<double> sphereCenter{std::vector<double>{0.0, 0.0, 0.0}};
                     double distanceAlongRay = 0.0;
+
+                    if (stepsIncreasing >= 2) { // if there are more than 4 steps where the ray gets father away, cancel early
+                        hit = false;
+                        break;
+                    }
 
                     for (int step = 0; step < maxMarchSteps; ++step) {
                         const qbVector<double> marchPoint = rayOrigin + distanceAlongRay * rayDirection;
                         const double distanceToSphere = Length3D(marchPoint, sphereCenter) - 1.0;
+
+                        if (distanceToSphere > lastDistanceToSphere) {
+                            stepsIncreasing += 1;
+                        }
+                        lastDistanceToSphere = distanceToSphere;
+
                         if (distanceToSphere <= hitThreshold) {
                             intersectionPoint = marchPoint;
                             localNorm = marchPoint;
