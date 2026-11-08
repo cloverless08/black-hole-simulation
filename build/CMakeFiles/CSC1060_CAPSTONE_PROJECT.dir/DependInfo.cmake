@@ -9,8 +9,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/camera.cpp" "CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/camera.cpp.o" "gcc" "CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/camera.cpp.o.d"
+  "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/geodesicrayintegrator.cpp" "CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/geodesicrayintegrator.cpp.o" "gcc" "CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/geodesicrayintegrator.cpp.o.d"
+  "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/linearrayintegrator.cpp" "CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/linearrayintegrator.cpp.o" "gcc" "CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/linearrayintegrator.cpp.o.d"
+  "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/marchingrayintegrator.cpp" "CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/marchingrayintegrator.cpp.o" "gcc" "CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/marchingrayintegrator.cpp.o.d"
   "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/objects/lightbase.cpp" "CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/lightbase.cpp.o" "gcc" "CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/lightbase.cpp.o.d"
   "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/objects/object_base.cpp" "CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/object_base.cpp.o" "gcc" "CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/object_base.cpp.o.d"
+  "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/objects/objplane.cpp" "CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/objplane.cpp.o" "gcc" "CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/objplane.cpp.o.d"
   "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/objects/objsphere.cpp" "CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/objsphere.cpp.o" "gcc" "CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/objsphere.cpp.o.d"
   "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/objects/pointlight.cpp" "CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/pointlight.cpp.o" "gcc" "CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/pointlight.cpp.o.d"
   "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/ray.cpp" "CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/ray.cpp.o" "gcc" "CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/ray.cpp.o.d"

@@ -174,6 +174,16 @@ CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/loop.cpp.o: \
  /usr/include/c++/16/bits/stl_numeric.h \
  /usr/include/c++/16/pstl/glue_numeric_defs.h \
  /usr/include/c++/16/pstl/execution_defs.h \
+ /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/include/../qbLinearAlgebra/qbVector.h \
+ /usr/include/c++/16/iomanip /usr/include/c++/16/locale \
+ /usr/include/c++/16/bits/locale_facets_nonio.h /usr/include/c++/16/ctime \
+ /usr/include/c++/16/x86_64-pc-linux-gnu/bits/time_members.h \
+ /usr/include/c++/16/x86_64-pc-linux-gnu/bits/messages_members.h \
+ /usr/include/libintl.h /usr/include/c++/16/bits/codecvt.h \
+ /usr/include/c++/16/bits/locale_facets_nonio.tcc \
+ /usr/include/c++/16/bits/locale_conv.h \
+ /usr/include/c++/16/bits/quoted_string.h /usr/include/c++/16/sstream \
+ /usr/include/c++/16/bits/sstream.tcc /usr/include/c++/16/math.h \
  /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/include/structs.h \
  /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/include/loop.h \
  /usr/include/c++/16/memory /usr/include/c++/16/bits/stl_tempbuf.h \
@@ -193,15 +203,6 @@ CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/loop.cpp.o: \
  /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/include/../raytrace/objects/pointlight.h \
  /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/include/../raytrace/objects/lightbase.h \
  /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/include/../qbLinearAlgebra/qbVector.h \
- /usr/include/c++/16/iomanip /usr/include/c++/16/locale \
- /usr/include/c++/16/bits/locale_facets_nonio.h /usr/include/c++/16/ctime \
- /usr/include/c++/16/x86_64-pc-linux-gnu/bits/time_members.h \
- /usr/include/c++/16/x86_64-pc-linux-gnu/bits/messages_members.h \
- /usr/include/libintl.h /usr/include/c++/16/bits/codecvt.h \
- /usr/include/c++/16/bits/locale_facets_nonio.tcc \
- /usr/include/c++/16/bits/locale_conv.h \
- /usr/include/c++/16/bits/quoted_string.h /usr/include/c++/16/sstream \
- /usr/include/c++/16/bits/sstream.tcc /usr/include/c++/16/math.h \
  /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/include/../raytrace/objects/../ray.h \
  /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/include/../raytrace/objects/../../qbLinearAlgebra/qbVector.h \
  /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/include/../raytrace/objects/object_base.h \

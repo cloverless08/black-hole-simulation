@@ -62,8 +62,12 @@ endif()
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/*.cpp")
 set(OLD_GLOB
   "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/camera.cpp"
+  "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/geodesicrayintegrator.cpp"
+  "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/linearrayintegrator.cpp"
+  "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/marchingrayintegrator.cpp"
   "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/objects/lightbase.cpp"
   "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/objects/object_base.cpp"
+  "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/objects/objplane.cpp"
   "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/objects/objsphere.cpp"
   "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/objects/pointlight.cpp"
   "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/ray.cpp"
@@ -95,9 +99,11 @@ set(OLD_GLOB
   "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/camera.h"
   "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/objects/lightbase.h"
   "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/objects/object_base.h"
+  "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/objects/objplane.h"
   "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/objects/objsphere.h"
   "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/objects/pointlight.h"
   "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/ray.h"
+  "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/rayintegrator.h"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")

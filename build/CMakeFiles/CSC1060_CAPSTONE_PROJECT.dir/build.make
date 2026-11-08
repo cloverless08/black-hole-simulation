@@ -86,10 +86,52 @@ CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/camera.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/camera.cpp.s"
 	/usr/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/camera.cpp" -o CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/camera.cpp.s
 
+CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/geodesicrayintegrator.cpp.o: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/flags.make
+CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/geodesicrayintegrator.cpp.o: /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/raytrace/geodesicrayintegrator.cpp
+CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/geodesicrayintegrator.cpp.o: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cdemin/Code/Active/CSC1060 Capstone Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/geodesicrayintegrator.cpp.o"
+	/usr/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/geodesicrayintegrator.cpp.o -MF CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/geodesicrayintegrator.cpp.o.d -o CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/geodesicrayintegrator.cpp.o -c "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/geodesicrayintegrator.cpp"
+
+CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/geodesicrayintegrator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/geodesicrayintegrator.cpp.i"
+	/usr/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/geodesicrayintegrator.cpp" > CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/geodesicrayintegrator.cpp.i
+
+CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/geodesicrayintegrator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/geodesicrayintegrator.cpp.s"
+	/usr/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/geodesicrayintegrator.cpp" -o CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/geodesicrayintegrator.cpp.s
+
+CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/linearrayintegrator.cpp.o: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/flags.make
+CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/linearrayintegrator.cpp.o: /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/raytrace/linearrayintegrator.cpp
+CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/linearrayintegrator.cpp.o: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cdemin/Code/Active/CSC1060 Capstone Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/linearrayintegrator.cpp.o"
+	/usr/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/linearrayintegrator.cpp.o -MF CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/linearrayintegrator.cpp.o.d -o CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/linearrayintegrator.cpp.o -c "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/linearrayintegrator.cpp"
+
+CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/linearrayintegrator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/linearrayintegrator.cpp.i"
+	/usr/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/linearrayintegrator.cpp" > CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/linearrayintegrator.cpp.i
+
+CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/linearrayintegrator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/linearrayintegrator.cpp.s"
+	/usr/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/linearrayintegrator.cpp" -o CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/linearrayintegrator.cpp.s
+
+CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/marchingrayintegrator.cpp.o: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/flags.make
+CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/marchingrayintegrator.cpp.o: /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/raytrace/marchingrayintegrator.cpp
+CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/marchingrayintegrator.cpp.o: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cdemin/Code/Active/CSC1060 Capstone Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/marchingrayintegrator.cpp.o"
+	/usr/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/marchingrayintegrator.cpp.o -MF CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/marchingrayintegrator.cpp.o.d -o CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/marchingrayintegrator.cpp.o -c "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/marchingrayintegrator.cpp"
+
+CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/marchingrayintegrator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/marchingrayintegrator.cpp.i"
+	/usr/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/marchingrayintegrator.cpp" > CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/marchingrayintegrator.cpp.i
+
+CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/marchingrayintegrator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/marchingrayintegrator.cpp.s"
+	/usr/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/marchingrayintegrator.cpp" -o CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/marchingrayintegrator.cpp.s
+
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/lightbase.cpp.o: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/flags.make
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/lightbase.cpp.o: /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/raytrace/objects/lightbase.cpp
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/lightbase.cpp.o: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cdemin/Code/Active/CSC1060 Capstone Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/lightbase.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cdemin/Code/Active/CSC1060 Capstone Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/lightbase.cpp.o"
 	/usr/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/lightbase.cpp.o -MF CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/lightbase.cpp.o.d -o CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/lightbase.cpp.o -c "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/objects/lightbase.cpp"
 
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/lightbase.cpp.i: cmake_force
@@ -103,7 +145,7 @@ CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/lightbase.cpp.s: cmake_
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/object_base.cpp.o: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/flags.make
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/object_base.cpp.o: /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/raytrace/objects/object_base.cpp
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/object_base.cpp.o: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cdemin/Code/Active/CSC1060 Capstone Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/object_base.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cdemin/Code/Active/CSC1060 Capstone Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/object_base.cpp.o"
 	/usr/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/object_base.cpp.o -MF CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/object_base.cpp.o.d -o CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/object_base.cpp.o -c "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/objects/object_base.cpp"
 
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/object_base.cpp.i: cmake_force
@@ -114,10 +156,24 @@ CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/object_base.cpp.s: cmak
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/object_base.cpp.s"
 	/usr/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/objects/object_base.cpp" -o CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/object_base.cpp.s
 
+CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/objplane.cpp.o: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/flags.make
+CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/objplane.cpp.o: /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/raytrace/objects/objplane.cpp
+CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/objplane.cpp.o: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cdemin/Code/Active/CSC1060 Capstone Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/objplane.cpp.o"
+	/usr/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/objplane.cpp.o -MF CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/objplane.cpp.o.d -o CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/objplane.cpp.o -c "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/objects/objplane.cpp"
+
+CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/objplane.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/objplane.cpp.i"
+	/usr/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/objects/objplane.cpp" > CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/objplane.cpp.i
+
+CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/objplane.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/objplane.cpp.s"
+	/usr/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/objects/objplane.cpp" -o CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/objplane.cpp.s
+
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/objsphere.cpp.o: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/flags.make
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/objsphere.cpp.o: /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/raytrace/objects/objsphere.cpp
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/objsphere.cpp.o: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cdemin/Code/Active/CSC1060 Capstone Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/objsphere.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cdemin/Code/Active/CSC1060 Capstone Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/objsphere.cpp.o"
 	/usr/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/objsphere.cpp.o -MF CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/objsphere.cpp.o.d -o CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/objsphere.cpp.o -c "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/objects/objsphere.cpp"
 
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/objsphere.cpp.i: cmake_force
@@ -131,7 +187,7 @@ CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/objsphere.cpp.s: cmake_
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/pointlight.cpp.o: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/flags.make
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/pointlight.cpp.o: /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/raytrace/objects/pointlight.cpp
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/pointlight.cpp.o: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cdemin/Code/Active/CSC1060 Capstone Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/pointlight.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cdemin/Code/Active/CSC1060 Capstone Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/pointlight.cpp.o"
 	/usr/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/pointlight.cpp.o -MF CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/pointlight.cpp.o.d -o CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/pointlight.cpp.o -c "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/objects/pointlight.cpp"
 
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/pointlight.cpp.i: cmake_force
@@ -145,7 +201,7 @@ CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/pointlight.cpp.s: cmake
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/ray.cpp.o: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/flags.make
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/ray.cpp.o: /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/raytrace/ray.cpp
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/ray.cpp.o: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cdemin/Code/Active/CSC1060 Capstone Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/ray.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cdemin/Code/Active/CSC1060 Capstone Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/ray.cpp.o"
 	/usr/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/ray.cpp.o -MF CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/ray.cpp.o.d -o CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/ray.cpp.o -c "/home/cdemin/Code/Active/CSC1060 Capstone Project/raytrace/ray.cpp"
 
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/ray.cpp.i: cmake_force
@@ -159,7 +215,7 @@ CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/ray.cpp.s: cmake_force
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/keybinds.cpp.o: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/flags.make
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/keybinds.cpp.o: /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/src/keybinds.cpp
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/keybinds.cpp.o: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cdemin/Code/Active/CSC1060 Capstone Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/keybinds.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cdemin/Code/Active/CSC1060 Capstone Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/keybinds.cpp.o"
 	/usr/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/keybinds.cpp.o -MF CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/keybinds.cpp.o.d -o CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/keybinds.cpp.o -c "/home/cdemin/Code/Active/CSC1060 Capstone Project/src/keybinds.cpp"
 
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/keybinds.cpp.i: cmake_force
@@ -173,7 +229,7 @@ CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/keybinds.cpp.s: cmake_force
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/loop.cpp.o: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/flags.make
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/loop.cpp.o: /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/src/loop.cpp
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/loop.cpp.o: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cdemin/Code/Active/CSC1060 Capstone Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/loop.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cdemin/Code/Active/CSC1060 Capstone Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/loop.cpp.o"
 	/usr/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/loop.cpp.o -MF CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/loop.cpp.o.d -o CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/loop.cpp.o -c "/home/cdemin/Code/Active/CSC1060 Capstone Project/src/loop.cpp"
 
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/loop.cpp.i: cmake_force
@@ -187,7 +243,7 @@ CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/loop.cpp.s: cmake_force
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/main.cpp.o: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/flags.make
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/main.cpp.o: /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/src/main.cpp
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/main.cpp.o: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cdemin/Code/Active/CSC1060 Capstone Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cdemin/Code/Active/CSC1060 Capstone Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/main.cpp.o"
 	/usr/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/main.cpp.o -MF CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/main.cpp.o.d -o CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/main.cpp.o -c "/home/cdemin/Code/Active/CSC1060 Capstone Project/src/main.cpp"
 
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/main.cpp.i: cmake_force
@@ -201,7 +257,7 @@ CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/main.cpp.s: cmake_force
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/postprocessing.cpp.o: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/flags.make
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/postprocessing.cpp.o: /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/src/postprocessing.cpp
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/postprocessing.cpp.o: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cdemin/Code/Active/CSC1060 Capstone Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/postprocessing.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cdemin/Code/Active/CSC1060 Capstone Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/postprocessing.cpp.o"
 	/usr/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/postprocessing.cpp.o -MF CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/postprocessing.cpp.o.d -o CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/postprocessing.cpp.o -c "/home/cdemin/Code/Active/CSC1060 Capstone Project/src/postprocessing.cpp"
 
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/postprocessing.cpp.i: cmake_force
@@ -215,7 +271,7 @@ CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/postprocessing.cpp.s: cmake_force
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/threading.cpp.o: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/flags.make
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/threading.cpp.o: /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/src/threading.cpp
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/threading.cpp.o: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cdemin/Code/Active/CSC1060 Capstone Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/threading.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/cdemin/Code/Active/CSC1060 Capstone Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/threading.cpp.o"
 	/usr/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/threading.cpp.o -MF CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/threading.cpp.o.d -o CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/threading.cpp.o -c "/home/cdemin/Code/Active/CSC1060 Capstone Project/src/threading.cpp"
 
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/threading.cpp.i: cmake_force
@@ -229,8 +285,12 @@ CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/threading.cpp.s: cmake_force
 # Object files for target CSC1060_CAPSTONE_PROJECT
 CSC1060_CAPSTONE_PROJECT_OBJECTS = \
 "CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/camera.cpp.o" \
+"CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/geodesicrayintegrator.cpp.o" \
+"CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/linearrayintegrator.cpp.o" \
+"CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/marchingrayintegrator.cpp.o" \
 "CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/lightbase.cpp.o" \
 "CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/object_base.cpp.o" \
+"CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/objplane.cpp.o" \
 "CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/objsphere.cpp.o" \
 "CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/pointlight.cpp.o" \
 "CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/ray.cpp.o" \
@@ -244,8 +304,12 @@ CSC1060_CAPSTONE_PROJECT_OBJECTS = \
 CSC1060_CAPSTONE_PROJECT_EXTERNAL_OBJECTS =
 
 CSC1060_CAPSTONE_PROJECT: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/camera.cpp.o
+CSC1060_CAPSTONE_PROJECT: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/geodesicrayintegrator.cpp.o
+CSC1060_CAPSTONE_PROJECT: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/linearrayintegrator.cpp.o
+CSC1060_CAPSTONE_PROJECT: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/marchingrayintegrator.cpp.o
 CSC1060_CAPSTONE_PROJECT: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/lightbase.cpp.o
 CSC1060_CAPSTONE_PROJECT: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/object_base.cpp.o
+CSC1060_CAPSTONE_PROJECT: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/objplane.cpp.o
 CSC1060_CAPSTONE_PROJECT: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/objsphere.cpp.o
 CSC1060_CAPSTONE_PROJECT: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/pointlight.cpp.o
 CSC1060_CAPSTONE_PROJECT: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/ray.cpp.o
@@ -259,7 +323,7 @@ CSC1060_CAPSTONE_PROJECT: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/compiler_depen
 CSC1060_CAPSTONE_PROJECT: /usr/lib/libSDL2-2.0.so.0.3200.74
 CSC1060_CAPSTONE_PROJECT: /usr/lib/libSDL2main.a
 CSC1060_CAPSTONE_PROJECT: CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/home/cdemin/Code/Active/CSC1060 Capstone Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable CSC1060_CAPSTONE_PROJECT"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/home/cdemin/Code/Active/CSC1060 Capstone Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable CSC1060_CAPSTONE_PROJECT"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

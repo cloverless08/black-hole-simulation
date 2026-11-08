@@ -186,4 +186,5 @@ CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/camera.cpp.o: \
  /usr/include/c++/16/bits/random.tcc /usr/include/c++/16/numeric \
  /usr/include/c++/16/bits/stl_numeric.h \
  /usr/include/c++/16/pstl/glue_numeric_defs.h \
- /usr/include/c++/16/pstl/execution_defs.h
+ /usr/include/c++/16/pstl/execution_defs.h \
+ /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/include/../qbLinearAlgebra/qbVector.h

@@ -173,10 +173,7 @@ CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/keybinds.cpp.o: \
  /usr/include/c++/16/bits/stl_numeric.h \
  /usr/include/c++/16/pstl/glue_numeric_defs.h \
  /usr/include/c++/16/pstl/execution_defs.h \
- /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/src/../raytrace/camera.h \
- /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/src/../raytrace/../include/structs.h \
- /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/src/../raytrace/ray.h \
- /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/src/../raytrace/../qbLinearAlgebra/qbVector.h \
+ /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/include/../qbLinearAlgebra/qbVector.h \
  /usr/include/c++/16/iomanip /usr/include/c++/16/locale \
  /usr/include/c++/16/bits/locale_facets_nonio.h /usr/include/c++/16/ctime \
  /usr/include/c++/16/x86_64-pc-linux-gnu/bits/time_members.h \
@@ -186,6 +183,10 @@ CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/keybinds.cpp.o: \
  /usr/include/c++/16/bits/locale_conv.h \
  /usr/include/c++/16/bits/quoted_string.h /usr/include/c++/16/sstream \
  /usr/include/c++/16/bits/sstream.tcc /usr/include/c++/16/math.h \
+ /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/src/../raytrace/camera.h \
+ /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/src/../raytrace/../include/structs.h \
+ /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/src/../raytrace/ray.h \
+ /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/src/../raytrace/../qbLinearAlgebra/qbVector.h \
  /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/src/../qbLinearAlgebra/qbVector.h \
  /usr/include/SDL2/SDL.h /usr/include/SDL2/SDL_main.h \
  /usr/include/SDL2/SDL_stdinc.h /usr/include/SDL2/SDL_config.h \

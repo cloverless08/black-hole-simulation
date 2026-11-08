@@ -154,6 +154,78 @@ raytrace/camera.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/build.make CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/camera.cpp.s
 .PHONY : raytrace/camera.cpp.s
 
+raytrace/geodesicrayintegrator.o: raytrace/geodesicrayintegrator.cpp.o
+.PHONY : raytrace/geodesicrayintegrator.o
+
+# target to build an object file
+raytrace/geodesicrayintegrator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/build.make CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/geodesicrayintegrator.cpp.o
+.PHONY : raytrace/geodesicrayintegrator.cpp.o
+
+raytrace/geodesicrayintegrator.i: raytrace/geodesicrayintegrator.cpp.i
+.PHONY : raytrace/geodesicrayintegrator.i
+
+# target to preprocess a source file
+raytrace/geodesicrayintegrator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/build.make CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/geodesicrayintegrator.cpp.i
+.PHONY : raytrace/geodesicrayintegrator.cpp.i
+
+raytrace/geodesicrayintegrator.s: raytrace/geodesicrayintegrator.cpp.s
+.PHONY : raytrace/geodesicrayintegrator.s
+
+# target to generate assembly for a file
+raytrace/geodesicrayintegrator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/build.make CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/geodesicrayintegrator.cpp.s
+.PHONY : raytrace/geodesicrayintegrator.cpp.s
+
+raytrace/linearrayintegrator.o: raytrace/linearrayintegrator.cpp.o
+.PHONY : raytrace/linearrayintegrator.o
+
+# target to build an object file
+raytrace/linearrayintegrator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/build.make CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/linearrayintegrator.cpp.o
+.PHONY : raytrace/linearrayintegrator.cpp.o
+
+raytrace/linearrayintegrator.i: raytrace/linearrayintegrator.cpp.i
+.PHONY : raytrace/linearrayintegrator.i
+
+# target to preprocess a source file
+raytrace/linearrayintegrator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/build.make CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/linearrayintegrator.cpp.i
+.PHONY : raytrace/linearrayintegrator.cpp.i
+
+raytrace/linearrayintegrator.s: raytrace/linearrayintegrator.cpp.s
+.PHONY : raytrace/linearrayintegrator.s
+
+# target to generate assembly for a file
+raytrace/linearrayintegrator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/build.make CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/linearrayintegrator.cpp.s
+.PHONY : raytrace/linearrayintegrator.cpp.s
+
+raytrace/marchingrayintegrator.o: raytrace/marchingrayintegrator.cpp.o
+.PHONY : raytrace/marchingrayintegrator.o
+
+# target to build an object file
+raytrace/marchingrayintegrator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/build.make CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/marchingrayintegrator.cpp.o
+.PHONY : raytrace/marchingrayintegrator.cpp.o
+
+raytrace/marchingrayintegrator.i: raytrace/marchingrayintegrator.cpp.i
+.PHONY : raytrace/marchingrayintegrator.i
+
+# target to preprocess a source file
+raytrace/marchingrayintegrator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/build.make CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/marchingrayintegrator.cpp.i
+.PHONY : raytrace/marchingrayintegrator.cpp.i
+
+raytrace/marchingrayintegrator.s: raytrace/marchingrayintegrator.cpp.s
+.PHONY : raytrace/marchingrayintegrator.s
+
+# target to generate assembly for a file
+raytrace/marchingrayintegrator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/build.make CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/marchingrayintegrator.cpp.s
+.PHONY : raytrace/marchingrayintegrator.cpp.s
+
 raytrace/objects/lightbase.o: raytrace/objects/lightbase.cpp.o
 .PHONY : raytrace/objects/lightbase.o
 
@@ -201,6 +273,30 @@ raytrace/objects/object_base.s: raytrace/objects/object_base.cpp.s
 raytrace/objects/object_base.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/build.make CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/object_base.cpp.s
 .PHONY : raytrace/objects/object_base.cpp.s
+
+raytrace/objects/objplane.o: raytrace/objects/objplane.cpp.o
+.PHONY : raytrace/objects/objplane.o
+
+# target to build an object file
+raytrace/objects/objplane.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/build.make CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/objplane.cpp.o
+.PHONY : raytrace/objects/objplane.cpp.o
+
+raytrace/objects/objplane.i: raytrace/objects/objplane.cpp.i
+.PHONY : raytrace/objects/objplane.i
+
+# target to preprocess a source file
+raytrace/objects/objplane.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/build.make CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/objplane.cpp.i
+.PHONY : raytrace/objects/objplane.cpp.i
+
+raytrace/objects/objplane.s: raytrace/objects/objplane.cpp.s
+.PHONY : raytrace/objects/objplane.s
+
+# target to generate assembly for a file
+raytrace/objects/objplane.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/build.make CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/objplane.cpp.s
+.PHONY : raytrace/objects/objplane.cpp.s
 
 raytrace/objects/objsphere.o: raytrace/objects/objsphere.cpp.o
 .PHONY : raytrace/objects/objsphere.o
@@ -406,12 +502,24 @@ help:
 	@echo "... raytrace/camera.o"
 	@echo "... raytrace/camera.i"
 	@echo "... raytrace/camera.s"
+	@echo "... raytrace/geodesicrayintegrator.o"
+	@echo "... raytrace/geodesicrayintegrator.i"
+	@echo "... raytrace/geodesicrayintegrator.s"
+	@echo "... raytrace/linearrayintegrator.o"
+	@echo "... raytrace/linearrayintegrator.i"
+	@echo "... raytrace/linearrayintegrator.s"
+	@echo "... raytrace/marchingrayintegrator.o"
+	@echo "... raytrace/marchingrayintegrator.i"
+	@echo "... raytrace/marchingrayintegrator.s"
 	@echo "... raytrace/objects/lightbase.o"
 	@echo "... raytrace/objects/lightbase.i"
 	@echo "... raytrace/objects/lightbase.s"
 	@echo "... raytrace/objects/object_base.o"
 	@echo "... raytrace/objects/object_base.i"
 	@echo "... raytrace/objects/object_base.s"
+	@echo "... raytrace/objects/objplane.o"
+	@echo "... raytrace/objects/objplane.i"
+	@echo "... raytrace/objects/objplane.s"
 	@echo "... raytrace/objects/objsphere.o"
 	@echo "... raytrace/objects/objsphere.i"
 	@echo "... raytrace/objects/objsphere.s"

@@ -343,6 +343,7 @@ CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/main.cpp.o: \
  /usr/include/c++/16/bits/random.tcc /usr/include/c++/16/numeric \
  /usr/include/c++/16/bits/stl_numeric.h \
  /usr/include/c++/16/pstl/glue_numeric_defs.h \
+ /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/include/../qbLinearAlgebra/qbVector.h \
  /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/include/structs.h \
  /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/include/loop.h \
  /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/include/../raytrace/objects/pointlight.h \
@@ -356,4 +357,13 @@ CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/main.cpp.o: \
  /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/include/keybinds.h \
  /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/src/../include/threading.h \
  /usr/include/c++/16/thread /usr/include/c++/16/bits/std_thread.h \
- /usr/include/c++/16/bits/this_thread_sleep.h
+ /usr/include/c++/16/bits/this_thread_sleep.h \
+ /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/src/../raytrace/rayintegrator.h \
+ /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/src/../raytrace/../qbLinearAlgebra/qbVector.h \
+ /usr/include/c++/16/functional /usr/include/c++/16/bits/std_function.h \
+ /usr/include/c++/16/unordered_map \
+ /usr/include/c++/16/bits/unordered_map.h \
+ /usr/include/c++/16/bits/hashtable.h \
+ /usr/include/c++/16/bits/hashtable_policy.h \
+ /usr/include/c++/16/bits/enable_special_members.h \
+ /usr/include/c++/16/bits/node_handle.h

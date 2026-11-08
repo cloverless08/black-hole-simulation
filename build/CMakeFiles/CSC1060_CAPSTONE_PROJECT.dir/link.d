@@ -3,8 +3,12 @@ CSC1060_CAPSTONE_PROJECT: \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crti.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o \
   CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/camera.cpp.o \
+  CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/geodesicrayintegrator.cpp.o \
+  CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/linearrayintegrator.cpp.o \
+  CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/marchingrayintegrator.cpp.o \
   CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/lightbase.cpp.o \
   CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/object_base.cpp.o \
+  CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/objplane.cpp.o \
   CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/objsphere.cpp.o \
   CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/pointlight.cpp.o \
   CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/ray.cpp.o \
@@ -55,9 +59,17 @@ CSC1060_CAPSTONE_PROJECT: \
 
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/camera.cpp.o:
 
+CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/geodesicrayintegrator.cpp.o:
+
+CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/linearrayintegrator.cpp.o:
+
+CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/marchingrayintegrator.cpp.o:
+
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/lightbase.cpp.o:
 
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/object_base.cpp.o:
+
+CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/objplane.cpp.o:
 
 CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/objects/objsphere.cpp.o:
 
