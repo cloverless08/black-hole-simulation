@@ -38,6 +38,13 @@ namespace raytrace {
                 camRay.GetPoint2().GetElement(1),
                 camRay.GetPoint2().GetElement(2)
                 }};
+
+                for (auto object : objectList) {
+                    // double mindistance = 1000000000
+                    // disance between march point and origin of object (x^2 + y^2) - radius
+                    // if distance < mindistance, mindistance = distance
+                }
+                // marchpoint steps 
             }
         }
 
