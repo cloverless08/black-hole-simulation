@@ -39,7 +39,7 @@ inline int LengthInt(int p1, int p2);
 
 inline double LengthDouble(int p1, int p2);
 
-inline double Length3D(qbVector<double> point, qbVector<double> point2);
+inline double Length3D(qbVector<double> point1, qbVector<double> point2);
 
 // definitions
 // -----------------

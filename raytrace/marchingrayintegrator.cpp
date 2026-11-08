@@ -30,22 +30,38 @@ namespace raytrace {
 
                 raytrace::Ray camRay; // construct ray for this pixel
 
+                bool running = true;
+
                 double U = (static_cast<double>(x) * factorX) - 1.0;
                 double V = (static_cast<double>(y) * factorY) - 1.0;
 
                 Cam.GenerateRay(U, V, camRay);
                 qbVector<double> marchPoint {std::vector<double>{
-                camRay.GetPoint2().GetElement(0),
-                camRay.GetPoint2().GetElement(1),
-                camRay.GetPoint2().GetElement(2)
-                }};
+                    camRay.GetPoint2().GetElement(0),
+                    camRay.GetPoint2().GetElement(1),
+                    camRay.GetPoint2().GetElement(2)
+                    }};
 
-                double minDistance = 8008.5;
-                for (auto object : objectList) {
-                    double distance = Length3D(marchPoint, // WHERE IS MY OBJECT LOCATION??!?!!!??!?!?);
-                    // if distance < mindistance, mindistance = distance
+                while (running) {
+                    double minDistance = 8008.5;
+                    for (auto object : objectList) {
+                        double distance = Length3D(marchPoint, qbVector<double>{std::vector<double>{0.0, 0.0, 0.0}}) - 1.0; // only works for sphere at origin
+                        if (distance == 0.0) {
+                            running = false;
+                            break;
+                        }
+
+                        if (distance < minDistance) {
+                            minDistance = distance;
+                        }
+                    }
+
+                   // P(t) = O + t * D
+                    // D = V / ||V||
+
+
                 }
-                // marchpoint steps
+
             }
         }
 
