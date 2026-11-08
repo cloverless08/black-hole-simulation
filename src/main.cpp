@@ -24,6 +24,7 @@
 #include "keybinds.h"
 #include "../raytrace/camera.h"
 #include "../include/threading.h"
+#include "../raytrace/rayintegrator.h"
 
 #include "../raytrace/objects/objsphere.h"
 #include "../raytrace/objects/pointlight.h"
@@ -234,6 +235,10 @@ int main() {
 
         frame += 1;
     }
+
+    raytrace::MarchingRayIntegrator::MarchRayTrace(pixelBuffer, cam, 0, STANDARD_H, STANDARD_H, STANDARD_W, BACKGROUND_COLOR,
+        xFactor, yFactor, objectList, lightList);
+
     StrOut("Closing Program Loop...", msgType[0]);
 
     StrOut("Pixel Buffer Deleted", msgType[3]);

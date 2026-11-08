@@ -28,10 +28,16 @@ namespace raytrace {
             for (int x = 0; x < width; ++x) {
 
                 raytrace::Ray camRay; // construct ray for this pixel
-                qbVector<double> marchPoint {3};
 
+                double U = (static_cast<double>(x) * factorX) - 1.0;
+                double V = (static_cast<double>(y) * factorY) - 1.0;
 
-
+                Cam.GenerateRay(U, V, camRay);
+                qbVector<double> marchPoint {std::vector<double>{
+                camRay.GetPoint2().GetElement(0),
+                camRay.GetPoint2().GetElement(1),
+                camRay.GetPoint2().GetElement(2)
+                }};
             }
         }
 

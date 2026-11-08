@@ -44,7 +44,7 @@ namespace raytrace {
         ~MarchingRayIntegrator();
 
 
-        void MarchRayTrace(std::vector<uint32_t>& buffer,
+        static void MarchRayTrace(std::vector<uint32_t>& buffer,
         raytrace::Camera& Cam,
         int startY, int endY,
         int height, int width,
