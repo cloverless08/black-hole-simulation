@@ -31,13 +31,16 @@ namespace raytrace {
             for (int x = 0; x < width; ++x) {
 
                 raytrace::Ray camRay; // construct ray for this pixel
+                qbVector<double> intersectionPoint(3);
+                qbVector<double> localNorm(3);
+                qbVector<double> localColor(3);
 
                 double U = (static_cast<double>(x) * factorX) - 1.0;
                 double V = (static_cast<double>(y) * factorY) - 1.0;
 
                 Cam.GenerateRay(U, V, camRay);
                 bool hit = false;
-                if (!objectList.empty()) {
+                for (auto& object : objectList) {
                     const qbVector<double> rayOrigin = camRay.GetPoint1();
                     qbVector<double> rayDirection = camRay.m_lab;
                     rayDirection.Normalize();
@@ -63,12 +66,23 @@ namespace raytrace {
                 }
 
                 if (hit) {
-                    SetPixel(buffer.data(), width, height, x, y, 255, 0, 0);
+                    double intensity;
+                    qbVector<double> color {3};
+                    bool validIllumination = false;
+                    for (auto currentLight : lightList) { // currently hard-coded to only deal with one light source
+                        validIllumination = currentLight -> ComputeIllumination(intersectionPoint,
+                            localNorm,
+                            objectList,
+                            objectList.at(0),
+                            color,
+                            intensity);
+                    }
+
+                    std::cout << intensity << std::endl;
+
+                    SetPixel(buffer.data(), width, height, x, y, 255 * intensity, 0, 0);
                 } else {
-                    SetPixel(buffer.data(), width, height, x, y,
-                        static_cast<uint8_t>(std::clamp(backgroundColor.x(), 0.0, 255.0)),
-                        static_cast<uint8_t>(std::clamp(backgroundColor.y(), 0.0, 255.0)),
-                        static_cast<uint8_t>(std::clamp(backgroundColor.z(), 0.0, 255.0)));
+                    SetPixel(buffer.data(), width, height, x, y, 0.0, 0.0, 0.0);
                 }
             }
         }

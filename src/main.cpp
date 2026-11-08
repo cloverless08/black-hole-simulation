@@ -176,7 +176,7 @@ int main() {
     std::vector<std::shared_ptr<raytrace::LightBase>> lightList;
 
     // unit sphere on origin for testing
-    raytrace::ObjSphere m_testSphere;
+    //raytrace::ObjSphere m_testSphere;
     objectList.push_back(std::make_shared<raytrace::ObjSphere>(raytrace::ObjSphere()));
 
     // construct a test light source
