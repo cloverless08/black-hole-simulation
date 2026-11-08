@@ -23,9 +23,18 @@ namespace raytrace {
         // test whether two flaoting points are close to being equal (truncation)
         bool CheckAreClose(const double float1, const double float2);
 
+        // getter function for location
+        qbVector<double> GetPosition() {
+            return m_location;
+        }
+
+        double GetRadius() const { return m_radius; }
+
 
         // member variables
         qbVector<double> m_baseColor {3};
+        qbVector<double> m_location {3};
+        double m_radius;
 
     };
 }

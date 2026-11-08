@@ -6,14 +6,16 @@
 
 #include <cmath>
 
-raytrace::ObjSphere::ObjSphere() {
-    std::cout << "ObjSphere::ObjSphere(): Constructing Sphere Object" << std::endl;
-};
+// constructor with location and radius
+raytrace::ObjSphere::ObjSphere(const qbVector<double> location, const double radius) {
+    m_location = location;
+    m_radius = radius;
+}
+
 
 raytrace::ObjSphere::~ObjSphere() {
     std::cout << "ObjSphere::~ObjSphere(): Destructing Sphere Object" << std::endl;
 }
-
 
 // define intersection test
 bool raytrace::ObjSphere::TestIntersection(
@@ -22,7 +24,6 @@ bool raytrace::ObjSphere::TestIntersection(
     qbVector<double> &localNorm,
     qbVector<double> &localColor) {
     // ===================================
-
 
     // compute values of a b and c
     qbVector<double> vhat = castRay.m_lab;

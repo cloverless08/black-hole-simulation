@@ -176,8 +176,15 @@ int main() {
     std::vector<std::shared_ptr<raytrace::LightBase>> lightList;
 
     // unit sphere on origin for testing
-    //raytrace::ObjSphere m_testSphere;
-    objectList.push_back(std::make_shared<raytrace::ObjSphere>(raytrace::ObjSphere()));
+    objectList.push_back(std::make_shared<raytrace::ObjSphere>(raytrace::ObjSphere(
+    std::vector<double>{-1.0, 0.0, 0.0}, 0.5
+    )));
+    objectList.push_back(std::make_shared<raytrace::ObjSphere>(raytrace::ObjSphere(
+std::vector<double>{1.0, 0.0, 0.0}, 0.5
+    )));
+    objectList.push_back(std::make_shared<raytrace::ObjSphere>(raytrace::ObjSphere(
+std::vector<double>{0.0, 0.0, 0.0}, 1
+    )));
 
     // construct a test light source
     lightList.push_back(std::make_shared<raytrace::PointLight>(raytrace::PointLight())); // calls default constructor

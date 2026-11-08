@@ -10,7 +10,8 @@ namespace raytrace {
     class ObjSphere : public ObjectBase {
     public:
         // default constructor, will define a unit sphere at origin
-        ObjSphere();
+        ObjSphere(const qbVector<double> m_location = std::vector<double>{0.0, 0.0, 0.0},
+            const double radius = 1.0);
 
         // override the base destructor and functions
         virtual ~ObjSphere() override;
@@ -20,7 +21,7 @@ namespace raytrace {
             qbVector<double> &localNorm,
             qbVector<double> &localColor) override;
 
-    private:
+        double GetRadius() const { return m_radius; }
 
     };
 }

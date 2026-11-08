@@ -41,6 +41,7 @@ void GetKeyPress(SDL_Event &event, bool &running, raytrace::Camera &cam) {
                         break;
                     case SDLK_q:
                         StrOut("Q: Camera Position", msgType[0]);
+                        cam.SetLookAt(std::vector<double>{0.0, 0.0, 0.0});
                         break;
                     default:
                         break;
