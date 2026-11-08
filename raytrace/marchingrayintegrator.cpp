@@ -40,6 +40,7 @@ namespace raytrace {
 
                 Cam.GenerateRay(U, V, camRay);
                 bool hit = false;
+                std::shared_ptr<raytrace::ObjectBase> hitObject;
                 for (auto& object : objectList) {
                     const qbVector<double> rayOrigin = camRay.GetPoint1();
                     qbVector<double> rayDirection = camRay.m_lab;
@@ -55,13 +56,20 @@ namespace raytrace {
                         const qbVector<double> marchPoint = rayOrigin + distanceAlongRay * rayDirection;
                         const double distanceToSphere = Length3D(marchPoint, sphereCenter) - 1.0;
                         if (distanceToSphere <= hitThreshold) {
+                            intersectionPoint = marchPoint;
+                            localNorm = marchPoint;
+                            localNorm.Normalize();
                             hit = true;
+                            hitObject = object;
                             break;
                         }
                         if (distanceAlongRay > maxMarchDistance) {
                             break;
                         }
                         distanceAlongRay += distanceToSphere;
+                    }
+                    if (hit) {
+                        break;
                     }
                 }
 
@@ -73,12 +81,11 @@ namespace raytrace {
                         validIllumination = currentLight -> ComputeIllumination(intersectionPoint,
                             localNorm,
                             objectList,
-                            objectList.at(0),
+                            hitObject,
                             color,
                             intensity);
                     }
 
-                    std::cout << intensity << std::endl;
 
                     SetPixel(buffer.data(), width, height, x, y, 255 * intensity, 0, 0);
                 } else {
