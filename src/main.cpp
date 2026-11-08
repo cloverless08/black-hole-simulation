@@ -7,7 +7,6 @@
 
 // library includes
 #include <SDL2/SDL.h>
-#include <SDL2/SDL_ttf.h>
 
 #include <vector>
 #include <array>
@@ -147,18 +146,6 @@ int main() {
         return 1;
     }
 
-    // text
-    TTF_Font* font = TTF_OpenFont("../assets/LiberationMono-Regular.ttf", 24);
-    if (!font) {
-        std::cout << "Failed to load font: " << TTF_GetError() << std::endl;
-        return -1;
-    }
-
-    SDL_Rect textRect;
-    textRect.x = 100; // Screen X position
-    textRect.y = 100; // Screen Y position
-    SDL_QueryTexture(pixelBufferTexture, NULL, NULL, &textRect.w, &textRect.h);
-
     StrOut("SDL2 Structs Initialized.", msgType[2]);
 
 
@@ -243,8 +230,6 @@ int main() {
             pixelBuffer.data(),            // Pointer to our raw CPU buffer
             resolutionWidth * sizeof(uint32_t)
         );
-
-        SDL_RenderCopy(renderer, pixelBufferTexture, NULL, &textRect);
 
         // render loop
         SDL_RenderClear(renderer);
