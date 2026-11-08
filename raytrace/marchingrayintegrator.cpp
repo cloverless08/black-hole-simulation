@@ -3,6 +3,7 @@
 //
 
 #include "rayintegrator.h"
+#include "../include/main_utils.h"
 
 namespace raytrace {
     raytrace::MarchingRayIntegrator::MarchingRayIntegrator() {
@@ -39,12 +40,12 @@ namespace raytrace {
                 camRay.GetPoint2().GetElement(2)
                 }};
 
+                double minDistance = 8008.5;
                 for (auto object : objectList) {
-                    // double mindistance = 1000000000
-                    // disance between march point and origin of object (x^2 + y^2) - radius
+                    double distance = Length3D(marchPoint, // WHERE IS MY OBJECT LOCATION??!?!!!??!?!?);
                     // if distance < mindistance, mindistance = distance
                 }
-                // marchpoint steps 
+                // marchpoint steps
             }
         }
 
