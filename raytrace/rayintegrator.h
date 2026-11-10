@@ -54,6 +54,19 @@ namespace raytrace {
     };
 
     class GeodesicRayIntegrator : public RayIntegrator {
+    public:
+        // default constructor and destructor
+        GeodesicRayIntegrator();
+        ~GeodesicRayIntegrator();
 
+
+        static void GeodesicRayTrace(std::vector<uint32_t>& buffer,
+        raytrace::Camera& Cam,
+        int startY, int endY,
+        int height, int width,
+        math::Vec3 backgroundColor,
+        double factorX, double factorY,
+        std::vector<std::shared_ptr<raytrace::ObjectBase>> objectList, std::vector<std::shared_ptr<raytrace::LightBase>> lightList);
+    };
     };
 } // raytrace

@@ -9,6 +9,10 @@
 class BlackHole : public ObjectBase {
 public:
     // default destructor and constructor
-    BlackHole();
+    BlackHole(double eventHorizon, double mass);
     virtual ~BlackHole() override;
+
+private:
+    double eventHorizon;
+    double mass;
 };
