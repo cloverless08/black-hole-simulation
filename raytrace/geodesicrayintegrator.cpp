@@ -65,8 +65,8 @@ namespace raytrace {
                     }
 
                     for (int step = 0; step < maxGeodesicSteps; ++step) {
-                        const qbVector<double> GeodesicPoint = rayOrigin + distanceAlongRay * rayDirection;
-                        const double distanceToSphere = Length3D(GeodesicPoint, sphereCenter) - 1.0;
+                        const qbVector<double> MarchPoint = rayOrigin + distanceAlongRay * rayDirection;
+                        const double distanceToSphere = Length3D(MarchPoint, sphereCenter) - 1.0;
 
                         if (distanceToSphere > lastDistanceToSphere) {
                             stepsIncreasing += 1;
@@ -74,8 +74,8 @@ namespace raytrace {
                         lastDistanceToSphere = distanceToSphere;
 
                         if (distanceToSphere <= hitThreshold) {
-                            intersectionPoint = GeodesicPoint;
-                            localNorm = GeodesicPoint;
+                            intersectionPoint = MarchPoint;
+                            localNorm = MarchPoint;
                             localNorm.Normalize();
                             hit = true;
                             hitObject = object;
