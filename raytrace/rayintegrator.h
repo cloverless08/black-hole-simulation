@@ -68,5 +68,4 @@ namespace raytrace {
         double factorX, double factorY,
         std::vector<std::shared_ptr<raytrace::ObjectBase>> objectList, std::vector<std::shared_ptr<raytrace::LightBase>> lightList);
     };
-    };
 } // raytrace
