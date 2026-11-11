@@ -65,7 +65,7 @@ namespace raytrace {
                     }
 
                     for (int step = 0; step < maxGeodesicSteps; ++step) {
-                        const qbVector<double> MarchPoint = rayOrigin + distanceAlongRay * rayDirection;
+                        qbVector<double> MarchPoint = rayOrigin + distanceAlongRay * rayDirection;
                         const double distanceToSphere = Length3D(MarchPoint, sphereCenter) - 1.0;
 
                         if (distanceToSphere > lastDistanceToSphere) {
