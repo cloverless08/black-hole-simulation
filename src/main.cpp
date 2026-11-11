@@ -55,7 +55,7 @@ unsigned int AMOUNT_RAM = SDL_GetSystemRAM();
 
 constexpr int BLACK_HOLE_MASS = 100;
 constexpr double BLACK_HOLE_RADIUS = 0.25;
-const math::Vec3 BLACK_HOLE_INITIAL_POSITION = {0.0, 0.0, 0.0}; // centers black hole in the middle of the world coordinates
+const math::Vec3 BLACK_HOLE_INITIAL_POSITION = {0.0, 0.0, 0.0}; // centers black astronomy in the middle of the world coordinates
 
 const std::array<std::string, 4> msgType = {"SYSTEM", "ERROR", "SETUP", "WARN"}; // strOut() helpful labels
 const math::Vec3 BACKGROUND_COLOR = {0, 0, 0}; // sets background to black, bc, yknow... space
@@ -179,6 +179,7 @@ int main() {
     objectList.push_back(std::make_shared<raytrace::ObjSphere>(raytrace::ObjSphere(
     std::vector<double>{0.0, 0.0, 0.0}, 1.0
     )));
+
 
     // construct a test light source
     lightList.push_back(std::make_shared<raytrace::PointLight>(raytrace::PointLight())); // calls default constructor

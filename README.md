@@ -31,7 +31,7 @@ You can use the following commands to simplify the installation (only tested on 
 
 ~~~bash
 git clone https://github.com/cloverless08/black-hole-simulation.git
-cd black-hole-simulation
+cd black-astronomy-simulation
 rm -rf ./build/
 cmake -S . -B build
 cd ./build && make && cd ..
