@@ -1,12 +1,6 @@
 # Project Best Practices and Standards/Methods
 
 
-## Guiding Values and Principles
-
-
-
----
-
 ## Use of Artificial Intelligence, LLMs, and Upfront Communication
 
 AI use will be clearly and proactively described and disclaimed in all necessary documents (most specifically, the README.md).
@@ -23,6 +17,10 @@ Some Examples of what should be listed include:
 - Idea generation or brainstorming.
 - **Any generated content or files**
 - Indexing or refactoring
+- Code harnesses like Claude Code or Codex
+
+Consequently, the creation of an AGENTS.md or CLAUDE.md file in this project will be considered
+evidence of vibe-coding and should be treated as a violation of academic honesty.
 
 ---
 
@@ -79,3 +77,8 @@ Use .h for header files (as apposed to .hpp)
 ---
 
 ## Crediting and Referencing
+
+All authors and contributors shall be listed under the respective tab in the README.md
+
+Any tutorials, videos, or projects used in this project should be linked and credited under the respective
+tab in the README.md
