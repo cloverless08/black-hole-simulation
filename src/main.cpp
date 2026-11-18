@@ -208,7 +208,7 @@ int main() {
 
 
         // start multithreaded rendering
-        CreateMarchedThreads(pixelBuffer, NUMBER_CORES, cam,
+        CreateGeodesicThreads(pixelBuffer, NUMBER_CORES, cam,
             STANDARD_H, STANDARD_W, BACKGROUND_COLOR,
             xFactor, yFactor, objectList, lightList);
 
