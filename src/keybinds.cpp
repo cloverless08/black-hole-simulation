@@ -43,6 +43,14 @@ void GetKeyPress(SDL_Event &event, bool &running, raytrace::Camera &cam) {
                         StrOut("Q: Camera Position", msgType[0]);
                         cam.SetLookAt(std::vector<double>{0.0, 0.0, 0.0});
                         break;
+                    case SDLK_d:
+                        StrOut("D: Diagnostics Output", msgType[0]);
+                        break;
+                    case SDLK_s:
+                        StrOut("S: Screenshot", msgType[0]);
+                        break;
+                    case SDLK_p:
+                        StrOut("P: Pause", msgType[0]);
                     default:
                         break;
                 }
