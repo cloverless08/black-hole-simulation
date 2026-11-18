@@ -171,7 +171,10 @@ int main() {
 
     // unit sphere on origin for testing
     objectList.push_back(std::make_shared<raytrace::ObjSphere>(raytrace::ObjSphere(
-    std::vector<double>{0.0, 0.0, 0.0}, 1.0
+    std::vector<double>{1.0, 1.0, 0.0}, 1.0
+    )));
+    objectList.push_back(std::make_shared<raytrace::ObjSphere>(raytrace::ObjSphere(
+    std::vector<double>{0.0, -1.0, 0.0}, 2.0
     )));
 
 
