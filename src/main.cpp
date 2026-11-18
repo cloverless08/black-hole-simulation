@@ -50,11 +50,9 @@ enum SCREEN_RESOLUTION {
     MOVING_H = 240,
 };
 
-unsigned int NUMBER_CORES = SDL_GetCPUCount();
-unsigned int AMOUNT_RAM = SDL_GetSystemRAM();
+unsigned int static NUMBER_CORES = SDL_GetCPUCount();
+unsigned int static AMOUNT_RAM = SDL_GetSystemRAM();
 
-constexpr int BLACK_HOLE_MASS = 100;
-constexpr double BLACK_HOLE_RADIUS = 0.25;
 const math::Vec3 BLACK_HOLE_INITIAL_POSITION = {0.0, 0.0, 0.0}; // centers black astronomy in the middle of the world coordinates
 
 const std::array<std::string, 4> msgType = {"SYSTEM", "ERROR", "SETUP", "WARN"}; // strOut() helpful labels
@@ -80,7 +78,6 @@ int main() {
 
     // local variables
     bool running = true;
-    bool setupMessageSent = false;
 
     double xFactor = 1.0 / (static_cast<double>(STANDARD_W) / 2.0);
     double yFactor = 1.0 / (static_cast<double>(STANDARD_H) / 2.0);
@@ -89,10 +86,7 @@ int main() {
     enum SCREEN_RESOLUTION resolutionHeight = STANDARD_H;
 
     int frame = 0;
-
     double THETA = 0;
-
-    unsigned long long time = 0;
 
     StrOut("Local Variables Initialized.", msgType[2]);
 
