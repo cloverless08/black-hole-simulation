@@ -58,7 +58,7 @@ namespace raytrace {
 
                     for (int step = 0; step < maxGeodesicSteps; ++step) {
                         qbVector<double> MarchPoint = rayOrigin + distanceAlongRay * rayDirection;
-                        const double distanceToSphere = Length3D(MarchPoint, sphereCenter) - 1.0;
+                        const double distanceToSphere = Length3D(MarchPoint, sphereCenter) - object->GetRadius();
 
                         if (distanceToSphere <= hitThreshold) {
                             intersectionPoint = MarchPoint;
