@@ -73,7 +73,7 @@ int main() {
     }
 
     if (AMOUNT_RAM == 0) {
-        throw "Could not detect system ram.\n";
+        std::cerr << "Could not detect system ram.\n";
     } else {
         std::cout << "Total system RAM detected: " << AMOUNT_RAM << "MB\n";
     }

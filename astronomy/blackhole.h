@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "../raytrace/objects/object.h"
+#include "../raytrace/objects/object_base.h"
 
 class BlackHole : public ObjectBase {
 public:

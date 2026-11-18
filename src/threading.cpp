@@ -96,7 +96,7 @@ void CreateGeodesicThreads(std::vector<uint32_t>& buffer, int numThreads,
 
         threads.emplace_back(GeodesicRayIntegrator.GeodesicRayTrace, std::ref(buffer), std::ref(Cam),
             startY, endY, height, width, backgroundColor,
-            factorX, factorY, objectList, lightList);
+            factorX, factorY, std::ref(objectList), std::ref(lightList));
     }
 
     // wait for all threads to finish rendering
