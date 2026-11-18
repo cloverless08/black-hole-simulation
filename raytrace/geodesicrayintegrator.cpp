@@ -104,7 +104,7 @@ namespace raytrace {
                             intensity);
                     }
 
-                    SetPixel(buffer.data(), width, height, x, y, 146 * intensity, 102 * intensity, 161 * intensity);
+                    SetPixel(buffer.data(), width, height, x, y, 173 * intensity, 255 * intensity, 95 * intensity);
                 } else {
                     SetPixel(buffer.data(), width, height, x, y, 0.0, 0.0, 0.0);
                 }

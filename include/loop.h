@@ -9,7 +9,7 @@
 
 #include "../raytrace/objects/pointlight.h"
 #include "../raytrace/objects/objsphere.h"
-#include "structs.h"
+#include "vec.h"
 #include "../raytrace/camera.h"
 
 void test_loop(std::vector<uint32_t>& buffer, int pixelX, int pixelY, int height, int width);

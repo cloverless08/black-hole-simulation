@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "../include/structs.h"
+#include "../include/vec.h"
 #include "ray.h"
 
 namespace raytrace {

@@ -19,7 +19,7 @@
 
 // gnereal header file includes
 #include "main_utils.h"
-#include "structs.h"
+#include "vec.h"
 #include "loop.h"
 #include "keybinds.h"
 #include "../raytrace/camera.h"

@@ -8,7 +8,7 @@
 #include <array>
 
 #include "main_utils.h"
-#include "structs.h"
+#include "vec.h"
 #include "loop.h"
 #include "../raytrace/camera.h"
 
