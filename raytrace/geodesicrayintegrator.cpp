@@ -46,36 +46,7 @@ namespace raytrace {
                 bool hit = false;
                 std::shared_ptr<raytrace::ObjectBase> hitObject;
                 for (auto& object : objectList) {
-                    const qbVector<double> rayOrigin = camRay.GetPoint1();
-                    qbVector<double> rayDirection = camRay.m_lab;
-                    rayDirection.Normalize();
 
-                    constexpr int maxGeodesicSteps = 128;
-                    constexpr double maxGeodesicDistance = 10.0;
-                    constexpr double hitThreshold = 0.025;
-                    const qbVector<double> sphereCenter{object->GetPosition()};
-                    double distanceAlongRay = 0.0;
-
-                    for (int step = 0; step < maxGeodesicSteps; ++step) {
-                        qbVector<double> MarchPoint = rayOrigin + distanceAlongRay * rayDirection;
-                        const double distanceToSphere = Length3D(MarchPoint, sphereCenter) - object->GetRadius();
-
-                        if (distanceToSphere <= hitThreshold) {
-                            intersectionPoint = MarchPoint;
-                            localNorm = MarchPoint;
-                            localNorm.Normalize();
-                            hit = true;
-                            hitObject = object;
-                            break;
-                        }
-                        if (distanceAlongRay > maxGeodesicDistance) {
-                            break;
-                        }
-                        distanceAlongRay += distanceToSphere;
-                    }
-                    if (hit) {
-                        break;
-                    }
                 }
 
                 if (hit) {
@@ -91,9 +62,9 @@ namespace raytrace {
                             intensity);
                     }
 
-                    SetPixel(buffer.data(), width, height, x, y, 173 * intensity, 255 * intensity, 95 * intensity);
+                    SetPixel(buffer.data(), width, height, x, y, 173 * intensity, 255 * intensity, 95 * intensity); // needs to change
                 } else {
-                    SetPixel(buffer.data(), width, height, x, y, 0.0, 0.0, 0.0);
+                    SetPixel(buffer.data(), width, height, x, y, 0.0, 0.0, 0.0); // needs to change (?)
                 }
             }
         }

@@ -17,7 +17,7 @@
 #include <functional>
 
 namespace raytrace {
-    class RayIntegrator {
+    class RayIntegrator { // deprecated
     };
 
     class LinearRayIntegrator {
@@ -67,5 +67,11 @@ namespace raytrace {
         math::Vec3 backgroundColor,
         double factorX, double factorY,
         std::vector<std::shared_ptr<raytrace::ObjectBase>>& objectList, std::vector<std::shared_ptr<raytrace::LightBase>>& lightList);
+
+    private:
+        qbVector<double> m_acceleration;
+        qbVector<double> m_velocity;
+        qbVector<double> m_direction;
+        qbVector<double> m_position;
     };
 } // raytrace
