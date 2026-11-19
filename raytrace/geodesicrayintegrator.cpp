@@ -43,31 +43,13 @@ namespace raytrace {
                 double V = (static_cast<double>(y) * factorY) - 1.0;
 
                 Cam.GenerateRay(U, V, camRay);
-                bool hit = false;
-                std::shared_ptr<raytrace::ObjectBase> hitObject;
-                for (auto& object : objectList) {
 
-                }
 
-                if (hit) {
-                    double intensity;
-                    qbVector<double> color {3};
-                    bool validIllumination = false;
-                    for (auto currentLight : lightList) { // currently hard-coded to only deal with one light source
-                        validIllumination = currentLight -> ComputeIllumination(intersectionPoint,
-                            localNorm,
-                            objectList,
-                            hitObject,
-                            color,
-                            intensity);
-                    }
 
-                    SetPixel(buffer.data(), width, height, x, y, 173 * intensity, 255 * intensity, 95 * intensity); // needs to change
-                } else {
-                    SetPixel(buffer.data(), width, height, x, y, 0.0, 0.0, 0.0); // needs to change (?)
+
+                    SetPixel(buffer.data(), width, height, x, y, 173, 255, 95); // needs to change
                 }
             }
         }
 
     }
-}
