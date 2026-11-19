@@ -99,7 +99,13 @@ public:
 
     Vec3 CrossProduct(Vec3 & rhs, Vec3 & lhs) { // returns a vector value of the cross product between two inputted vectors
     // essentially vector multiplication (or a form of it)
-        
+    // computes rhs x lhs (first argument crossed with second); order matters, a x b == -(b x a)
+    // result is perpendicular to both inputs, with length |a||b|sin(theta)
+        return {
+            (rhs[1] * lhs[2]) - (rhs[2] * lhs[1]),  // i component
+            (rhs[2] * lhs[0]) - (rhs[0] * lhs[2]),  // j component
+            (rhs[0] * lhs[1]) - (rhs[1] * lhs[0])   // k component
+        };
     }
 
     double GetAngleBetween(Vec3 & a, Vec3 & b) const { // dereived from dot product, gets angle between two vectors
