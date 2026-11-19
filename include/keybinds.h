@@ -1,3 +1,12 @@
+/* ========================================================================== */
+//  CSC1060 at FRCC
+//  Carrick De Min
+//  Capstone Project
+//
+//  File:    include/keybinds.h
+//  Purpose: Declares GetKeyPress(), the SDL keyboard/event handler.
+/* ========================================================================== */
+
 #pragma once
 
 #include "vec.h"

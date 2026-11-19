@@ -1,6 +1,11 @@
+/* ========================================================================== */
+//  CSC1060 at FRCC
+//  Carrick De Min
+//  Capstone Project
 //
-// Created by cdemin on 11/1/26.
-//
+//  File:    raytrace/objects/objsphere.h
+//  Purpose: Declares ObjSphere, a sphere scene object with location and radius.
+/* ========================================================================== */
 
 #pragma once
 

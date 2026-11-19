@@ -1,6 +1,12 @@
+/* ========================================================================== */
+//  CSC1060 at FRCC
+//  Carrick De Min
+//  Capstone Project
 //
-// Created by cdemin on 11/3/26.
-//
+//  File:    raytrace/objects/lightbase.cpp
+//  Purpose: Implements LightBase defaults (illumination is defined by
+//           derived light types).
+/* ========================================================================== */
 
 #include "lightbase.h"
 

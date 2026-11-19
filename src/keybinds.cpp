@@ -1,6 +1,12 @@
+/* ========================================================================== */
+//  CSC1060 at FRCC
+//  Carrick De Min
+//  Capstone Project
 //
-// Created by cdemin on 9/15/26.
-//
+//  File:    src/keybinds.cpp
+//  Purpose: Polls SDL events and handles keyboard input for quitting and
+//           moving the camera.
+/* ========================================================================== */
 
 #include <array>
 

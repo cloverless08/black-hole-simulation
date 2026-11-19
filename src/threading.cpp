@@ -1,7 +1,12 @@
-
+/* ========================================================================== */
+//  CSC1060 at FRCC
+//  Carrick De Min
+//  Capstone Project
 //
-// Created by cdemin on 11/5/26.
-//
+//  File:    src/threading.cpp
+//  Purpose: Splits the frame into row bands and dispatches them across
+//           worker threads for each ray integrator.
+/* ========================================================================== */
 
 #include "../include/threading.h"
 #include "../include/loop.h"

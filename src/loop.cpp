@@ -1,6 +1,12 @@
+/* ========================================================================== */
+//  CSC1060 at FRCC
+//  Carrick De Min
+//  Capstone Project
 //
-// Created by cdemin on 9/10/26.
-//
+//  File:    src/loop.cpp
+//  Purpose: Early test render loop that draws a gradient to verify the
+//           pixel buffer and display pipeline.
+/* ========================================================================== */
 
 #include <vector>
 #include <iostream>

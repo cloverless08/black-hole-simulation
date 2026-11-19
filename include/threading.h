@@ -1,6 +1,12 @@
+/* ========================================================================== */
+//  CSC1060 at FRCC
+//  Carrick De Min
+//  Capstone Project
 //
-// Created by cdemin on 11/5/26.
-//
+//  File:    include/threading.h
+//  Purpose: Declares the functions that render a frame across multiple
+//           threads using the linear, marching or geodesic integrators.
+/* ========================================================================== */
 
 #pragma once
 

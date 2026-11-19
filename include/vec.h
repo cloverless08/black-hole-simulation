@@ -1,6 +1,11 @@
+/* ========================================================================== */
+//  CSC1060 at FRCC
+//  Carrick De Min
+//  Capstone Project
 //
-// Created by cdemin on 9/10/26.
-//
+//  File:    include/vec.h
+//  Purpose: Lightweight Vec3 and Vec2 math types used throughout the project.
+/* ========================================================================== */
 
 #pragma once
 

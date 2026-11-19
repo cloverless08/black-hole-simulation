@@ -1,6 +1,12 @@
+/* ========================================================================== */
+//  CSC1060 at FRCC
+//  Carrick De Min
+//  Capstone Project
 //
-// Created by cdemin on 11/1/26.
-//
+//  File:    raytrace/objects/object_base.h
+//  Purpose: Declares ObjectBase, the abstract base class for all
+//           ray-traceable scene objects.
+/* ========================================================================== */
 
 #pragma once
 

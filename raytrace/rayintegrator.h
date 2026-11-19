@@ -1,6 +1,12 @@
+/* ========================================================================== */
+//  CSC1060 at FRCC
+//  Carrick De Min
+//  Capstone Project
 //
-// Created by cdemin on 11/7/26.
-//
+//  File:    raytrace/rayintegrator.h
+//  Purpose: Declares the ray integrators: linear (straight-line), marching,
+//           and geodesic (curved-spacetime) ray tracing.
+/* ========================================================================== */
 
 #pragma once
 

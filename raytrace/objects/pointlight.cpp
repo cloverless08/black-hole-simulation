@@ -1,6 +1,11 @@
+/* ========================================================================== */
+//  CSC1060 at FRCC
+//  Carrick De Min
+//  Capstone Project
 //
-// Created by cdemin on 11/3/26.
-//
+//  File:    raytrace/objects/pointlight.cpp
+//  Purpose: Implements PointLight and its diffuse illumination calculation.
+/* ========================================================================== */
 
 #include "pointlight.h"
 

@@ -1,6 +1,12 @@
+/* ========================================================================== */
+//  CSC1060 at FRCC
+//  Carrick De Min
+//  Capstone Project
 //
-// Created by cdemin on 9/10/26.
-//
+//  File:    include/loop.h
+//  Purpose: Declares the test render loop and pulls in shared scene types.
+/* ========================================================================== */
+
 #pragma once
 
 #include <array>

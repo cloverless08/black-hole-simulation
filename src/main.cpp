@@ -3,6 +3,10 @@
 //  Carrick De Min
 //  Capstone Project
 //  v0.4.0
+//
+//  File:    src/main.cpp
+//  Purpose: Program entry point; sets up SDL, the camera, scene objects and
+//           lights, and runs the main render loop.
 /* ========================================================================== */
 
 // library includes

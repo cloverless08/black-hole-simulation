@@ -1,6 +1,11 @@
+/* ========================================================================== */
+//  CSC1060 at FRCC
+//  Carrick De Min
+//  Capstone Project
 //
-// Created by cdemin on 11/1/26.
-//
+//  File:    raytrace/objects/objsphere.cpp
+//  Purpose: Implements ObjSphere and its ray-sphere intersection test.
+/* ========================================================================== */
 
 #include "objsphere.h"
 

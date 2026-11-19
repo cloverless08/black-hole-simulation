@@ -1,6 +1,12 @@
+/* ========================================================================== */
+//  CSC1060 at FRCC
+//  Carrick De Min
+//  Capstone Project
 //
-// Created by cdemin on 11/7/26.
-//
+//  File:    raytrace/marchingrayintegrator.cpp
+//  Purpose: Ray marching tracer: steps rays through the scene in small
+//           increments to find intersections.
+/* ========================================================================== */
 
 #include "rayintegrator.h"
 #include "../include/main_utils.h"

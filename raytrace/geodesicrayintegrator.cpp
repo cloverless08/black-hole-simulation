@@ -1,10 +1,12 @@
+/* ========================================================================== */
+//  CSC1060 at FRCC
+//  Carrick De Min
+//  Capstone Project
 //
-// Created by cdemin on 11/7/26.
-//
-
-//
-// Created by cdemin on 11/7/26.
-//
+//  File:    raytrace/geodesicrayintegrator.cpp
+//  Purpose: Geodesic ray tracer: integrates ray paths bent by gravity
+//           around the black hole.
+/* ========================================================================== */
 
 #include "rayintegrator.h"
 #include "../include/main_utils.h"
