@@ -37,12 +37,11 @@ public:
     double operator[](int i) const {return data[i];}
     double& operator[](int i) {return data[i];}
 
-    math::Vec3 operator+(const math::Vec3& o) const { return {x()+o.x(), y()+o.y(), z()+o.z()}; }
-    math::Vec3 operator-(const math::Vec3& o) const { return {x()-o.x(), y()-o.y(), z()-o.z()}; }
-    math::Vec3 operator*(double s) const { return {x()*s, y()*s, z()*s}; }
+    math::Vec3 operator+(const math::Vec3& o) const { return {data[0]+o.data[0], data[1]+o.data[1], data[2]+o.data[2]}; }
+    math::Vec3 operator-(const math::Vec3& o) const { return {data[0]-o.data[0], data[1]-o.data[1], data[2]-o.data[2]}; }
+    math::Vec3 operator*(double s) const { return {data[0]*s, data[1]*s, data[2]*s}; }
 
-    // experimenting with something that could replace Vec2
-    template <std::size_t N> class Vec { std::array<double,N> data; };
+
 
 };
 

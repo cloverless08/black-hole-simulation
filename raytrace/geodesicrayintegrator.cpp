@@ -44,6 +44,8 @@ namespace raytrace {
 
                 Cam.GenerateRay(U, V, camRay);
 
+                // actual geodesic shit
+                
 
 
 
