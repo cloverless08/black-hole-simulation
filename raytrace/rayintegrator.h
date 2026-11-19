@@ -15,6 +15,7 @@
 
 #include "camera.h"
 #include "../qbLinearAlgebra/qbVector.h"
+#include "../include/vec.h"
 
 #include "../include/threading.h"
 #include "../include/loop.h"
@@ -79,5 +80,8 @@ namespace raytrace {
         qbVector<double> m_velocity;
         qbVector<double> m_direction;
         qbVector<double> m_position;
+
+        math::Vec3 unitVector = {1.0, 1.0, 1.0};
+        math::Vec3 zeroVector = {0.0, 0.0, 0.0};
     };
 } // raytrace

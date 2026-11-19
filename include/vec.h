@@ -10,6 +10,7 @@
 #pragma once
 
 #include <array>
+#include <cmath>
 
 namespace math {
 class Vec3 {    // for 3d space
@@ -22,6 +23,7 @@ public:
 
 
     // getter functions
+    //=====================================
      double x() const {
         return data[0];
     }
@@ -35,6 +37,37 @@ public:
     }
 
 
+    // retrieves i vector for standard base vectors
+    Vec3 GetVecI() const {
+        return {data[0], 0.0, 0.0};
+    }
+
+    // retrieves j vector for standard base vectors
+    Vec3 GetVecJ() const {
+        return {0.0, data[1], 0.0};
+    }
+
+    // retrieves k vector for standard base vectors
+    Vec3 GetVecK() const {
+        return {0.0, 0.0, data[2]};
+    }
+
+    double GetLength() const {
+        return std::sqrt((data[0] * data[0]) + (data[1] * data[1]) + (data[2] * data[2]));
+    }
+
+
+    // other checks that idk how to classify (idk if its even useful)
+    //==========================================
+    bool IsOrthogonal(Vec3 & rhs, Vec3 & lhs) const {
+        if (GetAngleBetween(rhs, lhs) == 90.0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
     // operator functions
     math::Vec3 operator-() const {
         return math::Vec3{-data[0], -data[1], -data[2]};
@@ -42,11 +75,44 @@ public:
     double operator[](int i) const {return data[i];}
     double& operator[](int i) {return data[i];}
 
+    // traditional operator overloaders
     math::Vec3 operator+(const math::Vec3& o) const { return {data[0]+o.data[0], data[1]+o.data[1], data[2]+o.data[2]}; }
     math::Vec3 operator-(const math::Vec3& o) const { return {data[0]-o.data[0], data[1]-o.data[1], data[2]-o.data[2]}; }
     math::Vec3 operator*(double s) const { return {data[0]*s, data[1]*s, data[2]*s}; }
 
+    // setter function to change one element of data
+    void SetElement(int index, double val) {
+        data[index] = val;
+    }
 
+
+    // computational functions/operators
+    double DotProduct(Vec3 & rhs, Vec3 & lhs) const { //returns a scalar value of dot product
+        double dot = 0.0;
+
+        for (int i = 0; i < 3; ++i) {
+            dot += lhs[i] * rhs[i];
+        }
+
+        return dot;
+    }
+
+    Vec3 CrossProduct(Vec3 & rhs, Vec3 & lhs) { // returns a vector value of the cross product between two inputted vectors
+    // essentially vector multiplication (or a form of it)
+        
+    }
+
+    double GetAngleBetween(Vec3 & a, Vec3 & b) const { // dereived from dot product, gets angle between two vectors
+
+        double lenA = a.GetLength();
+        double lenB = b.GetLength();
+
+        double dot = DotProduct(a, b);
+
+        double tmp = dot / (lenA * lenB);
+
+        return acos(tmp);
+    }
 
 };
 
