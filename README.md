@@ -4,8 +4,8 @@
 
 A (not quite) real-time visual simulation of a Black Hole, including Doppler Effect, Gravitational Lensing, Accretion Disk, and Halo.
 
-CPU traced representation of light rays passing through a black hole in space.
- - C++ Calculates light rays, star position and black hole effects
+CPU traced representation of light rays passing through a black hole in space entirely in C++.
+ - Calculates light rays, RK4 and Geodesic bending, and black hole effects
  - Each pixel gets an RBG value in a pixel buffer
  - SDL2 renders pixel buffer to screen using GPU (requires graphics card or modern CPU with an igpu)
 
@@ -47,11 +47,10 @@ Download the platform-specific executable here (without source code):
  - [Linux](link TK)
 
 ## Controls/Keybinds
-- Arrow Keys: Control camera pitch and yaw
+- Arrow Keys: Control camera position around black hole
 - d: Display diagnostic info to terminal/screend
 - s: Save snapshot of current frame
 - p: Pause simulation
-- q: Output Camera Position
 - Esc: Quit App
 
 ## Authors
@@ -78,8 +77,6 @@ and articles for me to read, and sometimes was used to explain parts of these do
 *FRCC Code of Conduct* and the requirements outlined in the CSC1060 syllabus.
 
 - GitHub occasionally generated commit messages for changes that were staged in the remote repository or when made within a GitHub CodeSpace
-
-- Claude collected best practices and standards to help outline what documents I needed to write
 
 Please refer to the tags in the **Sources** section of this readme for more specifics.
 
@@ -111,6 +108,8 @@ The full text of the license can be found here for reference:
 ![Early test window](assets/screenshots/Screenshot_20260923_010026.png)
 
 ![First Sphere Demonstration](assets/screenshots/Screenshot_20261103_143503.png)
+
+![First Working Black Hole](assets/screenshots/image.png)
 
 ---
 
@@ -148,6 +147,8 @@ The full text of the license can be found here for reference:
 - *The Black Hole Equation* — Explained
 - *Schwarzschild Metric* — Wikipedia
 - *Anatomy* — NASA Science
+- Flannelhead's BlackStar
+- *Rendering general relativity* - Tom Hodson
 
 ### Geometrized Units
 - *Geometrized Units* — The Spectrum
@@ -158,6 +159,7 @@ The full text of the license can be found here for reference:
 - *Ray Tracing with C++*
 - *Ray Tracing (Graphics)* — Wikipedia
 - *An Introduction to Ray Tracing*
+- *Raytracing a black hole*
 
 ### Additional References
 - *Gravity: How...* — C++ Forum
