@@ -1,6 +1,12 @@
+/* ========================================================================== */
+//  CSC1060 at FRCC
+//  Carrick De Min
+//  Capstone Project
 //
-// Created by cdemin on 9/15/26.
-//
+//  File:    src/keybinds.cpp
+//  Purpose: Polls SDL events and handles keyboard input for quitting and
+//           moving the camera.
+/* ========================================================================== */
 
 #include <array>
 
@@ -41,7 +47,16 @@ void GetKeyPress(SDL_Event &event, bool &running, raytrace::Camera &cam) {
                         break;
                     case SDLK_q:
                         StrOut("Q: Camera Position", msgType[0]);
+                        cam.SetLookAt(std::vector<double>{0.0, 0.0, 0.0});
                         break;
+                    case SDLK_d:
+                        StrOut("D: Diagnostics Output", msgType[0]);
+                        break;
+                    case SDLK_s:
+                        StrOut("S: Screenshot", msgType[0]);
+                        break;
+                    case SDLK_p:
+                        StrOut("P: Pause", msgType[0]);
                     default:
                         break;
                 }

@@ -1,7 +1,13 @@
+/* ========================================================================== */
+//  CSC1060 at FRCC
+//  Carrick De Min
+//  Capstone Project
+//
+//  File:    include/main_utils.h
+//  Purpose: Shared utilities: terminal color macros, StrOut() logging,
+//           the startup info header, and SetPixel().
+/* ========================================================================== */
 
-//
-// Created by cdemin on 8/25/26.
-//
 #pragma once
 
 #include <iostream>

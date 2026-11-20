@@ -1,6 +1,11 @@
+/* ========================================================================== */
+//  CSC1060 at FRCC
+//  Carrick De Min
+//  Capstone Project
 //
-// Created by cdemin on 11/1/26.
-//
+//  File:    raytrace/objects/object_base.cpp
+//  Purpose: Implements ObjectBase defaults and floating-point comparison helpers.
+/* ========================================================================== */
 
 #include  <math.h>
 

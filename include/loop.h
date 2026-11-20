@@ -1,6 +1,12 @@
+/* ========================================================================== */
+//  CSC1060 at FRCC
+//  Carrick De Min
+//  Capstone Project
 //
-// Created by cdemin on 9/10/26.
-//
+//  File:    include/loop.h
+//  Purpose: Declares the test render loop and pulls in shared scene types.
+/* ========================================================================== */
+
 #pragma once
 
 #include <array>
@@ -9,7 +15,7 @@
 
 #include "../raytrace/objects/pointlight.h"
 #include "../raytrace/objects/objsphere.h"
-#include "structs.h"
+#include "vec.h"
 #include "../raytrace/camera.h"
 
 void test_loop(std::vector<uint32_t>& buffer, int pixelX, int pixelY, int height, int width);

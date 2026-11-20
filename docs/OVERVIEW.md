@@ -27,6 +27,4 @@ Backwards ray-trace from camera into space, four possible endings for every ray:
 
 ---
 
-## File Structure
-
 

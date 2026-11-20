@@ -1,6 +1,11 @@
+/* ========================================================================== */
+//  CSC1060 at FRCC
+//  Carrick De Min
+//  Capstone Project
 //
-// Created by cdemin on 11/3/26.
-//
+//  File:    raytrace/objects/lightbase.h
+//  Purpose: Declares LightBase, the abstract base class for scene lights.
+/* ========================================================================== */
 
 #pragma once
 

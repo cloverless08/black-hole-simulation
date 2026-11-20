@@ -1,6 +1,12 @@
+/* ========================================================================== */
+//  CSC1060 at FRCC
+//  Carrick De Min
+//  Capstone Project
 //
-// Created by cdemin on 11/4/26.
-//
+//  File:    raytrace/camera.cpp
+//  Purpose: Implements the Camera class and builds the virtual screen
+//           used to generate primary rays.
+/* ========================================================================== */
 
 #include "camera.h"
 #include "ray.h"

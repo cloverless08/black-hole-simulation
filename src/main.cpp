@@ -3,6 +3,10 @@
 //  Carrick De Min
 //  Capstone Project
 //  v0.4.0
+//
+//  File:    src/main.cpp
+//  Purpose: Program entry point; sets up SDL, the camera, scene objects and
+//           lights, and runs the main render loop.
 /* ========================================================================== */
 
 // library includes
@@ -19,7 +23,7 @@
 
 // gnereal header file includes
 #include "main_utils.h"
-#include "structs.h"
+#include "vec.h"
 #include "loop.h"
 #include "keybinds.h"
 #include "../raytrace/camera.h"
@@ -50,12 +54,10 @@ enum SCREEN_RESOLUTION {
     MOVING_H = 240,
 };
 
-unsigned int NUMBER_CORES = SDL_GetCPUCount();
-unsigned int AMOUNT_RAM = SDL_GetSystemRAM();
+unsigned int static NUMBER_CORES = SDL_GetCPUCount();
+unsigned int static AMOUNT_RAM = SDL_GetSystemRAM();
 
-constexpr int BLACK_HOLE_MASS = 100;
-constexpr double BLACK_HOLE_RADIUS = 0.25;
-const math::Vec3 BLACK_HOLE_INITIAL_POSITION = {0.0, 0.0, 0.0}; // centers black hole in the middle of the world coordinates
+const math::Vec3 BLACK_HOLE_INITIAL_POSITION = {0.0, 0.0, 0.0}; // centers black astronomy in the middle of the world coordinates
 
 const std::array<std::string, 4> msgType = {"SYSTEM", "ERROR", "SETUP", "WARN"}; // strOut() helpful labels
 const math::Vec3 BACKGROUND_COLOR = {0, 0, 0}; // sets background to black, bc, yknow... space
@@ -73,14 +75,13 @@ int main() {
     }
 
     if (AMOUNT_RAM == 0) {
-        throw "Could not detect system ram.\n";
+        std::cerr << "Could not detect system ram.\n";
     } else {
         std::cout << "Total system RAM detected: " << AMOUNT_RAM << "MB\n";
     }
 
     // local variables
     bool running = true;
-    bool setupMessageSent = false;
 
     double xFactor = 1.0 / (static_cast<double>(STANDARD_W) / 2.0);
     double yFactor = 1.0 / (static_cast<double>(STANDARD_H) / 2.0);
@@ -89,10 +90,7 @@ int main() {
     enum SCREEN_RESOLUTION resolutionHeight = STANDARD_H;
 
     int frame = 0;
-
     double THETA = 0;
-
-    unsigned long long time = 0;
 
     StrOut("Local Variables Initialized.", msgType[2]);
 
@@ -157,11 +155,12 @@ int main() {
     // initialize raytracing
     StrOut("Initializing ray tracing structure.", msgType[2]);
     raytrace::Camera cam;
-    cam.SetPosition(qbVector<double>{std::vector<double>{0.0, -10.0, 0.0}} );
+    // units are multiples of M: 30M out, slightly above the disk plane so the disk is seen tilted
+    cam.SetPosition(qbVector<double>{std::vector<double>{0.0, -30.0, 3.0}} );
     cam.SetLookAt(qbVector<double>{std::vector<double>{0.0, 0.0, 0.0}}); // look at origin
     cam.SetUp(qbVector<double>{std::vector<double>{0.0, 0.0, 1.0}});
 
-    cam.SetHorizontalSize(0.25);
+    cam.SetHorizontalSize(0.75); // wide enough to fit the whole disk (out to 20M)
     cam.SetAspectRatio(4.0 / 3.0);
 
     cam.UpdateCamera();
@@ -176,8 +175,13 @@ int main() {
     std::vector<std::shared_ptr<raytrace::LightBase>> lightList;
 
     // unit sphere on origin for testing
-    //raytrace::ObjSphere m_testSphere;
-    objectList.push_back(std::make_shared<raytrace::ObjSphere>(raytrace::ObjSphere()));
+    objectList.push_back(std::make_shared<raytrace::ObjSphere>(raytrace::ObjSphere(
+    std::vector<double>{1.0, 1.0, 0.0}, 1.0
+    )));
+    objectList.push_back(std::make_shared<raytrace::ObjSphere>(raytrace::ObjSphere(
+    std::vector<double>{0.0, -1.0, 0.0}, 2.0
+    )));
+
 
     // construct a test light source
     lightList.push_back(std::make_shared<raytrace::PointLight>(raytrace::PointLight())); // calls default constructor
@@ -206,7 +210,7 @@ int main() {
 
 
         // start multithreaded rendering
-        CreateMarchedThreads(pixelBuffer, NUMBER_CORES, cam,
+        CreateGeodesicThreads(pixelBuffer, NUMBER_CORES, cam,
             STANDARD_H, STANDARD_W, BACKGROUND_COLOR,
             xFactor, yFactor, objectList, lightList);
 

@@ -1,6 +1,11 @@
+/* ========================================================================== */
+//  CSC1060 at FRCC
+//  Carrick De Min
+//  Capstone Project
 //
-// Created by cdemin on 11/4/26.
-//
+//  File:    raytrace/ray.cpp
+//  Purpose: Implements the Ray class constructors and getters.
+/* ========================================================================== */
 
 #include "ray.h"
 

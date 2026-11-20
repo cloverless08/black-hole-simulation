@@ -15,7 +15,7 @@ This project has cross-platform makefiles included via CMake.
 
 To install and run, simply download or clone this repository, navigate to ./build and run the linux application file or build from source.
 
-**Linux**
+**Linux** (runs current public build, may not be up-to-date)
 - ./CSC1060_Captstone_Project/build
 - Find ./CSC1060_CAPSTONE_PROJECT
 - Execute via file manager or terminal
@@ -23,7 +23,9 @@ To install and run, simply download or clone this repository, navigate to ./buil
 ---
 
 **Windows**
-- TK 
+- Remove existing linux executable
+- Build from parent source using cmake
+- Enter build and run .exe
 
 You can use the following commands to simplify the installation (only tested on Linux) to install the latest git push from main:
 
@@ -31,7 +33,7 @@ You can use the following commands to simplify the installation (only tested on 
 
 ~~~bash
 git clone https://github.com/cloverless08/black-hole-simulation.git
-cd black-hole-simulation
+cd black-astronomy-simulation
 rm -rf ./build/
 cmake -S . -B build
 cd ./build && make && cd ..
@@ -76,6 +78,8 @@ and articles for me to read, and sometimes was used to explain parts of these do
 *FRCC Code of Conduct* and the requirements outlined in the CSC1060 syllabus.
 
 - GitHub occasionally generated commit messages for changes that were staged in the remote repository or when made within a GitHub CodeSpace
+
+- Claude collected best practices and standards to help outline what documents I needed to write
 
 Please refer to the tags in the **Sources** section of this readme for more specifics.
 
@@ -158,11 +162,6 @@ The full text of the license can be found here for reference:
 ### Additional References
 - *Gravity: How...* — C++ Forum
 
-### Tools Used
-- JetBrains CLion
-- NeoVim
-- cmake
-- GitHub Codespaces
 
 --- 
 

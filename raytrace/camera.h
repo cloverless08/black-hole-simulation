@@ -1,10 +1,16 @@
+/* ========================================================================== */
+//  CSC1060 at FRCC
+//  Carrick De Min
+//  Capstone Project
 //
-// Created by cdemin on 10/13/26.
-//
+//  File:    raytrace/camera.h
+//  Purpose: Declares the Camera class: position, look-at, up vector,
+//           screen geometry, and primary ray generation.
+/* ========================================================================== */
 
 #pragma once
 
-#include "../include/structs.h"
+#include "../include/vec.h"
 #include "ray.h"
 
 namespace raytrace {

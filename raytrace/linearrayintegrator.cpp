@@ -1,6 +1,12 @@
+/* ========================================================================== */
+//  CSC1060 at FRCC
+//  Carrick De Min
+//  Capstone Project
 //
-// Created by cdemin on 11/7/26.
-//
+//  File:    raytrace/linearrayintegrator.cpp
+//  Purpose: Straight-line ray tracer: casts one ray per pixel and shades
+//           the closest intersected object.
+/* ========================================================================== */
 
 #include "rayintegrator.h"
 

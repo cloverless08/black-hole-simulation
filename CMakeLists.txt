@@ -1,4 +1,9 @@
 cmake_minimum_required(VERSION 3.12) # Note: Upgraded from 3.10 for CONFIGURE_DEPENDS
+
+if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+    set(CMAKE_BUILD_TYPE Release CACHE STRING "Choose the type of build." FORCE)
+endif()
+
 project(CSC1060_Capstone_Project CXX)
 
 set(CMAKE_CXX_STANDARD 17)

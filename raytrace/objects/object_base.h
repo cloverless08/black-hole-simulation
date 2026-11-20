@@ -1,6 +1,12 @@
+/* ========================================================================== */
+//  CSC1060 at FRCC
+//  Carrick De Min
+//  Capstone Project
 //
-// Created by cdemin on 11/1/26.
-//
+//  File:    raytrace/objects/object_base.h
+//  Purpose: Declares ObjectBase, the abstract base class for all
+//           ray-traceable scene objects.
+/* ========================================================================== */
 
 #pragma once
 
@@ -23,9 +29,18 @@ namespace raytrace {
         // test whether two flaoting points are close to being equal (truncation)
         bool CheckAreClose(const double float1, const double float2);
 
+        // getter function for location
+        qbVector<double> GetPosition() {
+            return m_location;
+        }
+
+        double GetRadius() const { return m_radius; }
+
 
         // member variables
         qbVector<double> m_baseColor {3};
+        qbVector<double> m_location {3};
+        double m_radius;
 
     };
 }

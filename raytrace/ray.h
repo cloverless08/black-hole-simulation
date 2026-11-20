@@ -1,6 +1,16 @@
+/* ========================================================================== */
+//  CSC1060 at FRCC
+//  Carrick De Min
+//  Capstone Project
+//
+//  File:    raytrace/ray.h
+//  Purpose: Declares the Ray class, defined by two points and the vector
+//           between them.
+/* ========================================================================== */
+
 #pragma once
 
-#include "structs.h"
+#include "vec.h"
 #include "../qbLinearAlgebra/qbVector.h"
 
 namespace raytrace {
