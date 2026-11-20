@@ -152,7 +152,7 @@ namespace raytrace {
                     RK4Step(pos, vel, h2, dt);
                     double newR = pos.GetLength();
 
-                    // fell into the event horizon, means shadow
+                    // fell into the event horizon, shadow
                     if (newR < R_HORIZON) {
                         break;
                     }
