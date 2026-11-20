@@ -39,6 +39,7 @@ namespace raytrace {
         double GetLength();
         double GetHorizontalSize();
         double GetAspectRatio();
+        double GetDistanceFromOrigin();
 
         // function to get a ray
         bool GenerateRay(float projectScreenX, float projectScreenY,
@@ -48,6 +49,8 @@ namespace raytrace {
         void UpdateCamera();
 
     private:
+        double m_distanceFromOrigin;
+
         qbVector<double> m_cameraPosition = qbVector<double>(3);
         qbVector<double> m_cameraLookAt = qbVector<double>(3);
         qbVector<double> m_cameraUp = qbVector<double>(3);

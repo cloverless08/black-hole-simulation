@@ -156,7 +156,7 @@ int main() {
     StrOut("Initializing ray tracing structure.", msgType[2]);
     raytrace::Camera cam;
     // units are multiples of M: 30M out, slightly above the disk plane so the disk is seen tilted
-    cam.SetPosition(qbVector<double>{std::vector<double>{0.0, -30.0, 3.0}} );
+    cam.SetPosition(qbVector<double>{std::vector<double>{0.0, -cam.GetDistanceFromOrigin(), 3.0}} );
     cam.SetLookAt(qbVector<double>{std::vector<double>{0.0, 0.0, 0.0}}); // look at origin
     cam.SetUp(qbVector<double>{std::vector<double>{0.0, 0.0, 1.0}});
 

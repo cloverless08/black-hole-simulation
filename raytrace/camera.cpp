@@ -24,6 +24,8 @@ raytrace::Camera::Camera() {
 
     m_cameraLength = 1.0;
     m_cameraAspectRatio = 1.0;
+
+    m_distanceFromOrigin = 30.0;
 }
 
 //paramter assigning functions
@@ -69,6 +71,10 @@ qbVector<double> raytrace::Camera::GetUp() const {
 // length of camera
 double raytrace::Camera::GetLength() {
     return m_cameraLength;
+}
+
+double raytrace::Camera::GetDistanceFromOrigin() {
+    return m_distanceFromOrigin;
 }
 
 // return horizontal size

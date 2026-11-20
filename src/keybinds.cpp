@@ -31,23 +31,29 @@ void GetKeyPress(SDL_Event &event, bool &running, raytrace::Camera &cam) {
                         break;
                     case SDLK_RIGHT:
                         StrOut("Right Arrow Pressed", msgType[0]);
-                        cam.SetPosition(cam.GetPosition() + qbVector<double>{std::vector{0.025, 0.0, 0.0}});
+                        //cam.SetPosition(cam.GetPosition() + qbVector<double>{std::vector{0.025, 0.0, 0.0}});
+                        //cam.SetPosition(cam.GetPosition() + qbVector<double>{std::vector{0.0 + cos(10.0) * cam.GetDistanceFromOrigin(), 0.0 + sin(10.0) * cam.GetDistanceFromOrigin(), 0.0}});
+                        cam.SetPosition(std::vector{0.0 + cos(10.0) * cam.GetDistanceFromOrigin(), 0.0 + sin(10.0) * cam.GetDistanceFromOrigin(), 0.0});
+                        cam.SetLookAt(qbVector<double>{std::vector<double>{0.0, 0.0, 0.0}}); // look at origin
+                        cam.UpdateCamera();
                         break;
                     case SDLK_LEFT:
                         StrOut("Left Arrow Pressed", msgType[0]);
-                        cam.SetPosition(cam.GetPosition() + qbVector<double>{std::vector{-0.025, 0.0, 0.0}});
+                        cam.SetPosition(std::vector{0.0 - cos(10.0) * cam.GetDistanceFromOrigin(), 0.0 - sin(10.0) * cam.GetDistanceFromOrigin(), 0.0});
+                        cam.SetLookAt(qbVector<double>{std::vector<double>{0.0, 0.0, 0.0}}); // look at origin
+                        cam.UpdateCamera();
                         break;
                     case SDLK_UP:
                         StrOut("Up Arrow Pressed", msgType[0]);
-                        cam.SetPosition(cam.GetPosition() + qbVector<double>{std::vector{0.0, 0.0, -0.025}});
+                        cam.SetPosition(std::vector{0.0 + cos(10.0) * cam.GetDistanceFromOrigin(), 0.0, 0.0 + sin(10.0) * cam.GetDistanceFromOrigin(),});
+                        cam.SetLookAt(qbVector<double>{std::vector<double>{0.0, 0.0, 0.0}}); // look at origin
+                        cam.UpdateCamera();
                         break;
                     case SDLK_DOWN:
                         StrOut("Down Arrow Pressed", msgType[0]);
-                        cam.SetPosition(cam.GetPosition() + qbVector<double>{std::vector{0.0, 0.0, 0.025}});
-                        break;
-                    case SDLK_q:
-                        StrOut("Q: Camera Position", msgType[0]);
-                        cam.SetLookAt(std::vector<double>{0.0, 0.0, 0.0});
+                        cam.SetPosition(std::vector{0.0 - cos(10.0) * cam.GetDistanceFromOrigin(), 0.0, 0.0 - sin(10.0) * cam.GetDistanceFromOrigin(),});
+                        cam.SetLookAt(qbVector<double>{std::vector<double>{0.0, 0.0, 0.0}}); // look at origin
+                        cam.UpdateCamera();
                         break;
                     case SDLK_d:
                         StrOut("D: Diagnostics Output", msgType[0]);
