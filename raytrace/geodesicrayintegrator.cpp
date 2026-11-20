@@ -76,7 +76,8 @@ namespace raytrace {
         int cellsTheta = static_cast<int>(sphereLatitude / PI * 36.0); // hard coded square rows
         int cellsPhi   = static_cast<int>(sphereLongitude / (2.0 * PI) * 72.0); // hard coded square columns
         bool light = ((cellsTheta + cellsPhi) % 2) == 0;
-        math::Vec3 color = light ? math::Vec3{40.0, 40.0, 60.0} : math::Vec3{15.0, 15.0, 25.0};
+        //math::Vec3 color = light ? math::Vec3{43.0, 35.0, 51.0} : math::Vec3{17.0, 0.0, 33.0};
+        math::Vec3 color = light ? math::Vec3{0.0, 0.0, 0.0} : math::Vec3{0.0, 0.0, 0.0};
 
         // starfield
         int starT = static_cast<int>(sphereLatitude * 300.0);
@@ -96,16 +97,13 @@ namespace raytrace {
         // 0 at the inner edge, 1 at the outer edge
         double t = (r - DISK_INNER) / (DISK_OUTER - DISK_INNER);
 
-        // hot (white/yellow) inside, cool (dark red) outside
-        math::Vec3 inner{255.0, 230.0, 180.0};
-        math::Vec3 outer{140.0, 30.0, 5.0};
+        // hot  inside, cool outside
+        math::Vec3 inner{254.0, 121.0, 0.0};
+        math::Vec3 outer{148.0, 3.0, 3.0};
         math::Vec3 color = inner * (1.0 - t) + outer * t;
 
         // brightness falloff
         double brightness = std::pow(DISK_INNER / r, 1.5);
-
-        // faint rings so the warping of the disk shows up
-        //double rings = 0.8 + 0.2 * std::cos(r * 4.0);
 
         return color * std::clamp(brightness, 0.0, 1.0);
     }

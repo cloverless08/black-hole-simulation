@@ -160,7 +160,7 @@ int main() {
     cam.SetLookAt(qbVector<double>{std::vector<double>{0.0, 0.0, 0.0}}); // look at origin
     cam.SetUp(qbVector<double>{std::vector<double>{0.0, 0.0, 1.0}});
 
-    cam.SetHorizontalSize(0.75); // wide enough to fit the whole disk (out to 20M)
+    cam.SetHorizontalSize(1);
     cam.SetAspectRatio(4.0 / 3.0);
 
     cam.UpdateCamera();
@@ -200,7 +200,7 @@ int main() {
         float deltaTime = elapsed.count();
         lastTime = currentTime;
 
-        //std::cout << "frame rate: " << (1 / deltaTime) << std::endl;
+        std::cout << "frame rate: " << (1 / deltaTime) << "\n";
 
         // poll all events
         GetKeyPress(event, running, cam);
