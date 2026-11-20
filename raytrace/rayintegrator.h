@@ -76,12 +76,19 @@ namespace raytrace {
         std::vector<std::shared_ptr<raytrace::ObjectBase>>& objectList, std::vector<std::shared_ptr<raytrace::LightBase>>& lightList);
 
     private:
-        qbVector<double> m_acceleration;
-        qbVector<double> m_velocity;
-        qbVector<double> m_direction;
-        qbVector<double> m_position;
+        // photon acceleration in Schwarzschild spacetime, written as a 3D cartesian ODE: a = -3 M h^2 pos / r^5
+        static math::Vec3 Accel(const math::Vec3& pos, double h2);
 
-        math::Vec3 unitVector = {1.0, 1.0, 1.0};
-        math::Vec3 zeroVector = {0.0, 0.0, 0.0};
+        // advances pos/vel by one RK4 step of size dt
+        static void RK4Step(math::Vec3& pos, math::Vec3& vel, double h2, double dt);
+
+        // color of the sky in a given (unit) direction; checkerboard + stars so lensing is visible
+        static math::Vec3 RenderBackground(const math::Vec3& dir);
+
+        // color of the accretion disk at radius r
+        static math::Vec3 AccretionDisk(double r);
+
+        int NUM_CHECKERBOARD_ROWS = 36;
+        int NUM_CHECKERBOARD_COLS = 72;
     };
 } // raytrace

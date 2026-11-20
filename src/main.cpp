@@ -155,11 +155,12 @@ int main() {
     // initialize raytracing
     StrOut("Initializing ray tracing structure.", msgType[2]);
     raytrace::Camera cam;
-    cam.SetPosition(qbVector<double>{std::vector<double>{0.0, -10.0, 0.0}} );
+    // units are multiples of M: 30M out, slightly above the disk plane so the disk is seen tilted
+    cam.SetPosition(qbVector<double>{std::vector<double>{0.0, -30.0, 3.0}} );
     cam.SetLookAt(qbVector<double>{std::vector<double>{0.0, 0.0, 0.0}}); // look at origin
     cam.SetUp(qbVector<double>{std::vector<double>{0.0, 0.0, 1.0}});
 
-    cam.SetHorizontalSize(0.25);
+    cam.SetHorizontalSize(0.75); // wide enough to fit the whole disk (out to 20M)
     cam.SetAspectRatio(4.0 / 3.0);
 
     cam.UpdateCamera();
@@ -209,7 +210,7 @@ int main() {
 
 
         // start multithreaded rendering
-        CreateMarchedThreads(pixelBuffer, NUMBER_CORES, cam,
+        CreateGeodesicThreads(pixelBuffer, NUMBER_CORES, cam,
             STANDARD_H, STANDARD_W, BACKGROUND_COLOR,
             xFactor, yFactor, objectList, lightList);
 
