@@ -13,6 +13,7 @@
 
 #include <algorithm>
 #include <cmath>
+//#include <thesamecodebutfaster>
 
 namespace {
     // geometric units: G = c = 1 and lengths as multiples of M
@@ -21,7 +22,7 @@ namespace {
     constexpr double DISK_INNER   = 6.0 * M;   // ISCO, inner edge of the accretion disk
     constexpr double DISK_OUTER = 20.0 * M;  // outer edge of the accretion disk
     constexpr double R_ESCAPE  = 100.0 * M; // past this, the ray is considered gone to the sky
-    constexpr int    MAX_STEPS = 2000;
+    constexpr int    MAX_STEPS = 1000;
 
     constexpr double PI = 3.14159265358979323846;
 }
@@ -113,8 +114,7 @@ namespace raytrace {
     int startY, int endY,
     int height, int width,
     math::Vec3 backgroundColor,
-    double factorX, double factorY,
-    std::vector<std::shared_ptr<raytrace::ObjectBase>>& objectList, std::vector<std::shared_ptr<raytrace::LightBase>>& lightList) {
+    double factorX, double factorY) {
         /*
          * This should be repeated one time for every x and y pixel, each frame
          */
@@ -165,6 +165,7 @@ namespace raytrace {
                             break;
                         }
                     }
+
 
                     // excaped
                     if (newR > R_ESCAPE && math::Vec3::Dot(pos, vel) > 0.0) {

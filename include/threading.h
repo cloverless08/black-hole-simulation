@@ -36,5 +36,4 @@ void CreateGeodesicThreads(std::vector<uint32_t>& buffer, int numThreads,
     raytrace::Camera& Cam,
     int height, int width,
     math::Vec3 backgroundColor,
-    double factorX, double factorY,
-    std::vector<std::shared_ptr<raytrace::ObjectBase>> objectList, std::vector<std::shared_ptr<raytrace::LightBase>> lightList);
+    double factorX, double factorY);

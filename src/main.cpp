@@ -169,26 +169,26 @@ int main() {
 
     // create scene objects (test)
     // list of objects in scene
-    std::vector<std::shared_ptr<raytrace::ObjectBase>> objectList;
-
-    // list of lights in scene
-    std::vector<std::shared_ptr<raytrace::LightBase>> lightList;
-
-    // unit sphere on origin for testing
-    objectList.push_back(std::make_shared<raytrace::ObjSphere>(raytrace::ObjSphere(
-    std::vector<double>{1.0, 1.0, 0.0}, 1.0
-    )));
-    objectList.push_back(std::make_shared<raytrace::ObjSphere>(raytrace::ObjSphere(
-    std::vector<double>{0.0, -1.0, 0.0}, 2.0
-    )));
+    // std::vector<std::shared_ptr<raytrace::ObjectBase>> objectList;
+    //
+    // // list of lights in scene
+    // std::vector<std::shared_ptr<raytrace::LightBase>> lightList;
+    //
+    // // unit sphere on origin for testing
+    // objectList.push_back(std::make_shared<raytrace::ObjSphere>(raytrace::ObjSphere(
+    // std::vector<double>{1.0, 1.0, 0.0}, 1.0
+    // )));
+    // objectList.push_back(std::make_shared<raytrace::ObjSphere>(raytrace::ObjSphere(
+    // std::vector<double>{0.0, -1.0, 0.0}, 2.0
+    // )));
 
 
     // construct a test light source
-    lightList.push_back(std::make_shared<raytrace::PointLight>(raytrace::PointLight())); // calls default constructor
-    lightList.at(0) -> m_location = qbVector<double> {std::vector<double>{5.0, -10.0, -5.0}};
-    lightList.at(0) -> m_color = qbVector<double> {std::vector<double>{255.0, 255.0, 255.0}};
-    std::cout << objectList.data() << std::endl;
-    std::cout << lightList.data() << std::endl;
+    // lightList.push_back(std::make_shared<raytrace::PointLight>(raytrace::PointLight())); // calls default constructor
+    // lightList.at(0) -> m_location = qbVector<double> {std::vector<double>{5.0, -10.0, -5.0}};
+    // lightList.at(0) -> m_color = qbVector<double> {std::vector<double>{255.0, 255.0, 255.0}};
+    // std::cout << objectList.data() << std::endl;
+    // std::cout << lightList.data() << std::endl;
 
     auto lastTime = std::chrono::high_resolution_clock::now(); // initialize timestamp tracker for fps calculations
     // window loop
@@ -212,18 +212,18 @@ int main() {
         // start multithreaded rendering
         CreateGeodesicThreads(pixelBuffer, NUMBER_CORES, cam,
             STANDARD_H, STANDARD_W, BACKGROUND_COLOR,
-            xFactor, yFactor, objectList, lightList);
+            xFactor, yFactor);
 
 
-        // spin the light in a circle
-        qbVector<double> oldLightPosition = lightList.at(0) -> m_location;
-        double radius = lightList.at(0) -> m_location.GetElement(2);
-
-        double lightX = radius * std::cos(THETA);
-        double lightY = radius * std::sin(THETA);
-
-        lightList.at(0) -> m_location = oldLightPosition + qbVector<double>{std::vector<double>{lightX, lightY, 0.0}}; // add
-        THETA += 0.5;
+        // // spin the light in a circle
+        // qbVector<double> oldLightPosition = lightList.at(0) -> m_location;
+        // double radius = lightList.at(0) -> m_location.GetElement(2);
+        //
+        // double lightX = radius * std::cos(THETA);
+        // double lightY = radius * std::sin(THETA);
+        //
+        // lightList.at(0) -> m_location = oldLightPosition + qbVector<double>{std::vector<double>{lightX, lightY, 0.0}}; // add
+        // THETA += 0.5;
 
 
         // update render texture (pixel buffer)

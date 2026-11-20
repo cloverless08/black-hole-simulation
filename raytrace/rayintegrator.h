@@ -72,8 +72,7 @@ namespace raytrace {
         int startY, int endY,
         int height, int width,
         math::Vec3 backgroundColor,
-        double factorX, double factorY,
-        std::vector<std::shared_ptr<raytrace::ObjectBase>>& objectList, std::vector<std::shared_ptr<raytrace::LightBase>>& lightList);
+        double factorX, double factorY);
 
     private:
         // photon acceleration in Schwarzschild spacetime, written as a 3D cartesian ODE: a = -3 M h^2 pos / r^5
