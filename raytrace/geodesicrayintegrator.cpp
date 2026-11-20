@@ -106,7 +106,10 @@ namespace raytrace {
         // brightness falloff
         double brightness = std::pow(DISK_INNER / r, 1.5);
 
-        return color * std::clamp(brightness, 0.0, 1.0);
+        // faint rings so the warping of the disk shows up
+        double rings = 0.8 + 0.2 * std::cos(r * 4.0);
+
+        return color * std::clamp(brightness * rings, 0.0, 1.0);
     }
 
     void raytrace::GeodesicRayIntegrator::GeodesicRayTrace(std::vector<uint32_t>& buffer,
