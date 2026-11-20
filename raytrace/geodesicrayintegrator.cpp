@@ -47,11 +47,11 @@ namespace raytrace {
                 Cam.GenerateRay(U, V, camRay);
 
                 // actual geodesic shit
-                
+                double
 
 
 
-                    SetPixel(buffer.data(), width, height, x, y, 173, 255, 95); // needs to change
+                SetPixel(buffer.data(), width, height, x, y, 173, 255, 95); // needs to change
                 }
             }
         }
