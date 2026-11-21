@@ -48,9 +48,8 @@ Download the platform-specific executable here (without source code):
 
 ## Controls/Keybinds
 - Arrow Keys: Control camera position around black hole
-- d: Display diagnostic info to terminal/screend
+- d: Display diagnostic info to terminal/screen
 - s: Save snapshot of current frame
-- p: Pause simulation
 - Esc: Quit App
 
 ## Authors

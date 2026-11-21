@@ -77,8 +77,6 @@ void GetKeyPress(SDL_Event &event, bool &running, raytrace::Camera &cam,
                         stbi_write_jpg("output.jpg", width, height, CHANNELS, buffer.data(), width * CHANNELS);
 
                         break;
-                    case SDLK_p:
-                        StrOut("P: Pause", msgType[0]);
                     default:
                         break;
                 }

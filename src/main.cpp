@@ -49,7 +49,7 @@ constexpr int RESOLUTION_HEIGHT = 480;
 unsigned int static NUMBER_CORES = SDL_GetCPUCount();
 unsigned int static AMOUNT_RAM = SDL_GetSystemRAM();
 
-const math::Vec3 BLACK_HOLE_INITIAL_POSITION = {0.0, 0.0, 0.0}; // centers black astronomy in the middle of the world coordinates
+const math::Vec3 BLACK_HOLE_INITIAL_POSITION = {0.0, 0.0, 0.0}; // centers black hole in the middle of the world coordinates
 
 const std::array<std::string, 4> msgType = {
     std::string("SYSTEM"),
