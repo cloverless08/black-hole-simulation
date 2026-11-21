@@ -51,7 +51,12 @@ unsigned int static AMOUNT_RAM = SDL_GetSystemRAM();
 
 const math::Vec3 BLACK_HOLE_INITIAL_POSITION = {0.0, 0.0, 0.0}; // centers black astronomy in the middle of the world coordinates
 
-const std::array<std::string, 4> msgType = {"SYSTEM", "ERROR", "SETUP", "WARN"}; // strOut() helpful labels
+const std::array<std::string, 4> msgType = {
+    std::string("SYSTEM"),
+    std::string("ERROR"),
+    std::string("SETUP"),
+    std::string("WARN")
+}; // strOut() helpful labels
 
 int main() {
     // put information and header into console
@@ -78,7 +83,7 @@ int main() {
     constexpr double yFactor = 1.0 / (static_cast<double>(RESOLUTION_HEIGHT) / 2.0);
 
     int frame = 0;
-    double THETA = 0;
+    //double THETA = 0;
 
     StrOut("Local Variables Initialized.", msgType[2]);
 
@@ -148,7 +153,7 @@ int main() {
     cam.SetLookAt(qbVector<double>{std::vector<double>{0.0, 0.0, 0.0}}); // look at origin
     cam.SetUp(qbVector<double>{std::vector<double>{0.0, 0.0, 1.0}});
 
-    cam.SetHorizontalSize(1);
+    cam.SetHorizontalSize(1.25);
     cam.SetAspectRatio(4.0 / 3.0);
 
     cam.UpdateCamera();
