@@ -1,3 +1,4 @@
+~~~mermaid
 classDiagram
 direction TB
 namespace math {
@@ -193,3 +194,4 @@ SceneMain o-- "2" ObjSphere
 SceneMain o-- "1" PointLight
 SceneMain ..> SCREEN_RESOLUTION
 SceneMain ..> GeodesicRayIntegrator : via CreateGeodesicThreads
+~~~
