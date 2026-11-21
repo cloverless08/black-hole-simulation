@@ -183,5 +183,11 @@ https://github.com/cloverless08/raytracer-test.git
 https://github.com/libsdl-org/SDL.git
 ~~~
 
+## stb (stb_image_write.h)
+ - Writes the pixel buffer to an image on disk, not worth implementing myself.
+~~~
+https://github.com/nothings/stb.git
+~~~
+
 ## "Linear Algebra in  C++ - Part 4 - A simple Vector class"
  - Tutorial helpful for matrix math implementations
