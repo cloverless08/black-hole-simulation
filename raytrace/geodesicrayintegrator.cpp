@@ -86,8 +86,8 @@ namespace raytrace {
         int cellsTheta = static_cast<int>(sphereLatitude / PI * NUM_CHECKER_ROWS); // hard coded square rows
         int cellsPhi   = static_cast<int>(sphereLongitude / (2.0 * PI) * NUM_CHECKER_COLUMNS); // hard coded square columns
         bool light = ((cellsTheta + cellsPhi) % 2) == 0;
-        //math::Vec3 color = light ? math::Vec3{43.0, 35.0, 51.0} : math::Vec3{17.0, 0.0, 33.0};
-        math::Vec3 color = light ? math::Vec3{0.0, 0.0, 0.0} : math::Vec3{0.0, 0.0, 0.0};
+        math::Vec3 color = light ? math::Vec3{43.0, 35.0, 51.0} : math::Vec3{17.0, 0.0, 33.0};
+        //math::Vec3 color = light ? math::Vec3{0.0, 0.0, 0.0} : math::Vec3{0.0, 0.0, 0.0};
 
         // starfield
         int starT = static_cast<int>(sphereLatitude * 300.0);

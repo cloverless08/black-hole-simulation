@@ -8,15 +8,19 @@
 //           moving the camera.
 /* ========================================================================== */
 
+#define STB_IMAGE_WRITE_IMPLEMENTATION
+
 #include <array>
 
 #include "main_utils.h"
 #include "../raytrace/camera.h"
 #include "../qbLinearAlgebra/qbVector.h"
+#include "../include/stb_image_write.h"
 
 #include <SDL2/SDL.h>
 
-void GetKeyPress(SDL_Event &event, bool &running, raytrace::Camera &cam) {
+void GetKeyPress(SDL_Event &event, bool &running, raytrace::Camera &cam,
+    int height, int width, std::vector<uint32_t>& buffer) {
     // poll all events
         while (SDL_PollEvent(&event)) {
 
@@ -26,6 +30,7 @@ void GetKeyPress(SDL_Event &event, bool &running, raytrace::Camera &cam) {
             const double camZ = cam.GetPosition().GetElement(2);
 
             constexpr double changeAngle = 5.0;
+            constexpr int channels = 4;
 
             if (event.type == SDL_QUIT) {
                 running = false;
@@ -67,6 +72,10 @@ void GetKeyPress(SDL_Event &event, bool &running, raytrace::Camera &cam) {
                         break;
                     case SDLK_s:
                         StrOut("S: Screenshot", msgType[0]);
+
+                        // write buffer as jpeg (so that black isnt rendered invisible)
+                        stbi_write_jpg("output.jpg", width, height, channels, buffer.data(), width * channels);
+
                         break;
                     case SDLK_p:
                         StrOut("P: Pause", msgType[0]);

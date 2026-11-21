@@ -191,7 +191,8 @@ int main() {
         std::cout << "frame rate: " << (1 / deltaTime) << "\n";
 
         // poll all events
-        GetKeyPress(event, running, cam);
+        GetKeyPress(event, running, cam,
+            RESOLUTION_HEIGHT, RESOLUTION_WIDTH, pixelBuffer);
         if (!running) {
             break;
         }
