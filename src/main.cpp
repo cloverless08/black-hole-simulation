@@ -43,16 +43,8 @@
 #define newline "\n"
 
 // global constants
-enum SCREEN_RESOLUTION {
-    // standard resolutions
-    STANDARD_W = 640,
-    MOVING_W = 320,
-
-    // for while camera is moving, to act as a sort of preview that renders quicker
-    // not sure if this will ever be implemented
-    STANDARD_H = 480,
-    MOVING_H = 240,
-};
+constexpr int  RESOLUTION_WIDTH = 640;
+constexpr int RESOLUTION_HEIGHT = 480;
 
 unsigned int static NUMBER_CORES = SDL_GetCPUCount();
 unsigned int static AMOUNT_RAM = SDL_GetSystemRAM();
@@ -83,11 +75,8 @@ int main() {
     // local variables
     bool running = true;
 
-    double xFactor = 1.0 / (static_cast<double>(STANDARD_W) / 2.0);
-    double yFactor = 1.0 / (static_cast<double>(STANDARD_H) / 2.0);
-
-    enum SCREEN_RESOLUTION resolutionWidth = STANDARD_W;
-    enum SCREEN_RESOLUTION resolutionHeight = STANDARD_H;
+    constexpr double xFactor = 1.0 / (static_cast<double>(RESOLUTION_WIDTH) / 2.0);
+    constexpr double yFactor = 1.0 / (static_cast<double>(RESOLUTION_HEIGHT) / 2.0);
 
     int frame = 0;
     double THETA = 0;
@@ -116,7 +105,7 @@ int main() {
     SDL_Window* window = SDL_CreateWindow(
         "CSC1060 Capstone Project",
         SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-        resolutionWidth, resolutionHeight,
+        RESOLUTION_WIDTH, RESOLUTION_HEIGHT,
         SDL_WINDOW_SHOWN
         );
     if (!window) {
@@ -137,7 +126,7 @@ int main() {
         renderer,
         SDL_PIXELFORMAT_RGBA8888, // 32-bit format for 8 bits per channel
         SDL_TEXTUREACCESS_STREAMING, // allows fast cpu to gpu updates
-        resolutionWidth, resolutionHeight // screen resolution
+        RESOLUTION_WIDTH, RESOLUTION_HEIGHT // screen resolution
         );
     if (!pixelBufferTexture) {
         StrOut(std::string("CreateTexture failed: ") + SDL_GetError(), msgType[1]);
@@ -148,7 +137,7 @@ int main() {
 
 
     // create canvas pixel buffer in memory
-    std::vector<uint32_t> pixelBuffer(resolutionWidth * resolutionHeight, 0);
+    std::vector<uint32_t> pixelBuffer(RESOLUTION_WIDTH * RESOLUTION_HEIGHT, 0);
     StrOut("Pixel Buffer Initialized.", msgType[2]);
 
 
@@ -211,7 +200,7 @@ int main() {
 
         // start multithreaded rendering
         CreateGeodesicThreads(pixelBuffer, NUMBER_CORES, cam,
-            STANDARD_H, STANDARD_W, BACKGROUND_COLOR,
+            RESOLUTION_HEIGHT, RESOLUTION_WIDTH, BACKGROUND_COLOR,
             xFactor, yFactor);
 
 
@@ -231,7 +220,7 @@ int main() {
             pixelBufferTexture,
             nullptr,                   // NULL updates the entire texture
             pixelBuffer.data(),            // Pointer to our raw CPU buffer
-            resolutionWidth * sizeof(uint32_t)
+            RESOLUTION_WIDTH * sizeof(uint32_t)
         );
 
         // render loop

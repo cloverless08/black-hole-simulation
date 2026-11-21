@@ -131,7 +131,7 @@ namespace raytrace {
                 double U = (static_cast<double>(x) * factorX) - 1.0;
                 double V = (static_cast<double>(y) * factorY) - 1.0;
 
-                Cam.GenerateRay(U, V, camRay);
+                Cam.GenerateRay(U, V, camRay); // generates ray from camera through projection screen
 
                 // convert to Vec3 for speed
                 math::Vec3 pos{camRay.m_point1.GetElement(0), camRay.m_point1.GetElement(1), camRay.m_point1.GetElement(2)};
