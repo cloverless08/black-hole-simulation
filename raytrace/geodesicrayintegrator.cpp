@@ -47,21 +47,27 @@ namespace raytrace {
         // RK4 on the first-order system: pos' = vel, vel' = Accel(pos)
         // each k value is a pair where knp is the change of position and knv is acelleration
 
+        const double hdt = 0.5 * dt;
+        const double sdt = dt / 6.0;
+
         // k1 measures at the start of the step
         math::Vec3 k1p = vel;
         math::Vec3 k1v = Accel(pos, h2);
 
         // k2 measures at the halfway point
-        math::Vec3 k2p = vel + 0.5 * dt * k1v;
-        math::Vec3 k2v = Accel(pos + 0.5 * dt * k1p, h2);
+        math::Vec3 tmp = pos + hdt * k1p;
+        math::Vec3 k2p = vel + hdt * k1v;
+        math::Vec3 k2v = Accel(tmp, h2);
 
         // uses k2 to guess halfway again
-        math::Vec3 k3p = vel + 0.5 * dt * k2v;
-        math::Vec3 k3v = Accel(pos + 0.5 * dt * k2p, h2);
+        tmp = pos + hdt * k2p;
+        math::Vec3 k3p = vel + hdt * k2v;
+        math::Vec3 k3v = Accel(tmp, h2);
 
         // uses k3 to guess the end of a step and then measure there
+        tmp = pos + dt * k3p;
         math::Vec3 k4p = vel + dt * k3v;
-        math::Vec3 k4v = Accel(pos + dt * k3p, h2);
+        math::Vec3 k4v = Accel(tmp, h2);
 
         // combine
         pos += (dt / 6.0) * (k1p + 2.0 * k2p + 2.0 * k3p + k4p);
@@ -128,8 +134,8 @@ namespace raytrace {
                 raytrace::Ray camRay; // construct ray for this pixel
 
                 // projection screen coordinates
-                double U = (static_cast<double>(x) * factorX) - 1.0;
-                double V = (static_cast<double>(y) * factorY) - 1.0;
+                float U = (static_cast<float>(x) * factorX) - 1.0;
+                float V = (static_cast<float>(y) * factorY) - 1.0;
 
                 Cam.GenerateRay(U, V, camRay); // generates ray from camera through projection screen
 
