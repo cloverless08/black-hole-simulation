@@ -82,27 +82,6 @@ void GetKeyPress(SDL_Event &event, bool &running, raytrace::Camera &cam,
                     default:
                         break;
                 }
-            } else if (event.type == SDL_KEYUP) {
-                //std::cout << "Key Was Pressed" << std::endl;
-                switch (event.key.keysym.sym) {
-                    case SDLK_ESCAPE:
-                        StrOut("Escape Key Released", msgType[0]);
-                        break;
-                    case SDLK_RIGHT:
-                        StrOut("Right Arrow Released", msgType[0]);
-                        break;
-                    case SDLK_LEFT:
-                        StrOut("Left Arrow Released", msgType[0]);
-                        break;
-                    case SDLK_UP:
-                        StrOut("Up Arrow Released", msgType[0]);
-                        break;
-                    case SDLK_DOWN:
-                        StrOut("Down Arrow Released", msgType[0]);
-                        break;
-                    default:
-                        break;
-                }
             }
         }
 }

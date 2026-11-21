@@ -205,18 +205,21 @@ CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/keybinds.cpp.o: \
  /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/src/../raytrace/ray.h \
  /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/src/../raytrace/../qbLinearAlgebra/qbVector.h \
  /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/src/../qbLinearAlgebra/qbVector.h \
- /usr/include/SDL2/SDL.h /usr/include/SDL2/SDL_main.h \
- /usr/include/SDL2/SDL_stdinc.h /usr/include/SDL2/SDL_config.h \
- /usr/include/SDL2/SDL_platform.h /usr/include/SDL2/begin_code.h \
- /usr/include/SDL2/close_code.h /usr/include/SDL2/SDL_config_unix.h \
+ /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/src/../include/stb_image_write.h \
+ /usr/include/c++/16.1.1/stdlib.h /usr/include/string.h \
+ /usr/include/strings.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include/limits.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include/syslimits.h \
  /usr/include/limits.h /usr/include/bits/posix1_lim.h \
  /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
  /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
- /usr/include/bits/uio_lim.h /usr/include/c++/16.1.1/stdlib.h \
- /usr/include/string.h /usr/include/strings.h /usr/include/inttypes.h \
+ /usr/include/bits/uio_lim.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include/float.h \
+ /usr/include/assert.h /usr/include/SDL2/SDL.h \
+ /usr/include/SDL2/SDL_main.h /usr/include/SDL2/SDL_stdinc.h \
+ /usr/include/SDL2/SDL_config.h /usr/include/SDL2/SDL_platform.h \
+ /usr/include/SDL2/begin_code.h /usr/include/SDL2/close_code.h \
+ /usr/include/SDL2/SDL_config_unix.h /usr/include/inttypes.h \
  /usr/include/SDL2/SDL_assert.h /usr/include/SDL2/SDL_atomic.h \
  /usr/include/SDL2/SDL_audio.h /usr/include/SDL2/SDL_error.h \
  /usr/include/SDL2/SDL_endian.h /usr/include/SDL2/SDL_mutex.h \

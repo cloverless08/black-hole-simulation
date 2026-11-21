@@ -8,6 +8,7 @@ set(OLD_GLOB
   "/home/cdemin/Code/Active/CSC1060 Capstone Project/include/loop.h"
   "/home/cdemin/Code/Active/CSC1060 Capstone Project/include/main_utils.h"
   "/home/cdemin/Code/Active/CSC1060 Capstone Project/include/postprocessing.h"
+  "/home/cdemin/Code/Active/CSC1060 Capstone Project/include/stb_image_write.h"
   "/home/cdemin/Code/Active/CSC1060 Capstone Project/include/threading.h"
   "/home/cdemin/Code/Active/CSC1060 Capstone Project/include/vec.h"
   )
