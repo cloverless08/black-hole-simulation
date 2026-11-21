@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I"/home/cdemin/Code/Active/CSC1060 Capstone Project/include" -isystem /usr/include/SDL2
 
-CXX_FLAGS = -O3 -DNDEBUG -std=gnu++17
+CXX_FLAGS = -O3 -DNDEBUG -std=gnu++17 -g -fno-omit-frame-pointer
 
