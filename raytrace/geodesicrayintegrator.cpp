@@ -125,7 +125,6 @@ namespace raytrace {
     raytrace::Camera& Cam,
     int startY, int endY,
     int height, int width,
-    math::Vec3 backgroundColor,
     double factorX, double factorY) {
         /*
          * This should be repeated one time for every x and y pixel, each frame

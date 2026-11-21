@@ -52,7 +52,6 @@ unsigned int static AMOUNT_RAM = SDL_GetSystemRAM();
 const math::Vec3 BLACK_HOLE_INITIAL_POSITION = {0.0, 0.0, 0.0}; // centers black astronomy in the middle of the world coordinates
 
 const std::array<std::string, 4> msgType = {"SYSTEM", "ERROR", "SETUP", "WARN"}; // strOut() helpful labels
-const math::Vec3 BACKGROUND_COLOR = {0, 0, 0}; // sets background to black, bc, yknow... space
 
 int main() {
     // put information and header into console
@@ -200,7 +199,7 @@ int main() {
 
         // start multithreaded rendering
         CreateGeodesicThreads(pixelBuffer, NUMBER_CORES, cam,
-            RESOLUTION_HEIGHT, RESOLUTION_WIDTH, BACKGROUND_COLOR,
+            RESOLUTION_HEIGHT, RESOLUTION_WIDTH,
             xFactor, yFactor);
 
 
