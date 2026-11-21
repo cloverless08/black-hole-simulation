@@ -29,8 +29,8 @@ void GetKeyPress(SDL_Event &event, bool &running, raytrace::Camera &cam,
             const double camY = cam.GetPosition().GetElement(1);
             const double camZ = cam.GetPosition().GetElement(2);
 
-            constexpr double changeAngle = 5.0;
-            constexpr int channels = 4;
+            constexpr double CHANGE_ANGLE = 5.0;
+            constexpr int CHANNELS = 4;
 
             if (event.type == SDL_QUIT) {
                 running = false;
@@ -45,25 +45,25 @@ void GetKeyPress(SDL_Event &event, bool &running, raytrace::Camera &cam,
                         StrOut("Right Arrow Pressed", msgType[0]);
                         //cam.SetPosition(cam.GetPosition() + qbVector<double>{std::vector{0.025, 0.0, 0.0}});
                         //cam.SetPosition(cam.GetPosition() + qbVector<double>{std::vector{0.0 + cos(10.0) * cam.GetDistanceFromOrigin(), 0.0 + sin(10.0) * cam.GetDistanceFromOrigin(), 0.0}});
-                        cam.SetPosition(std::vector{camX + (cos(changeAngle) * cam.GetDistanceFromOrigin()), camY + (sin(changeAngle) * cam.GetDistanceFromOrigin()), camZ});
+                        cam.SetPosition(std::vector{camX + (cos(CHANGE_ANGLE) * cam.GetDistanceFromOrigin()), camY + (sin(CHANGE_ANGLE) * cam.GetDistanceFromOrigin()), camZ});
                         cam.SetLookAt(qbVector<double>{std::vector<double>{0.0, 0.0, 0.0}}); // look at origin
                         cam.UpdateCamera();
                         break;
                     case SDLK_LEFT:
                         StrOut("Left Arrow Pressed", msgType[0]);
-                        cam.SetPosition(std::vector{camX - (cos(changeAngle) * cam.GetDistanceFromOrigin()), camY - (sin(changeAngle) * cam.GetDistanceFromOrigin()), camZ});
+                        cam.SetPosition(std::vector{camX - (cos(CHANGE_ANGLE) * cam.GetDistanceFromOrigin()), camY - (sin(CHANGE_ANGLE) * cam.GetDistanceFromOrigin()), camZ});
                         cam.SetLookAt(qbVector<double>{std::vector<double>{0.0, 0.0, 0.0}}); // look at origin
                         cam.UpdateCamera();
                         break;
                     case SDLK_UP:
                         StrOut("Up Arrow Pressed", msgType[0]);
-                        cam.SetPosition(std::vector{camX + (cos(changeAngle) * cam.GetDistanceFromOrigin()), camY, camZ + (sin(changeAngle) * cam.GetDistanceFromOrigin())});
+                        cam.SetPosition(std::vector{camX + (cos(CHANGE_ANGLE) * cam.GetDistanceFromOrigin()), camY, camZ + (sin(CHANGE_ANGLE) * cam.GetDistanceFromOrigin())});
                         cam.SetLookAt(qbVector<double>{std::vector<double>{0.0, 0.0, 0.0}}); // look at origin
                         cam.UpdateCamera();
                         break;
                     case SDLK_DOWN:
                         StrOut("Down Arrow Pressed", msgType[0]);
-                        cam.SetPosition(std::vector{camX - (cos(changeAngle) * cam.GetDistanceFromOrigin()), camY, camZ - (sin(changeAngle) * cam.GetDistanceFromOrigin())});
+                        cam.SetPosition(std::vector{camX - (cos(CHANGE_ANGLE) * cam.GetDistanceFromOrigin()), camY, camZ - (sin(CHANGE_ANGLE) * cam.GetDistanceFromOrigin())});
                         cam.SetLookAt(qbVector<double>{std::vector<double>{0.0, 0.0, 0.0}}); // look at origin
                         cam.UpdateCamera();
                         break;
@@ -74,7 +74,7 @@ void GetKeyPress(SDL_Event &event, bool &running, raytrace::Camera &cam,
                         StrOut("S: Screenshot", msgType[0]);
 
                         // write buffer as jpeg (so that black isnt rendered invisible)
-                        stbi_write_jpg("output.jpg", width, height, channels, buffer.data(), width * channels);
+                        stbi_write_jpg("output.jpg", width, height, CHANNELS, buffer.data(), width * CHANNELS);
 
                         break;
                     case SDLK_p:
