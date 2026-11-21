@@ -24,6 +24,9 @@ namespace {
     constexpr double R_ESCAPE  = 100.0 * M; // past this, the ray is considered gone to the sky
     constexpr int    MAX_STEPS = 1000;
 
+    constexpr double NUM_CHECKER_ROWS = 36.0;
+    constexpr double NUM_CHECKER_COLUMNS = 72.0;
+
     constexpr double PI = 3.14159265358979323846;
 }
 
@@ -77,11 +80,11 @@ namespace raytrace {
     math::Vec3 GeodesicRayIntegrator::RenderBackground(const math::Vec3& dir) {
         // direction into spherical angles
         double sphereLatitude = std::acos(std::clamp(dir.z(), -1.0, 1.0)); // theta, 0..pi
-        double sphereLongitude   = std::atan2(dir.y(), dir.x()) + PI;          // phi, 0..2pi
+        double sphereLongitude   = std::atan2(dir.y(), dir.x()) + PI; // phi, 0..2pi
 
         // checkerboard pattern on the render
-        int cellsTheta = static_cast<int>(sphereLatitude / PI * 36.0); // hard coded square rows
-        int cellsPhi   = static_cast<int>(sphereLongitude / (2.0 * PI) * 72.0); // hard coded square columns
+        int cellsTheta = static_cast<int>(sphereLatitude / PI * NUM_CHECKER_ROWS); // hard coded square rows
+        int cellsPhi   = static_cast<int>(sphereLongitude / (2.0 * PI) * NUM_CHECKER_COLUMNS); // hard coded square columns
         bool light = ((cellsTheta + cellsPhi) % 2) == 0;
         //math::Vec3 color = light ? math::Vec3{43.0, 35.0, 51.0} : math::Vec3{17.0, 0.0, 33.0};
         math::Vec3 color = light ? math::Vec3{0.0, 0.0, 0.0} : math::Vec3{0.0, 0.0, 0.0};
@@ -153,7 +156,7 @@ namespace raytrace {
                     double r = pos.GetLength();
 
                     // small steps near the hole where paths bend sharply, bigger steps far away
-                    double dt = std::clamp(0.02 * r * r / (r + 10.0), 0.005, 1.0);
+                    double dt = std::clamp(0.02 * r * r / (r + 10.0), 0.005, 10.0);
 
                     math::Vec3 oldPos = pos;
                     RK4Step(pos, vel, h2, dt);
