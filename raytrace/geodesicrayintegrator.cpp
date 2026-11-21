@@ -146,7 +146,7 @@ namespace raytrace {
                 for (int step = 0; step < MAX_STEPS; ++step) {
                     double r = pos.GetLength();
 
-                    // small steps near the hole where paths bend sharply, big steps far away
+                    // small steps near the hole where paths bend sharply, bigger steps far away
                     double dt = std::clamp(0.02 * r * r / (r + 10.0), 0.005, 1.0);
 
                     math::Vec3 oldPos = pos;

@@ -105,8 +105,6 @@ The full text of the license can be found here for reference:
 
 ## Screenshots
 
-![Early test window](assets/screenshots/Screenshot_20260923_010026.png)
-
 ![First Sphere Demonstration](assets/screenshots/Screenshot_20261103_143503.png)
 
 ![First Working Black Hole](assets/screenshots/image.png)
