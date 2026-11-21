@@ -43,24 +43,20 @@
 #define newline "\n"
 
 // global constants
-enum SCREEN_RESOLUTION {
-    // standard resolutions
-    STANDARD_W = 640,
-    MOVING_W = 320,
-
-    // for while camera is moving, to act as a sort of preview that renders quicker
-    // not sure if this will ever be implemented
-    STANDARD_H = 480,
-    MOVING_H = 240,
-};
+constexpr int  RESOLUTION_WIDTH = 640;
+constexpr int RESOLUTION_HEIGHT = 480;
 
 unsigned int static NUMBER_CORES = SDL_GetCPUCount();
 unsigned int static AMOUNT_RAM = SDL_GetSystemRAM();
 
-const math::Vec3 BLACK_HOLE_INITIAL_POSITION = {0.0, 0.0, 0.0}; // centers black astronomy in the middle of the world coordinates
+const math::Vec3 BLACK_HOLE_INITIAL_POSITION = {0.0, 0.0, 0.0}; // centers black hole in the middle of the world coordinates
 
-const std::array<std::string, 4> msgType = {"SYSTEM", "ERROR", "SETUP", "WARN"}; // strOut() helpful labels
-const math::Vec3 BACKGROUND_COLOR = {0, 0, 0}; // sets background to black, bc, yknow... space
+const std::array<std::string, 4> msgType = {
+    std::string("SYSTEM"),
+    std::string("ERROR"),
+    std::string("SETUP"),
+    std::string("WARN")
+}; // strOut() helpful labels
 
 int main() {
     // put information and header into console
@@ -83,14 +79,11 @@ int main() {
     // local variables
     bool running = true;
 
-    double xFactor = 1.0 / (static_cast<double>(STANDARD_W) / 2.0);
-    double yFactor = 1.0 / (static_cast<double>(STANDARD_H) / 2.0);
-
-    enum SCREEN_RESOLUTION resolutionWidth = STANDARD_W;
-    enum SCREEN_RESOLUTION resolutionHeight = STANDARD_H;
+    constexpr double xFactor = 1.0 / (static_cast<double>(RESOLUTION_WIDTH) / 2.0);
+    constexpr double yFactor = 1.0 / (static_cast<double>(RESOLUTION_HEIGHT) / 2.0);
 
     int frame = 0;
-    double THETA = 0;
+    //double THETA = 0;
 
     StrOut("Local Variables Initialized.", msgType[2]);
 
@@ -116,7 +109,7 @@ int main() {
     SDL_Window* window = SDL_CreateWindow(
         "CSC1060 Capstone Project",
         SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-        resolutionWidth, resolutionHeight,
+        RESOLUTION_WIDTH, RESOLUTION_HEIGHT,
         SDL_WINDOW_SHOWN
         );
     if (!window) {
@@ -137,7 +130,7 @@ int main() {
         renderer,
         SDL_PIXELFORMAT_RGBA8888, // 32-bit format for 8 bits per channel
         SDL_TEXTUREACCESS_STREAMING, // allows fast cpu to gpu updates
-        resolutionWidth, resolutionHeight // screen resolution
+        RESOLUTION_WIDTH, RESOLUTION_HEIGHT // screen resolution
         );
     if (!pixelBufferTexture) {
         StrOut(std::string("CreateTexture failed: ") + SDL_GetError(), msgType[1]);
@@ -148,7 +141,7 @@ int main() {
 
 
     // create canvas pixel buffer in memory
-    std::vector<uint32_t> pixelBuffer(resolutionWidth * resolutionHeight, 0);
+    std::vector<uint32_t> pixelBuffer(RESOLUTION_WIDTH * RESOLUTION_HEIGHT, 0);
     StrOut("Pixel Buffer Initialized.", msgType[2]);
 
 
@@ -156,11 +149,11 @@ int main() {
     StrOut("Initializing ray tracing structure.", msgType[2]);
     raytrace::Camera cam;
     // units are multiples of M: 30M out, slightly above the disk plane so the disk is seen tilted
-    cam.SetPosition(qbVector<double>{std::vector<double>{0.0, -30.0, 3.0}} );
+    cam.SetPosition(qbVector<double>{std::vector<double>{0.0, -cam.GetDistanceFromOrigin(), 3.0}} );
     cam.SetLookAt(qbVector<double>{std::vector<double>{0.0, 0.0, 0.0}}); // look at origin
     cam.SetUp(qbVector<double>{std::vector<double>{0.0, 0.0, 1.0}});
 
-    cam.SetHorizontalSize(0.75); // wide enough to fit the whole disk (out to 20M)
+    cam.SetHorizontalSize(1.25);
     cam.SetAspectRatio(4.0 / 3.0);
 
     cam.UpdateCamera();
@@ -169,26 +162,26 @@ int main() {
 
     // create scene objects (test)
     // list of objects in scene
-    std::vector<std::shared_ptr<raytrace::ObjectBase>> objectList;
-
-    // list of lights in scene
-    std::vector<std::shared_ptr<raytrace::LightBase>> lightList;
-
-    // unit sphere on origin for testing
-    objectList.push_back(std::make_shared<raytrace::ObjSphere>(raytrace::ObjSphere(
-    std::vector<double>{1.0, 1.0, 0.0}, 1.0
-    )));
-    objectList.push_back(std::make_shared<raytrace::ObjSphere>(raytrace::ObjSphere(
-    std::vector<double>{0.0, -1.0, 0.0}, 2.0
-    )));
+    // std::vector<std::shared_ptr<raytrace::ObjectBase>> objectList;
+    //
+    // // list of lights in scene
+    // std::vector<std::shared_ptr<raytrace::LightBase>> lightList;
+    //
+    // // unit sphere on origin for testing
+    // objectList.push_back(std::make_shared<raytrace::ObjSphere>(raytrace::ObjSphere(
+    // std::vector<double>{1.0, 1.0, 0.0}, 1.0
+    // )));
+    // objectList.push_back(std::make_shared<raytrace::ObjSphere>(raytrace::ObjSphere(
+    // std::vector<double>{0.0, -1.0, 0.0}, 2.0
+    // )));
 
 
     // construct a test light source
-    lightList.push_back(std::make_shared<raytrace::PointLight>(raytrace::PointLight())); // calls default constructor
-    lightList.at(0) -> m_location = qbVector<double> {std::vector<double>{5.0, -10.0, -5.0}};
-    lightList.at(0) -> m_color = qbVector<double> {std::vector<double>{255.0, 255.0, 255.0}};
-    std::cout << objectList.data() << std::endl;
-    std::cout << lightList.data() << std::endl;
+    // lightList.push_back(std::make_shared<raytrace::PointLight>(raytrace::PointLight())); // calls default constructor
+    // lightList.at(0) -> m_location = qbVector<double> {std::vector<double>{5.0, -10.0, -5.0}};
+    // lightList.at(0) -> m_color = qbVector<double> {std::vector<double>{255.0, 255.0, 255.0}};
+    // std::cout << objectList.data() << std::endl;
+    // std::cout << lightList.data() << std::endl;
 
     auto lastTime = std::chrono::high_resolution_clock::now(); // initialize timestamp tracker for fps calculations
     // window loop
@@ -200,10 +193,11 @@ int main() {
         float deltaTime = elapsed.count();
         lastTime = currentTime;
 
-        //std::cout << "frame rate: " << (1 / deltaTime) << std::endl;
+        std::cout << "frame rate: " << (1 / deltaTime) << "\n";
 
         // poll all events
-        GetKeyPress(event, running, cam);
+        GetKeyPress(event, running, cam,
+            RESOLUTION_HEIGHT, RESOLUTION_WIDTH, pixelBuffer);
         if (!running) {
             break;
         }
@@ -211,19 +205,19 @@ int main() {
 
         // start multithreaded rendering
         CreateGeodesicThreads(pixelBuffer, NUMBER_CORES, cam,
-            STANDARD_H, STANDARD_W, BACKGROUND_COLOR,
-            xFactor, yFactor, objectList, lightList);
+            RESOLUTION_HEIGHT, RESOLUTION_WIDTH,
+            xFactor, yFactor);
 
 
-        // spin the light in a circle
-        qbVector<double> oldLightPosition = lightList.at(0) -> m_location;
-        double radius = lightList.at(0) -> m_location.GetElement(2);
-
-        double lightX = radius * std::cos(THETA);
-        double lightY = radius * std::sin(THETA);
-
-        lightList.at(0) -> m_location = oldLightPosition + qbVector<double>{std::vector<double>{lightX, lightY, 0.0}}; // add
-        THETA += 0.5;
+        // // spin the light in a circle
+        // qbVector<double> oldLightPosition = lightList.at(0) -> m_location;
+        // double radius = lightList.at(0) -> m_location.GetElement(2);
+        //
+        // double lightX = radius * std::cos(THETA);
+        // double lightY = radius * std::sin(THETA);
+        //
+        // lightList.at(0) -> m_location = oldLightPosition + qbVector<double>{std::vector<double>{lightX, lightY, 0.0}}; // add
+        // THETA += 0.5;
 
 
         // update render texture (pixel buffer)
@@ -231,7 +225,7 @@ int main() {
             pixelBufferTexture,
             nullptr,                   // NULL updates the entire texture
             pixelBuffer.data(),            // Pointer to our raw CPU buffer
-            resolutionWidth * sizeof(uint32_t)
+            RESOLUTION_WIDTH * sizeof(uint32_t)
         );
 
         // render loop

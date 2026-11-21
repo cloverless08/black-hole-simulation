@@ -13,6 +13,7 @@
 
 #include <algorithm>
 #include <cmath>
+//#include <thesamecodebutfaster>
 
 namespace {
     // geometric units: G = c = 1 and lengths as multiples of M
@@ -21,7 +22,10 @@ namespace {
     constexpr double DISK_INNER   = 6.0 * M;   // ISCO, inner edge of the accretion disk
     constexpr double DISK_OUTER = 20.0 * M;  // outer edge of the accretion disk
     constexpr double R_ESCAPE  = 100.0 * M; // past this, the ray is considered gone to the sky
-    constexpr int    MAX_STEPS = 2000;
+    constexpr int    MAX_STEPS = 1000;
+
+    constexpr double NUM_CHECKER_ROWS = 36.0;
+    constexpr double NUM_CHECKER_COLUMNS = 72.0;
 
     constexpr double PI = 3.14159265358979323846;
 }
@@ -46,21 +50,27 @@ namespace raytrace {
         // RK4 on the first-order system: pos' = vel, vel' = Accel(pos)
         // each k value is a pair where knp is the change of position and knv is acelleration
 
+        const double hdt = 0.5 * dt;
+        const double sdt = dt / 6.0;
+
         // k1 measures at the start of the step
         math::Vec3 k1p = vel;
         math::Vec3 k1v = Accel(pos, h2);
 
         // k2 measures at the halfway point
-        math::Vec3 k2p = vel + 0.5 * dt * k1v;
-        math::Vec3 k2v = Accel(pos + 0.5 * dt * k1p, h2);
+        math::Vec3 tmp = pos + hdt * k1p;
+        math::Vec3 k2p = vel + hdt * k1v;
+        math::Vec3 k2v = Accel(tmp, h2);
 
         // uses k2 to guess halfway again
-        math::Vec3 k3p = vel + 0.5 * dt * k2v;
-        math::Vec3 k3v = Accel(pos + 0.5 * dt * k2p, h2);
+        tmp = pos + hdt * k2p;
+        math::Vec3 k3p = vel + hdt * k2v;
+        math::Vec3 k3v = Accel(tmp, h2);
 
         // uses k3 to guess the end of a step and then measure there
+        tmp = pos + dt * k3p;
         math::Vec3 k4p = vel + dt * k3v;
-        math::Vec3 k4v = Accel(pos + dt * k3p, h2);
+        math::Vec3 k4v = Accel(tmp, h2);
 
         // combine
         pos += (dt / 6.0) * (k1p + 2.0 * k2p + 2.0 * k3p + k4p);
@@ -70,13 +80,14 @@ namespace raytrace {
     math::Vec3 GeodesicRayIntegrator::RenderBackground(const math::Vec3& dir) {
         // direction into spherical angles
         double sphereLatitude = std::acos(std::clamp(dir.z(), -1.0, 1.0)); // theta, 0..pi
-        double sphereLongitude   = std::atan2(dir.y(), dir.x()) + PI;          // phi, 0..2pi
+        double sphereLongitude   = std::atan2(dir.y(), dir.x()) + PI; // phi, 0..2pi
 
         // checkerboard pattern on the render
-        int cellsTheta = static_cast<int>(sphereLatitude / PI * 36.0); // hard coded square rows
-        int cellsPhi   = static_cast<int>(sphereLongitude / (2.0 * PI) * 72.0); // hard coded square columns
+        int cellsTheta = static_cast<int>(sphereLatitude / PI * NUM_CHECKER_ROWS); // hard coded square rows
+        int cellsPhi   = static_cast<int>(sphereLongitude / (2.0 * PI) * NUM_CHECKER_COLUMNS); // hard coded square columns
         bool light = ((cellsTheta + cellsPhi) % 2) == 0;
-        math::Vec3 color = light ? math::Vec3{40.0, 40.0, 60.0} : math::Vec3{15.0, 15.0, 25.0};
+        math::Vec3 color = light ? math::Vec3{11.0, 8.0, 17.0} : math::Vec3{5.0, 5.0, 5.0};
+        //math::Vec3 color = light ? math::Vec3{0.0, 0.0, 0.0} : math::Vec3{0.0, 0.0, 0.0};
 
         // starfield
         int starT = static_cast<int>(sphereLatitude * 300.0);
@@ -96,27 +107,25 @@ namespace raytrace {
         // 0 at the inner edge, 1 at the outer edge
         double t = (r - DISK_INNER) / (DISK_OUTER - DISK_INNER);
 
-        // hot (white/yellow) inside, cool (dark red) outside
-        math::Vec3 inner{255.0, 230.0, 180.0};
-        math::Vec3 outer{140.0, 30.0, 5.0};
+        // hot  inside, cool outside
+        math::Vec3 inner{254.0, 121.0, 0.0};
+        math::Vec3 outer{148.0, 3.0, 3.0};
         math::Vec3 color = inner * (1.0 - t) + outer * t;
 
         // brightness falloff
         double brightness = std::pow(DISK_INNER / r, 1.5);
 
         // faint rings so the warping of the disk shows up
-        //double rings = 0.8 + 0.2 * std::cos(r * 4.0);
+        double rings = 0.8 + 0.2 * std::cos(r * 4.0);
 
-        return color * std::clamp(brightness, 0.0, 1.0);
+        return color * std::clamp(brightness * rings, 0.0, 1.0);
     }
 
     void raytrace::GeodesicRayIntegrator::GeodesicRayTrace(std::vector<uint32_t>& buffer,
     raytrace::Camera& Cam,
     int startY, int endY,
     int height, int width,
-    math::Vec3 backgroundColor,
-    double factorX, double factorY,
-    std::vector<std::shared_ptr<raytrace::ObjectBase>>& objectList, std::vector<std::shared_ptr<raytrace::LightBase>>& lightList) {
+    double factorX, double factorY) {
         /*
          * This should be repeated one time for every x and y pixel, each frame
          */
@@ -127,10 +136,10 @@ namespace raytrace {
                 raytrace::Ray camRay; // construct ray for this pixel
 
                 // projection screen coordinates
-                double U = (static_cast<double>(x) * factorX) - 1.0;
-                double V = (static_cast<double>(y) * factorY) - 1.0;
+                float U = (static_cast<float>(x) * factorX) - 1.0;
+                float V = (static_cast<float>(y) * factorY) - 1.0;
 
-                Cam.GenerateRay(U, V, camRay);
+                Cam.GenerateRay(U, V, camRay); // generates ray from camera through projection screen
 
                 // convert to Vec3 for speed
                 math::Vec3 pos{camRay.m_point1.GetElement(0), camRay.m_point1.GetElement(1), camRay.m_point1.GetElement(2)};
@@ -145,8 +154,8 @@ namespace raytrace {
                 for (int step = 0; step < MAX_STEPS; ++step) {
                     double r = pos.GetLength();
 
-                    // small steps near the hole where paths bend sharply, big steps far away
-                    double dt = std::clamp(0.02 * r * r / (r + 10.0), 0.005, 1.0);
+                    // small steps near the hole where paths bend sharply, bigger steps far away
+                    double dt = std::clamp(0.02 * r * r / (r + 10.0), 0.005, 10.0);
 
                     math::Vec3 oldPos = pos;
                     RK4Step(pos, vel, h2, dt);
@@ -167,6 +176,7 @@ namespace raytrace {
                             break;
                         }
                     }
+
 
                     // excaped
                     if (newR > R_ESCAPE && math::Vec3::Dot(pos, vel) > 0.0) {

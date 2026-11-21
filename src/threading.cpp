@@ -85,9 +85,7 @@ void CreateGeodesicThreads(std::vector<uint32_t>& buffer, int numThreads,
     // arguments for the loop3D that has to get passed, fix this bc its sloppy
     raytrace::Camera& Cam,
     int height, int width,
-    math::Vec3 backgroundColor,
-    double factorX, double factorY,
-    std::vector<std::shared_ptr<raytrace::ObjectBase>> objectList, std::vector<std::shared_ptr<raytrace::LightBase>> lightList) {
+    double factorX, double factorY) {
     //-------------------------------------
 
     //std::cout << "Initializing MultiThreading..." << std::endl;
@@ -100,8 +98,8 @@ void CreateGeodesicThreads(std::vector<uint32_t>& buffer, int numThreads,
         int endY = (i + 1) * height / numThreads;
 
         threads.emplace_back(GeodesicRayIntegrator.GeodesicRayTrace, std::ref(buffer), std::ref(Cam),
-            startY, endY, height, width, backgroundColor,
-            factorX, factorY, std::ref(objectList), std::ref(lightList));
+            startY, endY, height, width,
+            factorX, factorY);
     }
 
     // wait for all threads to finish rendering

@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.12) # Note: Upgraded from 3.10 for CONFIGURE_DEPENDS
 
-if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
-    set(CMAKE_BUILD_TYPE Release CACHE STRING "Choose the type of build." FORCE)
-endif()
+#if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+#    set(CMAKE_BUILD_TYPE Release CACHE STRING "Choose the type of build." FORCE)
+#endif()
 
 project(CSC1060_Capstone_Project CXX)
 
@@ -20,6 +20,11 @@ file(GLOB_RECURSE ALL_SOURCES CONFIGURE_DEPENDS
 )
 
 add_executable(CSC1060_CAPSTONE_PROJECT ${ALL_SOURCES})
+
+
+target_compile_options(CSC1060_CAPSTONE_PROJECT PRIVATE
+        $<$<CXX_COMPILER_ID:GNU,Clang,AppleClang>:-g -fno-omit-frame-pointer>
+)
 
 target_include_directories(CSC1060_CAPSTONE_PROJECT PRIVATE
         "${CMAKE_CURRENT_SOURCE_DIR}/include"

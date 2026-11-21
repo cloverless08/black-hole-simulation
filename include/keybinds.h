@@ -12,4 +12,4 @@
 #include "vec.h"
 #include <SDL2/SDL.h>
 
-void GetKeyPress(SDL_Event &event, bool &running, raytrace::Camera &cam);
+void GetKeyPress(SDL_Event &event, bool &running, raytrace::Camera &cam, int height, int width, std::vector<uint32_t>& buffer);
