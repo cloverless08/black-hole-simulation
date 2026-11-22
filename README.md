@@ -16,7 +16,7 @@ This project has cross-platform makefiles included via CMake.
 To install and run, simply download or clone this repository, navigate to ./build and run the linux application file or build from source.
 
 **Linux** (runs current public build, may not be up-to-date)
-- ./CSC1060_Captstone_Project/build
+- ./black-hole-simulation/build
 - Find ./CSC1060_CAPSTONE_PROJECT
 - Execute via file manager or terminal
 
@@ -34,23 +34,22 @@ You can use the following commands to simplify the installation (only tested on 
 ~~~bash
 git clone https://github.com/cloverless08/black-hole-simulation.git
 cd black-hole-simulation
-rm -rf ./build/
-cmake -S . -B build
+rm -rf ./build
+echo Removed build
+cmake -B build -DCMAKE_BUILD_TYPE=Release -S .
+echo Compiled makefiles for application into ./build with type: Release
 cd ./build && make && cd ..
+echo Built application in ./build
 cp ./build/CSC1060_CAPSTONE_PROJECT ./BlackHoleSimExec
 ~~~
 
-***OR***
-
-Download the platform-specific executable here (without source code):
- - [Windows](link TK)
- - [Linux](link TK)
-
 ## Controls/Keybinds
-- Left/Right: yaw around Hole
-- Up/Down: pitch around Hole
+- Left/Right: Yaw around hole
+- Up/Down: Pitch around Hole
+- q: Move camera close to hole
+- e: Move camera farther away from hole
 - s: Save screenshot of current frame (to current directory)
-- Esc: Quit App
+- Esc: Exit simulation and close window
 
 ## Authors
 
