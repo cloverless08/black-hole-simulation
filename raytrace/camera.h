@@ -19,7 +19,7 @@ namespace raytrace {
         // default constructor
         Camera();
 
-        // camera parameter functions
+        // camera parameter and setter functions
         void SetPosition(const qbVector<double> &newPosition);
         void SetLookAt(const qbVector<double> &newLookAt);
         void SetUp(const qbVector<double> &upVector);
@@ -27,6 +27,7 @@ namespace raytrace {
 
         void SetHorizontalSize(double horizontalSize); // defines aspect ratio
         void SetAspectRatio(double aspectRatio);
+        void SetDistanceFromOrigin(double newDistanceFromOrigin);
 
         // parameter getter functions
         [[nodiscard]] qbVector<double> GetPosition() const;
@@ -36,6 +37,7 @@ namespace raytrace {
         [[nodiscard]] qbVector<double> GetV() const; // screen dimension getter
         [[nodiscard]] qbVector<double> GetScreenCenter() const;
 
+        // getter functions
         double GetLength();
         double GetHorizontalSize();
         double GetAspectRatio();

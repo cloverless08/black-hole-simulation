@@ -66,6 +66,12 @@ void GetKeyPress(SDL_Event &event, bool &running, raytrace::Camera &cam,
                         stbi_write_jpg(GenerateScreenshotName().c_str(), width, height, CHANNELS, RenderScreenshot(buffer, width, height).data(), width * CHANNELS);
 
                         break;
+                    case SDLK_q: // move camera closer to origin
+                        cam.SetDistanceFromOrigin(cam.GetDistanceFromOrigin() - 10.0);
+                        cam.UpdateCamera();
+                    case SDLK_e: // move camera closer to origin
+                        cam.SetDistanceFromOrigin(cam.GetDistanceFromOrigin() + 10.0);
+                        cam.UpdateCamera();
                     default:
                         break;
                 }

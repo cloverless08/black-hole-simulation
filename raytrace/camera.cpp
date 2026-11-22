@@ -56,6 +56,11 @@ void raytrace::Camera::SetAspectRatio(double aspectRatio) {
     m_cameraAspectRatio = aspectRatio;
 }
 
+void raytrace::Camera::SetDistanceFromOrigin(double newDistanceFromOrigin) {
+    m_distanceFromOrigin = newDistanceFromOrigin;
+}
+
+
 // return parameters of camera
 // position
 qbVector<double> raytrace::Camera::GetPosition() const {
