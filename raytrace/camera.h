@@ -54,6 +54,11 @@ namespace raytrace {
         double GetElevation() const; // get angles of rotation up/down
 
     private:
+
+        // member variables for orbiting
+        double m_azimuth;
+        double m_elevation;
+
         double m_distanceFromOrigin;
 
         qbVector<double> m_cameraPosition = qbVector<double>(3);
