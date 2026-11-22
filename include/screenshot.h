@@ -20,12 +20,12 @@ inline std::vector<uint32_t> RenderScreenshot(std::vector<uint32_t> inputBuffer,
     for (int x = 0; x < width; ++x) {
         for (int y = 0; y < height; ++y) {
             uint32_t oldColor = inputBuffer[y * width + x];
-            int newR = oldColor >> 24;
-            int newG = oldColor >> 16;
-            int newB = oldColor >> 8;
+            uint8_t newR = oldColor >> 24;
+            uint8_t newG = oldColor >> 16;
+            uint8_t newB = oldColor >> 8;
 
             // borrowing packing from setpixel, but in reverse order
-            uint32_t newColor = newR | newG | newB;
+            uint32_t newColor = newB << 16 | newG << 8 | newR;
             outputBuffer[y * width + x] = newColor;
         }
     }
