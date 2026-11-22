@@ -150,14 +150,30 @@ public:
     Vec2() : data{0.0,0.0} {};
     Vec2(double x, double y) : data{x,y} {};
 
-    double x() const {
+
+    // getter functions
+    //===========================
+    double x() const { // retrieves x coordinate (element 0)
         return data[0];
     }
 
-    double y() const {
+    double y() const { // retrives y coordinate (element 1)
         return data[1];
     }
 
+    // retrieves I vector for standard base vectors
+    Vec2 GetVecI() const {
+        return {data[0], 0.0};
+    }
+
+    // retrieves J vector for standard base vectors
+    Vec2 GetVecJ() const {
+        return {0.0, data[1]};
+    }
+
+
+    // operator overloaders
+    //============================
     math::Vec2 operator-() const {
         return math::Vec2{-data[0], -data[1]};
     }
