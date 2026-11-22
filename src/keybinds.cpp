@@ -69,9 +69,11 @@ void GetKeyPress(SDL_Event &event, bool &running, raytrace::Camera &cam,
                     case SDLK_q: // move camera closer to origin
                         cam.SetDistanceFromOrigin(cam.GetDistanceFromOrigin() - 10.0);
                         cam.UpdateCamera();
+                        break;
                     case SDLK_e: // move camera closer to origin
                         cam.SetDistanceFromOrigin(cam.GetDistanceFromOrigin() + 10.0);
                         cam.UpdateCamera();
+                        break;
                     default:
                         break;
                 }
