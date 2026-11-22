@@ -16,6 +16,7 @@
 #include "../raytrace/camera.h"
 #include "../qbLinearAlgebra/qbVector.h"
 #include "../include/stb_image_write.h"
+#include "../include/screenshot.h"
 
 #include <SDL2/SDL.h>
 
@@ -29,7 +30,8 @@ void GetKeyPress(SDL_Event &event, bool &running, raytrace::Camera &cam,
             const double camY = cam.GetPosition().GetElement(1);
             const double camZ = cam.GetPosition().GetElement(2);
 
-            constexpr double CHANGE_ANGLE = 5.0;
+            constexpr double CHANGE_ANGLE_DEGREES = 5; // 15 degrees in radians
+            constexpr double CHANGE_ANGLE_RADIANS = static_cast<double>(CHANGE_ANGLE_DEGREES) * M_PI / 180.0;
             constexpr int CHANNELS = 4;
 
             if (event.type == SDL_QUIT) {
@@ -37,45 +39,40 @@ void GetKeyPress(SDL_Event &event, bool &running, raytrace::Camera &cam,
             } else if (event.type == SDL_KEYDOWN) {
                 //std::cout << "Key Was Pressed" << std::endl;
                 switch (event.key.keysym.sym) {
-                    case SDLK_ESCAPE:
+                    case SDLK_ESCAPE: // quit window and stop sim
                         StrOut("Escape Key Pressed", msgType[0]);
                         running = false;
                         break;
-                    case SDLK_RIGHT:
+                    case SDLK_RIGHT: // yaw right (change azimuth)
                         StrOut("Right Arrow Pressed", msgType[0]);
-                        //cam.SetPosition(cam.GetPosition() + qbVector<double>{std::vector{0.025, 0.0, 0.0}});
-                        //cam.SetPosition(cam.GetPosition() + qbVector<double>{std::vector{0.0 + cos(10.0) * cam.GetDistanceFromOrigin(), 0.0 + sin(10.0) * cam.GetDistanceFromOrigin(), 0.0}});
-                        cam.SetPosition(std::vector{camX + (cos(CHANGE_ANGLE) * cam.GetDistanceFromOrigin()), camY + (sin(CHANGE_ANGLE) * cam.GetDistanceFromOrigin()), camZ});
-                        cam.SetLookAt(qbVector<double>{std::vector<double>{0.0, 0.0, 0.0}}); // look at origin
-                        cam.UpdateCamera();
+                        cam.Orbit(CHANGE_ANGLE_RADIANS, 0.0);
                         break;
-                    case SDLK_LEFT:
+                    case SDLK_LEFT: // yaw left (change azimuth)
                         StrOut("Left Arrow Pressed", msgType[0]);
-                        cam.SetPosition(std::vector{camX - (cos(CHANGE_ANGLE) * cam.GetDistanceFromOrigin()), camY - (sin(CHANGE_ANGLE) * cam.GetDistanceFromOrigin()), camZ});
-                        cam.SetLookAt(qbVector<double>{std::vector<double>{0.0, 0.0, 0.0}}); // look at origin
-                        cam.UpdateCamera();
+                        cam.Orbit(-CHANGE_ANGLE_RADIANS, 0.0);
                         break;
-                    case SDLK_UP:
+                    case SDLK_UP: // pitch up (change elevation)
                         StrOut("Up Arrow Pressed", msgType[0]);
-                        cam.SetPosition(std::vector{camX + (cos(CHANGE_ANGLE) * cam.GetDistanceFromOrigin()), camY, camZ + (sin(CHANGE_ANGLE) * cam.GetDistanceFromOrigin())});
-                        cam.SetLookAt(qbVector<double>{std::vector<double>{0.0, 0.0, 0.0}}); // look at origin
-                        cam.UpdateCamera();
+                        cam.Orbit(0.0, -CHANGE_ANGLE_RADIANS);
                         break;
-                    case SDLK_DOWN:
+                    case SDLK_DOWN: // pitch down (change elevation
                         StrOut("Down Arrow Pressed", msgType[0]);
-                        cam.SetPosition(std::vector{camX - (cos(CHANGE_ANGLE) * cam.GetDistanceFromOrigin()), camY, camZ - (sin(CHANGE_ANGLE) * cam.GetDistanceFromOrigin())});
-                        cam.SetLookAt(qbVector<double>{std::vector<double>{0.0, 0.0, 0.0}}); // look at origin
-                        cam.UpdateCamera();
+                        cam.Orbit(0.0, CHANGE_ANGLE_RADIANS);
                         break;
-                    case SDLK_d:
-                        StrOut("D: Diagnostics Output", msgType[0]);
-                        break;
-                    case SDLK_s:
+                    case SDLK_s: // take screenshot and write to file
                         StrOut("S: Screenshot", msgType[0]);
 
-                        // write buffer as jpeg (so that black isnt rendered invisible)
-                        stbi_write_jpg("output.jpg", width, height, CHANNELS, buffer.data(), width * CHANNELS);
+                        // write buffer as jpeg (so that black isnt rendered invisible
+                        stbi_write_jpg(GenerateScreenshotName().c_str(), width, height, CHANNELS, RenderScreenshot(buffer, width, height).data(), width * CHANNELS);
 
+                        break;
+                    case SDLK_q: // move camera closer to origin
+                        cam.SetDistanceFromOrigin(cam.GetDistanceFromOrigin() - 10.0);
+                        cam.UpdateCamera();
+                        break;
+                    case SDLK_e: // move camera closer to origin
+                        cam.SetDistanceFromOrigin(cam.GetDistanceFromOrigin() + 10.0);
+                        cam.UpdateCamera();
                         break;
                     default:
                         break;

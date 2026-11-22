@@ -19,7 +19,7 @@ namespace raytrace {
         // default constructor
         Camera();
 
-        // camera parameter functions
+        // camera parameter and setter functions
         void SetPosition(const qbVector<double> &newPosition);
         void SetLookAt(const qbVector<double> &newLookAt);
         void SetUp(const qbVector<double> &upVector);
@@ -27,6 +27,7 @@ namespace raytrace {
 
         void SetHorizontalSize(double horizontalSize); // defines aspect ratio
         void SetAspectRatio(double aspectRatio);
+        void SetDistanceFromOrigin(double newDistanceFromOrigin);
 
         // parameter getter functions
         [[nodiscard]] qbVector<double> GetPosition() const;
@@ -36,6 +37,7 @@ namespace raytrace {
         [[nodiscard]] qbVector<double> GetV() const; // screen dimension getter
         [[nodiscard]] qbVector<double> GetScreenCenter() const;
 
+        // getter functions
         double GetLength();
         double GetHorizontalSize();
         double GetAspectRatio();
@@ -48,7 +50,17 @@ namespace raytrace {
         // update camera geometry
         void UpdateCamera();
 
+        // camera rotation around hole
+        void Orbit(double deltaAzimuth, double deltaElevation);
+        double GetAzimuth() const; // get angles of rotation left and right
+        double GetElevation() const; // get angles of rotation up/down
+
     private:
+
+        // member variables for orbiting
+        double m_azimuth = -M_PI / 2.0;              // start on the -y axis
+        double m_elevation = std::asin(3.0 / 30.0);  // ~5.7 deg above the disk
+
         double m_distanceFromOrigin;
 
         qbVector<double> m_cameraPosition = qbVector<double>(3);

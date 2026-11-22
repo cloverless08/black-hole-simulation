@@ -12,6 +12,7 @@
 #include "ray.h"
 
 #include<math.h>
+#include<algorithm>
 
 #include "main_utils.h"
 
@@ -27,6 +28,8 @@ raytrace::Camera::Camera() {
 
     m_distanceFromOrigin = 30.0;
 }
+
+constexpr double MAX_ELEVATION = 85.0 * M_PI / 180.0; // stops you from going 90 degrees above or below holw (converted to radians)
 
 //paramter assigning functions
 void raytrace::Camera::SetPosition(const qbVector<double> &newPosition) {
@@ -53,7 +56,12 @@ void raytrace::Camera::SetAspectRatio(double aspectRatio) {
     m_cameraAspectRatio = aspectRatio;
 }
 
-// return paramters of cmaera
+void raytrace::Camera::SetDistanceFromOrigin(double newDistanceFromOrigin) {
+    m_distanceFromOrigin = newDistanceFromOrigin;
+}
+
+
+// return parameters of camera
 // position
 qbVector<double> raytrace::Camera::GetPosition() const {
     return m_cameraPosition;
@@ -140,4 +148,33 @@ bool raytrace::Camera::GenerateRay(float projScreenX, float projScreenY, raytrac
     return true;
 
 
+}
+
+// compute angles for orbit
+void raytrace::Camera::Orbit(double deltaAzimuth, double deltaElevation) {
+    // azimuth wraps freely around the z axis
+    m_azimuth = std::fmod(m_azimuth + deltaAzimuth, 2.0 * M_PI);
+
+    // clamp elevation to avoid NaN errors at poles
+    m_elevation = std::clamp(m_elevation + deltaElevation, -MAX_ELEVATION, MAX_ELEVATION);
+
+    const double radius = m_distanceFromOrigin;
+
+    // spherical to cartesian, z is up
+    const double x = radius * std::cos(m_elevation) * std::cos(m_azimuth);
+    const double y = radius * std::cos(m_elevation) * std::sin(m_azimuth);
+    const double z = radius * std::sin(m_elevation);
+
+    SetPosition(qbVector<double>{std::vector<double>{x, y, z}});
+    SetLookAt(qbVector<double>{std::vector<double>{0.0, 0.0, 0.0}});
+    UpdateCamera();
+}
+
+// getter functions for orbits
+double raytrace::Camera::GetAzimuth() const {
+    return m_azimuth;
+}
+
+double raytrace::Camera::GetElevation() const {
+    return m_elevation;
 }
