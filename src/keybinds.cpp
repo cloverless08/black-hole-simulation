@@ -30,7 +30,7 @@ void GetKeyPress(SDL_Event &event, bool &running, raytrace::Camera &cam,
             const double camY = cam.GetPosition().GetElement(1);
             const double camZ = cam.GetPosition().GetElement(2);
 
-            constexpr double CHANGE_ANGLE = 5.0;
+            constexpr double CHANGE_ANGLE = 0.261799; // 15 degrees in radians
             constexpr int CHANNELS = 4;
 
             if (event.type == SDL_QUIT) {

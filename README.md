@@ -47,9 +47,9 @@ Download the platform-specific executable here (without source code):
  - [Linux](link TK)
 
 ## Controls/Keybinds
-- Arrow Keys: Control camera position around black hole
-- d: Display diagnostic info to terminal/screen
-- s: Save snapshot of current frame
+- Left/Right: yaw around Hole
+- Up/Down: pitch around Hole
+- s: Save screenshot of current frame (to current directory)
 - Esc: Quit App
 
 ## Authors

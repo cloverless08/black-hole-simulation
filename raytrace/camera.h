@@ -48,6 +48,11 @@ namespace raytrace {
         // update camera geometry
         void UpdateCamera();
 
+        // camera rotation around hole
+        void Orbit(double deltaAzimuth, double deltaElevation);
+        double GetAzimuth() const; // get angles of rotation left and right
+        double GetElevation() const; // get angles of rotation up/down
+
     private:
         double m_distanceFromOrigin;
 
