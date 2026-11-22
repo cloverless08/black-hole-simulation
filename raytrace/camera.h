@@ -58,8 +58,8 @@ namespace raytrace {
     private:
 
         // member variables for orbiting
-        double m_azimuth;
-        double m_elevation;
+        double m_azimuth = -M_PI / 2.0;              // start on the -y axis
+        double m_elevation = std::asin(3.0 / 30.0);  // ~5.7 deg above the disk
 
         double m_distanceFromOrigin;
 
