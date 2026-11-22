@@ -192,15 +192,21 @@ CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/raytrace/camera.cpp.o: \
  /usr/include/c++/16.1.1/bits/stl_vector.h \
  /usr/include/c++/16.1.1/bits/stl_bvector.h \
  /usr/include/c++/16.1.1/bits/vector.tcc \
+ /usr/include/c++/16.1.1/algorithm \
+ /usr/include/c++/16.1.1/bits/stl_algo.h \
+ /usr/include/c++/16.1.1/bits/algorithmfwd.h \
+ /usr/include/c++/16.1.1/bits/stl_heap.h \
+ /usr/include/c++/16.1.1/bits/uniform_int_dist.h \
+ /usr/include/c++/16.1.1/bits/stl_tempbuf.h \
+ /usr/include/c++/16.1.1/pstl/glue_algorithm_defs.h \
+ /usr/include/c++/16.1.1/pstl/execution_defs.h \
  /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/include/main_utils.h \
  /usr/include/c++/16.1.1/random /usr/include/c++/16.1.1/cstdint \
  /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include/stdint.h \
  /usr/include/stdint.h /usr/include/bits/stdint-uintn.h \
  /usr/include/bits/stdint-least.h /usr/include/c++/16.1.1/bits/random.h \
- /usr/include/c++/16.1.1/bits/uniform_int_dist.h \
  /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/opt_random.h \
  /usr/include/c++/16.1.1/bits/random.tcc /usr/include/c++/16.1.1/numeric \
  /usr/include/c++/16.1.1/bits/stl_numeric.h \
  /usr/include/c++/16.1.1/pstl/glue_numeric_defs.h \
- /usr/include/c++/16.1.1/pstl/execution_defs.h \
  /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/include/../qbLinearAlgebra/qbVector.h

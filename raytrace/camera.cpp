@@ -153,12 +153,12 @@ void raytrace::Camera::Orbit(double deltaAzimuth, double deltaElevation) {
     // clamp elevation to avoid NaN errors at poles
     m_elevation = std::clamp(m_elevation + deltaElevation, -MAX_ELEVATION, MAX_ELEVATION);
 
-    const double r = m_distanceFromOrigin;
+    const double radius = m_distanceFromOrigin;
 
-    // spherical to cartesian, z up
-    const double x = r * std::cos(m_elevation) * std::cos(m_azimuth);
-    const double y = r * std::cos(m_elevation) * std::sin(m_azimuth);
-    const double z = r * std::sin(m_elevation);
+    // spherical to cartesian, z is up
+    const double x = radius * std::cos(m_elevation) * std::cos(m_azimuth);
+    const double y = radius * std::cos(m_elevation) * std::sin(m_azimuth);
+    const double z = radius * std::sin(m_elevation);
 
     SetPosition(qbVector<double>{std::vector<double>{x, y, z}});
     SetLookAt(qbVector<double>{std::vector<double>{0.0, 0.0, 0.0}});
