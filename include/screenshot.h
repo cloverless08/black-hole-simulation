@@ -7,6 +7,9 @@
 #include <array>
 #include <vector>
 #include <cstdint>
+#include <chrono>
+#include <format>
+#include <string>
 
 #include <main_utils.h>
 
@@ -32,4 +35,14 @@ inline std::vector<uint32_t> RenderScreenshot(std::vector<uint32_t> inputBuffer,
 
     // returns repacked buffer for screenshots
     return outputBuffer;
+}
+
+// creates name for the screenshot based on current time and date
+inline std::string GenerateScreenshotName() {
+    auto now = std::chrono::system_clock::now();
+    std::time_t now_c = std::chrono::system_clock::to_time_t(now);
+
+    std::stringstream ss;
+    ss << "screenshotBHS_" << std::put_time(std::gmtime(&now_c), "%Y-%m-%d_%H-%M-%S.jpg");
+    return ss.str();
 }

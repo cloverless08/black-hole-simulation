@@ -215,7 +215,12 @@ CMakeFiles/CSC1060_CAPSTONE_PROJECT.dir/src/keybinds.cpp.o: \
  /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
  /usr/include/bits/uio_lim.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include/float.h \
- /usr/include/assert.h /usr/include/SDL2/SDL.h \
+ /usr/include/assert.h \
+ /home/cdemin/Code/Active/CSC1060\ Capstone\ Project/src/../include/screenshot.h \
+ /usr/include/c++/16.1.1/chrono /usr/include/c++/16.1.1/bits/chrono.h \
+ /usr/include/c++/16.1.1/ratio \
+ /usr/include/c++/16.1.1/bits/parse_numbers.h \
+ /usr/include/c++/16.1.1/format /usr/include/SDL2/SDL.h \
  /usr/include/SDL2/SDL_main.h /usr/include/SDL2/SDL_stdinc.h \
  /usr/include/SDL2/SDL_config.h /usr/include/SDL2/SDL_platform.h \
  /usr/include/SDL2/begin_code.h /usr/include/SDL2/close_code.h \

@@ -72,7 +72,7 @@ void GetKeyPress(SDL_Event &event, bool &running, raytrace::Camera &cam,
                         StrOut("S: Screenshot", msgType[0]);
 
                         // write buffer as jpeg (so that black isnt rendered invisible
-                        stbi_write_jpg("output.jpg", width, height, CHANNELS, RenderScreenshot(buffer, width, height).data(), width * CHANNELS);
+                        stbi_write_jpg(GenerateScreenshotName().c_str(), width, height, CHANNELS, RenderScreenshot(buffer, width, height).data(), width * CHANNELS);
 
                         break;
                     default:
