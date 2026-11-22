@@ -16,6 +16,7 @@
 #include "../raytrace/camera.h"
 #include "../qbLinearAlgebra/qbVector.h"
 #include "../include/stb_image_write.h"
+#include "../include/screenshot.h"
 
 #include <SDL2/SDL.h>
 
@@ -70,8 +71,8 @@ void GetKeyPress(SDL_Event &event, bool &running, raytrace::Camera &cam,
                     case SDLK_s:
                         StrOut("S: Screenshot", msgType[0]);
 
-                        // write buffer as jpeg (so that black isnt rendered invisible)
-                        stbi_write_jpg("output.jpg", width, height, CHANNELS, buffer.data(), width * CHANNELS);
+                        // write buffer as jpeg (so that black isnt rendered invisible
+                        stbi_write_jpg("output.jpg", width, height, CHANNELS, RenderScreenshot(buffer, width, height).data(), width * CHANNELS);
 
                         break;
                     default:
