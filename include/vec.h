@@ -21,7 +21,6 @@ public:
     Vec3() : data{0.0,0.0,0.0} {}
     Vec3(double position0, double position1, double position2) : data{position0,position1,position2} {}
 
-
     // getter functions
     //=====================================
      double x() const {

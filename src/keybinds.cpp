@@ -67,9 +67,6 @@ void GetKeyPress(SDL_Event &event, bool &running, raytrace::Camera &cam,
                         cam.SetLookAt(qbVector<double>{std::vector<double>{0.0, 0.0, 0.0}}); // look at origin
                         cam.UpdateCamera();
                         break;
-                    case SDLK_d:
-                        StrOut("D: Diagnostics Output", msgType[0]);
-                        break;
                     case SDLK_s:
                         StrOut("S: Screenshot", msgType[0]);
 

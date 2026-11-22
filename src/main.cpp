@@ -46,6 +46,7 @@
 constexpr int  RESOLUTION_WIDTH = 640;
 constexpr int RESOLUTION_HEIGHT = 480;
 
+// pulls hardware information
 unsigned int static NUMBER_CORES = SDL_GetCPUCount();
 unsigned int static AMOUNT_RAM = SDL_GetSystemRAM();
 
@@ -86,12 +87,6 @@ int main() {
     //double THETA = 0;
 
     StrOut("Local Variables Initialized.", msgType[2]);
-
-
-    // initial warnings and output
-    StrOut("CSC1060 - Capstone Project", "info");
-    StrOut("By Carrick De Min, Fall 2026", "info");
-    StrOut("This program is under development and may not function as expected.", "warn");
 
 
     // initialize sdl2
